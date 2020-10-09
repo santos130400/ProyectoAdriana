@@ -27,17 +27,14 @@ class _Accesorios extends State<Accesorios> {
 
 Widget collar(BuildContext context) {
   return Padding(
-      padding: EdgeInsets.only(top: 10),
+      padding: EdgeInsets.only(top: 20, right: 80),
       child: SizedBox(
           width: 410,
           height: 70,
           child: RaisedButton(
               child: Text(
                 "COLLAR Y ARETES",
-                style: TextStyle(
-                    color: Color.fromARGB(255, 92, 68, 56),
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               onPressed: () {},
               color: Color.fromARGB(255, 255, 198, 165))));
@@ -45,17 +42,14 @@ Widget collar(BuildContext context) {
 
 Widget sombreros(BuildContext context) {
   return Padding(
-      padding: EdgeInsets.only(top: 20),
+      padding: EdgeInsets.only(top: 20, right: 80),
       child: SizedBox(
           width: 410,
           height: 70,
           child: RaisedButton(
               child: Text(
                 "SOMBREROS",
-                style: TextStyle(
-                    color: Color.fromARGB(255, 92, 68, 56),
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               onPressed: () {},
               color: Color.fromARGB(255, 255, 198, 165))));
@@ -63,17 +57,14 @@ Widget sombreros(BuildContext context) {
 
 Widget pulseras(BuildContext context) {
   return Padding(
-      padding: EdgeInsets.only(top: 20),
+      padding: EdgeInsets.only(top: 20, right: 80),
       child: SizedBox(
           width: 410,
           height: 70,
           child: RaisedButton(
               child: Text(
                 "PULSERAS Y RELOJES",
-                style: TextStyle(
-                    color: Color.fromARGB(255, 92, 68, 56),
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               onPressed: () {},
               color: Color.fromARGB(255, 255, 198, 165))));
@@ -81,17 +72,14 @@ Widget pulseras(BuildContext context) {
 
 Widget lentes(BuildContext context) {
   return Padding(
-      padding: EdgeInsets.only(top: 20),
+      padding: EdgeInsets.only(top: 20, right: 80),
       child: SizedBox(
           width: 410,
           height: 70,
           child: RaisedButton(
               child: Text(
                 "LENTES",
-                style: TextStyle(
-                    color: Color.fromARGB(255, 92, 68, 56),
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               onPressed: () {},
               color: Color.fromARGB(255, 255, 198, 165))));
@@ -99,17 +87,14 @@ Widget lentes(BuildContext context) {
 
 Widget bolsos(BuildContext context) {
   return Padding(
-      padding: EdgeInsets.only(top: 20),
+      padding: EdgeInsets.only(top: 20, right: 80),
       child: SizedBox(
           width: 410,
           height: 70,
           child: RaisedButton(
               child: Text(
                 "BOLSOS Y CARTERAS",
-                style: TextStyle(
-                    color: Color.fromARGB(255, 92, 68, 56),
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               onPressed: () {},
               color: Color.fromARGB(255, 255, 198, 165))));
@@ -117,17 +102,14 @@ Widget bolsos(BuildContext context) {
 
 Widget cinturones(BuildContext context) {
   return Padding(
-      padding: EdgeInsets.only(top: 20),
+      padding: EdgeInsets.only(top: 20, right: 80),
       child: SizedBox(
           width: 410,
           height: 70,
           child: RaisedButton(
               child: Text(
                 "CINTURONES",
-                style: TextStyle(
-                    color: Color.fromARGB(255, 92, 68, 56),
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               onPressed: () {},
               color: Color.fromARGB(255, 255, 198, 165))));
@@ -166,8 +148,10 @@ Widget barraNavegacion(BuildContext context) {
                 child: Text(
                   'ACCESORIOS',
                   textAlign: TextAlign.center,
-                  textScaleFactor: 2.0,
-                  style: TextStyle(),
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 92, 68, 46),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
             ),

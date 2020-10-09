@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:prueba_apliacion/main.dart';
 
-var prendid = [false, false, false, false, false];
+
 double border1 = 0;
 double border2 = 0;
 double border3 = 0;
@@ -12,6 +13,7 @@ double border8 = 0;
 double border9 = 0;
 int selected = 0;
 int radioItem = 0;
+int opacity2=0;
 
 class Ojos extends StatefulWidget {
   Ojos({Key key}) : super(key: key);
@@ -315,7 +317,7 @@ class _Ojos extends State<Ojos> {
                         children: <Widget>[
                           new Radio(
                             groupValue: radioItem,
-                            value: 0,
+                            value: 1,
                             onChanged: _handleRadioValueChange,
                           )
                         ],
@@ -329,7 +331,7 @@ class _Ojos extends State<Ojos> {
                         children: <Widget>[
                           new Radio(
                             groupValue: radioItem,
-                            value: 1,
+                            value: 2,
                             onChanged: _handleRadioValueChange,
                           )
                         ],
@@ -344,7 +346,50 @@ class _Ojos extends State<Ojos> {
             ),
           ),
         ),
-        continuar(context)
+        Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: Column(
+        children: [
+          Text('Seleccione ambas Opciones', 
+      style: TextStyle(
+        color: Color.fromARGB(opacity2, 255, 0, 0)
+      ),),
+          Container(
+              height: 63.0,
+              width: MediaQuery.of(context).size.width,
+              padding: const EdgeInsets.only(top: 15, bottom: 15),
+              decoration:
+                  new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
+              child: FlatButton(
+                  onPressed: () {
+                    if(selected!=0&&radioItem!=0){
+                      setState(() {
+                        opacity2=0;
+                      });
+                      resul.ojos=selected;
+                      resul.ojeras=radioItem;
+                    Navigator.of(context).pushNamed('/cara');
+                    }else{
+                       setState(() {
+                        opacity2=255;
+                      });
+
+                    }
+                  },
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'CONTINUAR',
+                          textAlign: TextAlign.center,
+                          textScaleFactor: 2.0,
+                          style:
+                              TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
+                        ),
+                      ]))),
+        ],
+      ),
+    )
       ])
     ]));
   }
@@ -366,32 +411,7 @@ class _Ojos extends State<Ojos> {
     );
   }
 
-  Widget continuar(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 10),
-      child: Container(
-          height: 63.0,
-          width: MediaQuery.of(context).size.width,
-          padding: const EdgeInsets.only(top: 15, bottom: 15),
-          decoration:
-              new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
-          child: FlatButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed('/cara');
-              },
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'CONTINUAR',
-                      textAlign: TextAlign.center,
-                      textScaleFactor: 2.0,
-                      style:
-                          TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
-                    ),
-                  ]))),
-    );
-  }
+  
 
   Widget barraNavegacion(BuildContext context) {
     return Stack(

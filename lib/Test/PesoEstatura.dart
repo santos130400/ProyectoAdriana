@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_xlider/flutter_xlider.dart';
+import 'package:prueba_apliacion/main.dart';
 
 double valAlt = 0;
 double valBot = 0;
+int opacity4 = 0;
 
 class PesoEstatura extends StatefulWidget {
   PesoEstatura({Key key}) : super(key: key);
@@ -156,34 +158,50 @@ class _PesoEstatura extends State<PesoEstatura> {
               ],
             ),
           ),
-          continuar(context),
+          Column(
+            children: [
+              Text(
+                'Seleccione ambas Opciones',
+                style: TextStyle(color: Color.fromARGB(opacity4, 255, 0, 0)),
+              ),
+              Container(
+                  height: 63.0,
+                  width: MediaQuery.of(context).size.width,
+                  padding: const EdgeInsets.only(top: 15, bottom: 15),
+                  decoration: new BoxDecoration(
+                      color: new Color.fromRGBO(255, 198, 165, 1)),
+                  child: FlatButton(
+                      onPressed: () {
+                        if (valAlt != 0 && valBot != 0) {
+                          setState(() {
+                            opacity4 = 0;
+                          });
+                          Navigator.of(context).pushNamed('/cuerpo');
+                          resul.estatura=valAlt.toInt();
+                          resul.peso=valBot.toInt();
+                        } else {
+                          setState(() {
+                            opacity4 = 255;
+                          });
+                        }
+                      },
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'CONTINUAR',
+                              textAlign: TextAlign.center,
+                              textScaleFactor: 2.0,
+                              style: TextStyle(
+                                  color: new Color.fromRGBO(92, 68, 56, 1)),
+                            ),
+                          ]))),
+            ],
+          )
         ],
       ),
     );
   }
-}
-
-Widget continuar(BuildContext context) {
-  return Container(
-      height: 63.0,
-      width: MediaQuery.of(context).size.width,
-      padding: const EdgeInsets.only(top: 15, bottom: 15),
-      decoration:
-          new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
-      child: FlatButton(
-          onPressed: () {
-            Navigator.of(context).pushNamed('/cuerpo');
-          },
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'CONTINUAR',
-                  textAlign: TextAlign.center,
-                  textScaleFactor: 2.0,
-                  style: TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
-                ),
-              ])));
 }
 
 Widget barraNavegacion(BuildContext context) {

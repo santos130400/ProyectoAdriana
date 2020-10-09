@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:prueba_apliacion/Inicio.dart';
 import 'package:prueba_apliacion/Menu.dart';
 import 'package:prueba_apliacion/Registro.dart';
+import 'package:prueba_apliacion/Resul.dart';
 import 'package:prueba_apliacion/Test/Cabello.dart';
 import 'package:prueba_apliacion/Test/Cara.dart';
 import 'package:prueba_apliacion/Test/Caracter.dart';
@@ -17,8 +18,13 @@ import 'package:prueba_apliacion/Test/Preferencias.dart';
 import 'package:prueba_apliacion/Test/Tejidos.dart';
 import 'package:prueba_apliacion/Test/Venas.dart';
 
+
+Test resul= new Test();
 void main() {
+  //print(resul.getCara);
   runApp(MyApp());
+
+
 }
 
 class MyApp extends StatelessWidget {

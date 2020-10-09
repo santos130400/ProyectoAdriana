@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:prueba_apliacion/main.dart';
 
-String radioItem1 = '';
 int selected = 0;
+int opacity8 =0;
 double border1 = 0;
 double border2 = 0;
 double border3 = 0;
@@ -613,7 +614,49 @@ class _Paleta extends State<Paleta> {
               ],
             ),
           ),
-          continuar(context)
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: Column(
+              children: [
+                Text(
+                  'Seleccione una Opción',
+                  style: TextStyle(color: Color.fromARGB(opacity8, 255, 0, 0)),
+                ),
+                Container(
+                    height: 63.0,
+                    width: MediaQuery.of(context).size.width,
+                    padding: const EdgeInsets.only(top: 15, bottom: 15),
+                    decoration: new BoxDecoration(
+                        color: new Color.fromRGBO(255, 198, 165, 1)),
+                    child: FlatButton(
+                        onPressed: () {
+                          if (selected != 0) {
+                            setState(() {
+                            opacity8 = 0;
+                          });
+                            Navigator.of(context).pushNamed('/tejidos');
+                            resul.paleta=selected;
+                          } else {
+                            setState(() {
+                            opacity8 = 255;
+                          });
+
+                          }
+                        },
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                'CONTINUAR',
+                                textAlign: TextAlign.center,
+                                textScaleFactor: 2.0,
+                                style: TextStyle(
+                                    color: new Color.fromRGBO(92, 68, 56, 1)),
+                              ),
+                            ]))),
+              ],
+            ),
+          )
         ])
       ]),
     );
@@ -646,32 +689,6 @@ Widget texto() {
         ])
       ],
     )),
-  );
-}
-
-Widget continuar(BuildContext context) {
-  return Padding(
-    padding: const EdgeInsets.only(top: 20),
-    child: Container(
-        height: 63.0,
-        width: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.only(top: 15, bottom: 15),
-        decoration:
-            new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
-        child: FlatButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed('/tejidos');
-            },
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'CONTINUAR',
-                    textAlign: TextAlign.center,
-                    textScaleFactor: 2.0,
-                    style: TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
-                  ),
-                ]))),
   );
 }
 

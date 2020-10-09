@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:prueba_apliacion/main.dart';
 
-String radioItem1 = '';
-String colorPiel = '';
-
+int radioItem1 = 0;
+int colorPiel = 0;
+int opacity1=0;
+String tmp='';
 class Piel extends StatefulWidget {
   Piel({Key key}) : super(key: key);
   @override
   _Piel createState() => new _Piel();
 }
+
+
 
 class _Piel extends State<Piel> {
   @override
@@ -45,7 +49,8 @@ class _Piel extends State<Piel> {
                               ))),
                       onTap: () {
                         setState(() {
-                          colorPiel = 'TOFFEE';
+                          colorPiel = 1;
+                          tmp="TOFFEE";
                         });
                       },
                     ),
@@ -79,7 +84,8 @@ class _Piel extends State<Piel> {
                                   ))),
                           onTap: () {
                             setState(() {
-                              colorPiel = 'COCOA';
+                              colorPiel = 2;
+                              tmp="COCOA";
                             });
                           },
                         ),
@@ -108,7 +114,8 @@ class _Piel extends State<Piel> {
                                   ))),
                           onTap: () {
                             setState(() {
-                              colorPiel = 'DOLCE';
+                              colorPiel = 3;
+                              tmp="DOLCE";
                             });
                           },
                         ),
@@ -142,7 +149,8 @@ class _Piel extends State<Piel> {
                             ))),
                     onTap: () {
                       setState(() {
-                        colorPiel = 'CHAI';
+                        colorPiel = 4;
+                        tmp="CHAI";
                       });
                     },
                   ),
@@ -171,7 +179,8 @@ class _Piel extends State<Piel> {
                                 ))),
                         onTap: () {
                           setState(() {
-                            colorPiel = 'HONEY';
+                            colorPiel = 5;
+                            tmp="HONEY";
                           });
                         },
                       ),
@@ -200,7 +209,8 @@ class _Piel extends State<Piel> {
                                 ))),
                         onTap: () {
                           setState(() {
-                            colorPiel = 'VAINILLA';
+                            tmp="VAINILLA";
+                            colorPiel = 6;
                           });
                         },
                       ),
@@ -231,7 +241,8 @@ class _Piel extends State<Piel> {
                             ))),
                     onTap: () {
                       setState(() {
-                        colorPiel = 'CREAM';
+                        tmp="CREAM";
+                        colorPiel = 7;
                       });
                     },
                   ),
@@ -260,7 +271,8 @@ class _Piel extends State<Piel> {
                                 ))),
                         onTap: () {
                           setState(() {
-                            colorPiel = 'LIGHT';
+                            colorPiel = 8;
+                            tmp="LIGHT";
                           });
                         },
                       ),
@@ -289,7 +301,8 @@ class _Piel extends State<Piel> {
                                 ))),
                         onTap: () {
                           setState(() {
-                            colorPiel = 'CLOUD';
+                            colorPiel = 9;
+                            tmp="CLOUD";
                           });
                         },
                       ),
@@ -301,7 +314,7 @@ class _Piel extends State<Piel> {
         Padding(
           padding: EdgeInsets.only(top: 5),
           child: Text(
-            colorPiel,
+            tmp,
             style: TextStyle(
                 fontSize: 30,
                 color: Color.fromARGB(255, 92, 68, 56),
@@ -324,7 +337,7 @@ class _Piel extends State<Piel> {
               children: <Widget>[
                 Radio(
                   groupValue: radioItem1,
-                  value: '0',
+                  value: 1,
                   activeColor: Color.fromRGBO(92, 68, 56, 1),
                   onChanged: (val) {
                     setState(() {
@@ -338,7 +351,7 @@ class _Piel extends State<Piel> {
                 ),
                 Radio(
                   groupValue: radioItem1,
-                  value: '1',
+                  value: 2,
                   activeColor: Color.fromRGBO(92, 68, 56, 1),
                   onChanged: (val) {
                     setState(() {
@@ -354,27 +367,47 @@ class _Piel extends State<Piel> {
             )),
 
         //Button
-        Container(
-            height: 63.0,
-            width: MediaQuery.of(context).size.width,
-            padding: const EdgeInsets.only(top: 15, bottom: 15),
-            decoration:
-                new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
-            child: FlatButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/venas');
-                },
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        'CONTINUAR',
-                        textAlign: TextAlign.center,
-                        textScaleFactor: 2.0,
-                        style:
-                            TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
-                      ),
-                    ])))
+        Column(
+          children: [
+            Text('Seleccione ambas opciones', 
+      style: TextStyle(
+        color: Color.fromARGB(opacity1, 255, 0, 0)
+      ),),
+            Container(
+                height: 63.0,
+                width: MediaQuery.of(context).size.width,
+                padding: const EdgeInsets.only(top: 15, bottom: 15),
+                decoration:
+                    new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
+                child: FlatButton(
+                    onPressed: () {
+                      if(colorPiel!=0&& radioItem1!=0){
+                        setState(() {
+                        opacity1=0;
+                      });
+                        resul.piel=colorPiel;
+                        resul.sol=radioItem1;
+                        Navigator.of(context).pushNamed('/venas');
+                      }else{
+                        setState(() {
+                        opacity1=255;
+                      });
+                      }
+                      
+                    },
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'CONTINUAR',
+                            textAlign: TextAlign.center,
+                            textScaleFactor: 2.0,
+                            style:
+                                TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
+                          ),
+                        ]))),
+          ],
+        )
       ],
     ));
   }

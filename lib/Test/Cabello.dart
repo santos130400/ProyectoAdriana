@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+
 class Cabello extends StatefulWidget {
   Cabello({Key key}) : super(key: key);
   @override
   _Cabello createState() => new _Cabello();
 }
 
-var prendid = [false, false, false, false, false];
 double border1 = 0;
 double border2 = 0;
 double border3 = 0;
@@ -18,6 +18,7 @@ double border7 = 0;
 double border8 = 0;
 double border9 = 0;
 int selected = 0;
+int opacity=0;
 
 class _Cabello extends State<Cabello> {
   // This widget is the root of your application.
@@ -32,7 +33,8 @@ class _Cabello extends State<Cabello> {
             texto(),
             Container(
                 padding: EdgeInsets.only(
-                  right: 70,
+                  right: 20,
+                  left:20,
                   bottom: 15,
                 ),
                 child: CarouselSlider(
@@ -301,7 +303,45 @@ class _Cabello extends State<Cabello> {
                     );
                   }).toList(),
                 )),
-            continuar(context)
+            Column(
+    children: [
+      Text('Seleccione una opción', 
+      style: TextStyle(
+        color: Color.fromARGB(opacity, 255, 0, 0)
+      ),),
+      Container(
+          height: 63.0,
+          width: MediaQuery.of(context).size.width,
+          padding: const EdgeInsets.only(top: 15, bottom: 15),
+          decoration:
+              new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
+          child: FlatButton(
+              onPressed: () {
+                if(selected!=0){
+                  setState(() {
+                    opacity=0;
+                  });
+                Navigator.of(context).pushNamed('/ojos');
+                }else{
+                  setState(() {
+                    opacity=255;
+                  });
+                  
+
+                }
+              },
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      'CONTINUAR',
+                      textAlign: TextAlign.center,
+                      textScaleFactor: 2.0,
+                      style: TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
+                    ),
+                  ]))),
+    ],
+  )
           ],
         ),
       ],
@@ -336,28 +376,7 @@ Widget texto() {
       ]));
 }
 
-Widget continuar(BuildContext context) {
-  return Container(
-      height: 63.0,
-      width: MediaQuery.of(context).size.width,
-      padding: const EdgeInsets.only(top: 15, bottom: 15),
-      decoration:
-          new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
-      child: FlatButton(
-          onPressed: () {
-            Navigator.of(context).pushNamed('/ojos');
-          },
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'CONTINUAR',
-                  textAlign: TextAlign.center,
-                  textScaleFactor: 2.0,
-                  style: TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
-                ),
-              ])));
-}
+
 
 Widget barraNavegacion(BuildContext context) {
   return Stack(

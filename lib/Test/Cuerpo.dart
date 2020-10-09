@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:prueba_apliacion/main.dart';
 
 class Cuerpo extends StatefulWidget {
   Cuerpo({Key key}) : super(key: key);
@@ -10,7 +11,8 @@ class Cuerpo extends StatefulWidget {
 double cuerpo1 = 0;
 double cuerpo2 = 0;
 double cuerpo3 = 0;
-double seleccionado = 0;
+int seleccionado = 0;
+int opacity5 = 0;
 
 class _Cuerpo extends State<Cuerpo> {
   @override
@@ -57,6 +59,7 @@ class _Cuerpo extends State<Cuerpo> {
               GestureDetector(
                 onTap: () {
                   setState(() {
+                    seleccionado = 1;
                     cuerpo1 = 5;
                     cuerpo2 = 0;
                     cuerpo3 = 0;
@@ -75,6 +78,7 @@ class _Cuerpo extends State<Cuerpo> {
               GestureDetector(
                 onTap: () {
                   setState(() {
+                    seleccionado = 2;
                     cuerpo1 = 0;
                     cuerpo2 = 5;
                     cuerpo3 = 0;
@@ -93,6 +97,7 @@ class _Cuerpo extends State<Cuerpo> {
               GestureDetector(
                 onTap: () {
                   setState(() {
+                    seleccionado = 3;
                     cuerpo1 = 0;
                     cuerpo2 = 0;
                     cuerpo3 = 5;
@@ -113,37 +118,53 @@ class _Cuerpo extends State<Cuerpo> {
           SizedBox(
             height: 7,
           ),
-          continuar(context),
+          Column(
+            children: [
+              Text(
+                'Seleccione una opción',
+                style: TextStyle(color: Color.fromARGB(opacity5, 255, 0, 0)),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Container(
+                    height: 63.0,
+                    width: MediaQuery.of(context).size.width,
+                    padding: const EdgeInsets.only(top: 15, bottom: 15),
+                    decoration: new BoxDecoration(
+                        color: new Color.fromRGBO(255, 198, 165, 1)),
+                    child: FlatButton(
+                        onPressed: () {
+                          if (seleccionado != 0) {
+                            setState(() {
+                              opacity5 = 0;
+                            });
+
+                            Navigator.of(context).pushNamed('/estilos');
+                            resul.forma = seleccionado;
+                          } else {
+                            setState(() {
+                              opacity5 = 255;
+                            });
+                          }
+                        },
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                'CONTINUAR',
+                                textAlign: TextAlign.center,
+                                textScaleFactor: 2.0,
+                                style: TextStyle(
+                                    color: new Color.fromRGBO(92, 68, 56, 1)),
+                              ),
+                            ]))),
+              ),
+            ],
+          )
         ],
       ),
     );
   }
-}
-
-Widget continuar(BuildContext context) {
-  return Padding(
-    padding: const EdgeInsets.only(top: 20),
-    child: Container(
-        height: 63.0,
-        width: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.only(top: 15, bottom: 15),
-        decoration:
-            new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
-        child: FlatButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed('/estilos');
-            },
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'CONTINUAR',
-                    textAlign: TextAlign.center,
-                    textScaleFactor: 2.0,
-                    style: TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
-                  ),
-                ]))),
-  );
 }
 
 Widget barraNavegacion(BuildContext context) {

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:prueba_apliacion/main.dart';
 
+// HOLA JUANFER
+
 int radioItem1 = 0;
-int opacity10=0;
+int opacity10 = 0;
 
 class Caracter extends StatefulWidget {
   Caracter({Key key}) : super(key: key);
@@ -117,19 +119,17 @@ class _Caracter extends State<Caracter> {
                       color: new Color.fromRGBO(255, 198, 165, 1)),
                   child: FlatButton(
                       onPressed: () {
-                        if(radioItem1!=0){
+                        if (radioItem1 != 0) {
                           setState(() {
                             opacity10 = 0;
                           });
                           Navigator.of(context).pushNamed('/preferencias');
-                          resul.carac=radioItem1;
-                        }else{
+                          resul.carac = radioItem1;
+                        } else {
                           setState(() {
                             opacity10 = 255;
                           });
-
                         }
-                        
                       },
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,

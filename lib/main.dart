@@ -17,14 +17,12 @@ import 'package:prueba_apliacion/Test/Piel.dart';
 import 'package:prueba_apliacion/Test/Preferencias.dart';
 import 'package:prueba_apliacion/Test/Tejidos.dart';
 import 'package:prueba_apliacion/Test/Labios.dart';
+import 'package:prueba_apliacion/maquillaje.dart';
 
-
-Test resul= new Test();
+Test resul = new Test();
 void main() {
   //print(resul.getCara);
   runApp(MyApp());
-
-
 }
 
 class MyApp extends StatelessWidget {
@@ -33,7 +31,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Inicio(),
+        home: Maquillaje(),
         routes: <String, WidgetBuilder>{
           '/inicio': (BuildContext context) => new Inicio(),
           '/menu': (BuildContext context) => new Menu(),

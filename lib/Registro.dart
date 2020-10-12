@@ -41,6 +41,8 @@ class _RegistroState extends State<Registro> {
         backgroundColor: Colors.white,
         body: ListView(children: [
           Stack(children: [
+
+            
             textoUnete(),
             Column(
               children: [

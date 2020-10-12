@@ -396,7 +396,7 @@ Widget barraNavegacion(BuildContext context) {
       IconButton(
           icon: const Icon(Icons.keyboard_arrow_left),
           onPressed: () {
-            Navigator.of(context).pushNamed('/venas');
+            Navigator.of(context).pushNamed('/labios');
           },
           iconSize: 48.0,
           color: new Color.fromRGBO(92, 68, 56, 1),

@@ -16,7 +16,7 @@ import 'package:prueba_apliacion/Test/PesoEstatura.dart';
 import 'package:prueba_apliacion/Test/Piel.dart';
 import 'package:prueba_apliacion/Test/Preferencias.dart';
 import 'package:prueba_apliacion/Test/Tejidos.dart';
-import 'package:prueba_apliacion/Test/Venas.dart';
+import 'package:prueba_apliacion/Test/Labios.dart';
 
 
 Test resul= new Test();
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
           '/estilos': (BuildContext context) => new Estilos(),
           '/hola': (BuildContext context) => new Hola(),
           '/piel': (BuildContext context) => new Piel(),
-          '/venas': (BuildContext context) => new Venas(),
+          '/labios': (BuildContext context) => new Labios(),
           '/cuerpo': (BuildContext context) => new Cuerpo(),
           '/detalles': (BuildContext context) => new Detalles(),
           '/caracter': (BuildContext context) => new Caracter(),

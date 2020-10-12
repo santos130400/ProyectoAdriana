@@ -4,7 +4,7 @@
 class Test {
   int piel;
   int sol;
-  int venas;
+  int labios;
   int pelo;
   int ojos;
   int cara;
@@ -27,9 +27,9 @@ class Test {
 
  set setSol(int sol) => this.sol = sol;
 
- int get getVenas => venas;
+ int get getVenas => labios;
 
- set setVenas(int venas) => this.venas = venas;
+ set setVenas(int venas) => this.labios = venas;
 
  int get getPelo => pelo;
 

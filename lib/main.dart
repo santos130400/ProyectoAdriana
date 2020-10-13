@@ -17,6 +17,7 @@ import 'package:prueba_apliacion/Test/Piel.dart';
 import 'package:prueba_apliacion/Test/Preferencias.dart';
 import 'package:prueba_apliacion/Test/Tejidos.dart';
 import 'package:prueba_apliacion/Test/Labios.dart';
+import 'package:prueba_apliacion/cabelloresul.dart';
 import 'package:prueba_apliacion/maquillaje.dart';
 
 Test resul = new Test();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prueba_apliacion/Inicio.dart';
-import 'package:prueba_apliacion/Menu.dart';
+import 'package:prueba_apliacion/MenuPrincipal.dart';
 import 'package:prueba_apliacion/Registro.dart';
 import 'package:prueba_apliacion/Resul.dart';
 import 'package:prueba_apliacion/Test/Cabello.dart';
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         home: Inicio(),
         routes: <String, WidgetBuilder>{
           '/inicio': (BuildContext context) => new Inicio(),
-          '/menu': (BuildContext context) => new Menu(),
+          '/menu': (BuildContext context) => new MenuPrincipal(),
           '/registro': (BuildContext context) => new Registro(),
           '/cara': (BuildContext context) => new Cara(),
           '/tejidos': (BuildContext context) => new Tejidos(),

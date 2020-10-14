@@ -21,7 +21,7 @@ import 'package:prueba_apliacion/Test/Tejidos.dart';
 import 'package:prueba_apliacion/Test/Labios.dart';
 import 'package:prueba_apliacion/Resultados/CabelloResultados.dart';
 import 'package:prueba_apliacion/Resultados/MaquillajeResultados.dart';
-import 'package:prueba_apliacion/ropa.dart';
+
 
 Test resul = new Test();
 void main() {

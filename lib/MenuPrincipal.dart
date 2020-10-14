@@ -248,7 +248,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   width: 140,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage('assets/falda.jpeg')),
+                          image: AssetImage('assets/falda.png')),
                       color: Color(0xFFFFEED9),
                       borderRadius: BorderRadius.circular(30),
                       boxShadow: [

@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../main.dart';
 
@@ -9,7 +12,7 @@ double border2 = 0;
 double border3 = 0;
 double selected = 0;
 String palabra = '';
-int opacity3 =0;
+int opacity3 = 0;
 
 //List<CameraDescription> cameras;
 
@@ -59,6 +62,7 @@ class Cara extends StatefulWidget {
 
 class _Cara extends State<Cara> {
   @override
+  File imageFile;
   Widget build(BuildContext context) {
     return new Scaffold(
       body: ListView(children: [
@@ -162,6 +166,7 @@ class _Cara extends State<Cara> {
               alignment: Alignment.centerRight,
               child: FlatButton(
                   onPressed: () {
+                    _abrirCamara(context);
                     // Navigator.push(context,
                     //  MaterialPageRoute(builder: (context)=> CameraApp())
                     // );
@@ -172,32 +177,30 @@ class _Cara extends State<Cara> {
         ),
         Column(
           children: [
-            Text('Seleccione una opción', 
-      style: TextStyle(
-        color: Color.fromARGB(opacity3, 255, 0, 0)
-      ),),
+            Text(
+              'Seleccione una opción',
+              style: TextStyle(color: Color.fromARGB(opacity3, 255, 0, 0)),
+            ),
             Container(
                 height: 63.0,
                 width: MediaQuery.of(context).size.width,
                 padding: const EdgeInsets.only(
                   top: 15,
                 ),
-                decoration:
-                    new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
+                decoration: new BoxDecoration(
+                    color: new Color.fromRGBO(255, 198, 165, 1)),
                 child: FlatButton(
                     onPressed: () {
-                      if(selected!=0){
-                         setState(() {
-                        opacity3=0;
-                      });
-                      resul.cara = selected.toInt();
-                      Navigator.of(context).pushNamed('/pesoEstatura');
-                      }else{
+                      if (selected != 0) {
                         setState(() {
-                        opacity3=255;
-                      });
-
-
+                          opacity3 = 0;
+                        });
+                        resul.cara = selected.toInt();
+                        Navigator.of(context).pushNamed('/pesoEstatura');
+                      } else {
+                        setState(() {
+                          opacity3 = 255;
+                        });
                       }
                     },
                     child: Column(
@@ -207,14 +210,21 @@ class _Cara extends State<Cara> {
                             'CONTINUAR',
                             textAlign: TextAlign.center,
                             textScaleFactor: 2.0,
-                            style:
-                                TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
+                            style: TextStyle(
+                                color: new Color.fromRGBO(92, 68, 56, 1)),
                           ),
                         ]))),
           ],
         )
       ]),
     );
+  }
+
+  void _abrirCamara(BuildContext context) async {
+    var picture = await ImagePicker.pickImage(source: ImageSource.camera);
+    this.setState(() {
+      imageFile = picture;
+    });
   }
 }
 

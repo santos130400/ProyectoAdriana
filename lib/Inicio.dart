@@ -71,7 +71,7 @@ class Inicio extends StatelessWidget {
                                           color: const Color(0xFF5C4438),
                                           fontSize: 25)),
                                   onPressed: () {
-                                    Navigator.of(context).pushNamed('/menu');
+                                    Navigator.of(context).pushNamed('/hola');
                                   }),
                             )),
                         olvidasteContrasena(),

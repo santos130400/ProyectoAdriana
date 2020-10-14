@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:prueba_apliacion/main.dart';
 
 int selected = 0;
-int opacity8 =0;
+int opacity8 = 0;
 double border1 = 0;
 double border2 = 0;
 double border3 = 0;
@@ -29,10 +29,10 @@ class _Paleta extends State<Paleta> {
           //opciones
           //primera fila
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
                   '1',
                   style:
@@ -115,10 +115,10 @@ class _Paleta extends State<Paleta> {
           Padding(
             padding: const EdgeInsets.only(top: 15),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
                     '2',
                     style:
@@ -197,10 +197,10 @@ class _Paleta extends State<Paleta> {
           Padding(
             padding: const EdgeInsets.only(top: 15),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
                     '3',
                     style:
@@ -283,10 +283,10 @@ class _Paleta extends State<Paleta> {
           Padding(
             padding: const EdgeInsets.only(top: 15),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
                     '4',
                     style:
@@ -367,10 +367,10 @@ class _Paleta extends State<Paleta> {
           Padding(
             padding: const EdgeInsets.only(top: 15),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
                     '5',
                     style:
@@ -451,10 +451,10 @@ class _Paleta extends State<Paleta> {
           Padding(
             padding: const EdgeInsets.only(top: 15),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
                     '6',
                     style:
@@ -534,10 +534,10 @@ class _Paleta extends State<Paleta> {
           Padding(
             padding: const EdgeInsets.only(top: 15),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
                     '7',
                     style:
@@ -632,15 +632,14 @@ class _Paleta extends State<Paleta> {
                         onPressed: () {
                           if (selected != 0) {
                             setState(() {
-                            opacity8 = 0;
-                          });
+                              opacity8 = 0;
+                            });
                             Navigator.of(context).pushNamed('/tejidos');
-                            resul.paleta=selected;
+                            resul.paleta = selected;
                           } else {
                             setState(() {
-                            opacity8 = 255;
-                          });
-
+                              opacity8 = 255;
+                            });
                           }
                         },
                         child: Column(

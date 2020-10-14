@@ -406,15 +406,19 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   }
 
   Widget menuHamburguesa(BuildContext context) {
-    return Column(children: [
-      Image.asset('assets/logo.png'),
-      menu1(),
-      menu2(),
-      menu3(context),
-      Expanded(child: Container()),
-      configuraciones(),
-      cerrarSesion()
-    ]);
+    return Stack(
+      children: [
+        Column(children: [
+          Image.asset('assets/logo.png'),
+          menu1(),
+          menu2(),
+          menu3(context),
+          Expanded(child: Container()),
+          configuraciones(),
+          cerrarSesion()
+        ]),
+      ],
+    );
   }
 
   Widget menu1() {

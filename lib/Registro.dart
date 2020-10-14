@@ -38,63 +38,75 @@ class _RegistroState extends State<Registro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: ListView(children: [
-          Stack(children: [
-            textoUnete(),
-            Column(
-              children: [
-                panelContieneDatos(),
-                //boton confrimar
-                Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: Container(
-                      width: 350,
-                      height: 50,
-                      decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey[200],
-                                blurRadius: 0,
-                                offset: Offset(0, 3))
-                          ],
-                          color: Colors.grey[100],
-                          borderRadius: BorderRadius.circular(30)),
-                      child: RaisedButton(
-                          color: const Color(0xffffc6a5),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Text('CREAR CUENTA',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: const Color(0xFF5C4438),
-                                  fontSize: 25)),
-                          onPressed: () {
-                            Navigator.of(context).pushNamed('/registro');
-                          }),
-                    )),
-                textosFinales()
-              ],
-            ),
-            //ciculo sobre puesto
-            circuloFoto(),
-            cuadroUsuario(),
-            cuadroCorreo(),
-            cuadroTelefono(),
-            cuadroClave(),
-            cuadroConfromacion()
-          ]),
-        ]));
+        body: Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/fondo1.png'), fit: BoxFit.fill)),
+      child: ListView(children: [
+        Stack(children: [
+          textoUnete(),
+          Column(
+            children: [
+              panelContieneDatos(),
+              //boton confrimar
+              Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Container(
+                    width: 350,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey[200],
+                              blurRadius: 0,
+                              offset: Offset(0, 3))
+                        ],
+                        color: Colors.grey[100],
+                        borderRadius: BorderRadius.circular(30)),
+                    child: RaisedButton(
+                        color: const Color(0xffffc6a5),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Text('CREAR CUENTA',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: const Color(0xFF5C4438),
+                                fontSize: 25)),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/registro');
+                        }),
+                  )),
+              textosFinales()
+            ],
+          ),
+          //ciculo sobre puesto
+          circuloFoto(),
+          Align(
+            alignment: Alignment.center,
+            child: Column(children: [
+              cuadroUsuario(),
+              cuadroCorreo(),
+              cuadroTelefono(),
+              cuadroClave(),
+              cuadroConfromacion()
+            ]),
+          )
+        ]),
+      ]),
+    ));
   }
 
   Widget textosFinales() {
     return Padding(
         padding: EdgeInsets.only(top: 5),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-                padding: const EdgeInsets.only(top: 1, left: 70),
+                padding: const EdgeInsets.only(
+                  top: 1,
+                ),
                 child: Text(
                   '¿Ya tienes una cuenta?',
                   style: TextStyle(
@@ -122,7 +134,7 @@ class _RegistroState extends State<Registro> {
 
   Widget cuadroUsuario() {
     return Padding(
-        padding: EdgeInsets.only(top: 215, left: 80),
+        padding: EdgeInsets.only(top: 215, right: 120),
         child: Stack(children: [
           Container(
               height: 18,
@@ -142,7 +154,7 @@ class _RegistroState extends State<Registro> {
 
   Widget cuadroCorreo() {
     return Padding(
-        padding: EdgeInsets.only(top: 280, left: 80),
+        padding: EdgeInsets.only(top: 45, right: 120),
         child: Stack(children: [
           Container(
               height: 18,
@@ -162,7 +174,7 @@ class _RegistroState extends State<Registro> {
 
   Widget cuadroTelefono() {
     return Padding(
-        padding: EdgeInsets.only(top: 342, left: 80),
+        padding: EdgeInsets.only(top: 45, right: 120),
         child: Stack(children: [
           Container(
               height: 18,
@@ -182,7 +194,7 @@ class _RegistroState extends State<Registro> {
 
   Widget cuadroClave() {
     return Padding(
-        padding: EdgeInsets.only(top: 405, left: 80),
+        padding: EdgeInsets.only(top: 45, right: 120),
         child: Stack(children: [
           Container(
               height: 18,
@@ -202,7 +214,7 @@ class _RegistroState extends State<Registro> {
 
   Widget cuadroConfromacion() {
     return Padding(
-        padding: EdgeInsets.only(top: 468, left: 80),
+        padding: EdgeInsets.only(top: 45, right: 120),
         child: Stack(children: [
           Container(
               height: 18,
@@ -274,8 +286,11 @@ class _RegistroState extends State<Registro> {
               child: Container(
                 height: 110,
                 width: 110,
-                decoration:
-                    BoxDecoration(shape: BoxShape.circle, color: Colors.grey),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                        image: AssetImage('assets/persona.png'),
+                        fit: BoxFit.cover)),
               )),
         )
       ],
@@ -318,12 +333,20 @@ class _RegistroState extends State<Registro> {
   }
 
   Widget textoNombre() {
-    return TextFormField(
-        decoration: InputDecoration(
-            icon: Icon(Icons.person_outline, color: const Color(0xFF5C4438)),
-            hintText: 'Escriba su nombre completo',
-            hintStyle: TextStyle(color: Colors.grey[400]),
-            border: InputBorder.none));
+    return Padding(
+      padding: const EdgeInsets.only(right: 60),
+      child: Center(
+        child: Container(
+          width: 300,
+          color: Color(0x00000000),
+          child: TextFormField(
+              decoration: InputDecoration(
+                  icon: Icon(Icons.person_outline,
+                      color: const Color(0xFF5C4438)),
+                  border: InputBorder.none)),
+        ),
+      ),
+    );
   }
 
   Widget cajaCorreo() {
@@ -350,12 +373,20 @@ class _RegistroState extends State<Registro> {
   }
 
   Widget textoCorreo() {
-    return TextFormField(
-        decoration: InputDecoration(
-            icon: Icon(Icons.mail_outline, color: const Color(0xFF5C4438)),
-            hintText: 'Escriba su correo electrónico',
-            hintStyle: TextStyle(color: Colors.grey[400]),
-            border: InputBorder.none));
+    return Padding(
+      padding: const EdgeInsets.only(right: 60),
+      child: Center(
+        child: Container(
+          width: 300,
+          color: Color(0x00000000),
+          child: TextFormField(
+              decoration: InputDecoration(
+                  icon:
+                      Icon(Icons.mail_outline, color: const Color(0xFF5C4438)),
+                  border: InputBorder.none)),
+        ),
+      ),
+    );
   }
 
   Widget cajaTelefono() {
@@ -382,12 +413,17 @@ class _RegistroState extends State<Registro> {
   }
 
   Widget textoTelefono() {
-    return TextFormField(
-        decoration: InputDecoration(
-            icon: Icon(Icons.phone_android, color: const Color(0xFF5C4438)),
-            hintText: 'Escriba su número de teléfono',
-            hintStyle: TextStyle(color: Colors.grey[400]),
-            border: InputBorder.none));
+    return Padding(
+        padding: const EdgeInsets.only(right: 60),
+        child: Center(
+            child: Container(
+                width: 300,
+                color: Color(0x00000000),
+                child: TextFormField(
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.phone_android,
+                            color: const Color(0xFF5C4438)),
+                        border: InputBorder.none)))));
   }
 
   Widget cajaContrasena() {
@@ -415,13 +451,18 @@ class _RegistroState extends State<Registro> {
   }
 
   Widget textoContrasena() {
-    return TextFormField(
-        decoration: InputDecoration(
-            icon: Icon(Icons.lock_outline, color: const Color(0xFF5C4438)),
-            hintText: 'Escriba su contraseña',
-            hintStyle: TextStyle(color: Colors.grey[400]),
-            border: InputBorder.none),
-        obscureText: true);
+    return Padding(
+        padding: const EdgeInsets.only(right: 60),
+        child: Center(
+            child: Container(
+                width: 300,
+                color: Color(0x00000000),
+                child: TextFormField(
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.lock_outline,
+                            color: const Color(0xFF5C4438)),
+                        border: InputBorder.none),
+                    obscureText: true))));
   }
 
   Widget cajaConfirmacion() {
@@ -449,13 +490,18 @@ class _RegistroState extends State<Registro> {
   }
 
   Widget textoConfirmacion() {
-    return TextFormField(
-        decoration: InputDecoration(
-            icon: Icon(Icons.lock_outline, color: const Color(0xFF5C4438)),
-            hintText: 'Escriba su constraseña de nuevo',
-            hintStyle: TextStyle(color: Colors.grey[400]),
-            border: InputBorder.none),
-        obscureText: true);
+    return Padding(
+        padding: const EdgeInsets.only(right: 60),
+        child: Center(
+            child: Container(
+                width: 300,
+                color: Color(0x00000000),
+                child: TextFormField(
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.lock_outline,
+                            color: const Color(0xFF5C4438)),
+                        border: InputBorder.none),
+                    obscureText: true))));
   }
 
   void _adicionarU(Event event) {

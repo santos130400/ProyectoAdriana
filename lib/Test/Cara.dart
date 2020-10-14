@@ -140,41 +140,51 @@ class _Cara extends State<Cara> {
             );
           }).toList(),
         ),
-        Row(
-          children: [
-            Container(
-                width: 250,
-                child: Text(
-                  palabra,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20, color: Color(0xFF5C4438)),
-                )),
-            Container(
-              height: 50.0,
-              width: 50.0,
-              decoration: new BoxDecoration(
-                  color: new Color.fromRGBO(255, 238, 217, 1),
-                  borderRadius: new BorderRadius.all(Radius.circular(54.0)),
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                        color: Colors.black54,
-                        blurRadius: 4.0,
-                        offset: Offset(0.0, 0.75))
-                  ]),
-              margin: new EdgeInsets.only(
-                  left: 80.0, bottom: 10.0, top: 45.0, right: 10),
-              alignment: Alignment.centerRight,
-              child: FlatButton(
-                  onPressed: () {
-                    _abrirCamara(context);
-                    // Navigator.push(context,
-                    //  MaterialPageRoute(builder: (context)=> CameraApp())
-                    // );
-                  },
-                  child: Image.asset('assets/camara_01.png')),
+        Stack(children: [
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 30),
+              child: Container(
+                  width: 250,
+                  child: Text(
+                    palabra,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 20, color: Color(0xFF5C4438)),
+                  )),
             ),
-          ],
-        ),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Padding(
+              padding: const EdgeInsets.only(right: 30),
+              child: Container(
+                height: 50.0,
+                width: 50.0,
+                decoration: new BoxDecoration(
+                    color: new Color.fromRGBO(255, 238, 217, 1),
+                    borderRadius: new BorderRadius.all(Radius.circular(54.0)),
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                          color: Colors.black54,
+                          blurRadius: 4.0,
+                          offset: Offset(0.0, 0.75))
+                    ]),
+                margin: new EdgeInsets.only(
+                    left: 80.0, bottom: 10.0, top: 45.0, right: 10),
+                alignment: Alignment.centerRight,
+                child: FlatButton(
+                    onPressed: () {
+                      _abrirCamara(context);
+                      // Navigator.push(context,
+                      //  MaterialPageRoute(builder: (context)=> CameraApp())
+                      // );
+                    },
+                    child: Image.asset('assets/camara_01.png')),
+              ),
+            ),
+          )
+        ]),
         Column(
           children: [
             Text(

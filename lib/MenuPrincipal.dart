@@ -18,7 +18,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
       drawer: Drawer(
         child: Container(
           color: Color(0xFFEBA47A),
-          child: menuHamburguesa(),
+          child: menuHamburguesa(context),
         ),
       ),
       body: ListView(
@@ -405,12 +405,12 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     );
   }
 
-  Widget menuHamburguesa() {
+  Widget menuHamburguesa(BuildContext context) {
     return Column(children: [
       Image.asset('assets/logo.png'),
       menu1(),
       menu2(),
-      menu3(),
+      menu3(context),
       Expanded(child: Container()),
       configuraciones(),
       cerrarSesion()
@@ -472,7 +472,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     );
   }
 
-  Widget menu3() {
+  Widget menu3(BuildContext context) {
     return Container(
       child: FlatButton(
         child: Row(
@@ -487,7 +487,9 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             )
           ],
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed('/hola');
+        },
       ),
     );
   }

@@ -9,15 +9,20 @@ class _RopaResultadosState extends State<RopaResultados> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: ListView(
-        children: [
-          barraNavegacion(context),
-          parteSuperior(context),
-          parteInferior(context),
-          zapatos(context),
-          vestidos(context),
-          ropaInterior(context)
-        ],
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/fondo1.png'), fit: BoxFit.fill)),
+        child: ListView(
+          children: [
+            barraNavegacion(context),
+            parteSuperior(context),
+            parteInferior(context),
+            zapatos(context),
+            vestidos(context),
+            ropaInterior(context)
+          ],
+        ),
       ),
     );
   }

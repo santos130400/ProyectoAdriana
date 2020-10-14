@@ -10,12 +10,17 @@ class _CabelloResultadosState extends State<CabelloResultados> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: ListView(
-        children: [
-          barraNavegacion(context),
-          cabelloYPeinados(context),
-          colorYEfectos(context),
-        ],
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/fondo1.png'), fit: BoxFit.fill)),
+        child: ListView(
+          children: [
+            barraNavegacion(context),
+            cabelloYPeinados(context),
+            colorYEfectos(context),
+          ],
+        ),
       ),
     );
   }
@@ -25,7 +30,7 @@ Widget cabelloYPeinados(BuildContext context) {
   return Padding(
       padding: EdgeInsets.only(top: 20, right: 80),
       child: SizedBox(
-          width: 100,
+          width: 410,
           height: 70,
           child: RaisedButton(
               child: Text(

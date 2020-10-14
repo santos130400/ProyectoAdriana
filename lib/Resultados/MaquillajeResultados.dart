@@ -10,13 +10,18 @@ class _MaquillajeResultadosState extends State<MaquillajeResultados> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: ListView(
-        children: [
-          barraNavegacion(context),
-          ojos(context),
-          labios(context),
-          piel(context),
-        ],
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/fondo1.png'), fit: BoxFit.fill)),
+        child: ListView(
+          children: [
+            barraNavegacion(context),
+            ojos(context),
+            labios(context),
+            piel(context),
+          ],
+        ),
       ),
     );
   }

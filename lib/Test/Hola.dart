@@ -74,36 +74,34 @@ Widget cajaContieneDatos(BuildContext context) {
                   margin: EdgeInsets.only(left: 10),
                   child: Align(alignment: Alignment.centerLeft, child: hola())),
               Container(
-                margin: EdgeInsets.only(right: 7),
+                  margin: EdgeInsets.only(right: 7),
                   child: Align(
                       alignment: Alignment.centerRight, child: bienvenidos())),
-              Container(margin: EdgeInsets.only(left: 12, top: 29), child: info()),
-               Container(
-                 margin: EdgeInsets.only(top: 10),
-                 child: Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                   children: [
+              Container(
+                  margin: EdgeInsets.only(left: 12, top: 29), child: info()),
+              Container(
+                margin: EdgeInsets.only(top: 10),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
                       Container(
-                        
-                        alignment: Alignment.center,
-                        child: Column(children: [tiempo1(), tiempo2()])),
+                          alignment: Alignment.center,
+                          child: Column(children: [tiempo1(), tiempo2()])),
                       Container(
                         width: 153,
                         height: 45,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 255, 197, 163),
-                          borderRadius:BorderRadius.all(Radius.circular(8)),
-                          boxShadow:[
-                            BoxShadow(
-                              color: Color.fromARGB(51, 0, 0, 0),
-                              blurRadius: 5,
-                              offset: Offset(0, 5),
-                              spreadRadius: 1
-                            )
-                          ]
-                        ),
-                          
+                            color: Color.fromARGB(255, 255, 197, 163),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Color.fromARGB(51, 0, 0, 0),
+                                  blurRadius: 5,
+                                  offset: Offset(0, 5),
+                                  spreadRadius: 1)
+                            ]),
+                        child: FlatButton(
                           child: Text(
                             "EMPEZAR",
                             style: TextStyle(
@@ -111,9 +109,13 @@ Widget cajaContieneDatos(BuildContext context) {
                                 color: Color.fromARGB(255, 92, 68, 56),
                                 fontSize: 18),
                           ),
-                          )
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('/piel');
+                          },
+                        ),
+                      )
                     ]),
-               ),
+              ),
             ],
           ),
         )),
@@ -156,8 +158,7 @@ Widget tiempo1() {
 }
 
 Widget tiempo2() {
-  return Text("30 minutos",
-      style: TextStyle(color: Colors.grey, fontSize: 12));
+  return Text("30 minutos", style: TextStyle(color: Colors.grey, fontSize: 12));
 }
 
 void iconButtonPressed() {}

@@ -17,7 +17,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
       key: scaffoldKey,
       drawer: Drawer(
         child: Container(
-          color: Color(0xFFFFD8C7),
+          color: Color(0xFFEBA47A),
           child: menuHamburguesa(),
         ),
       ),
@@ -153,14 +153,14 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
       padding: const EdgeInsets.only(top: 10),
       child: Stack(children: [
         Container(
-            height: 50, width: double.maxFinite, color: Color(0xFFFFD8C7)),
+            height: 50, width: double.maxFinite, color: Color(0xFFEBA47A)),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
                 height: 50,
                 width: 135,
-                decoration: BoxDecoration(color: Color(0xFFFFD8C7)),
+                decoration: BoxDecoration(color: Color(0xFFEBA47A)),
                 child: FlatButton(
                     onPressed: () {},
                     child: Icon(
@@ -171,7 +171,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               height: 50,
               width: 135,
               decoration: BoxDecoration(
-                color: Color(0xFFFFD8C7),
+                color: Color(0xFFEBA47A),
               ),
               child: FlatButton(
                   onPressed: () {},
@@ -183,7 +183,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             Container(
                 height: 50,
                 width: 135,
-                decoration: BoxDecoration(color: Color(0xFFFFD8C7)),
+                decoration: BoxDecoration(color: Color(0xFFEBA47A)),
                 child: FlatButton(
                     onPressed: () {},
                     child: Icon(

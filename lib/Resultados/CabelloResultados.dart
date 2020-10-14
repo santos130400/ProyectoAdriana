@@ -7,83 +7,48 @@ class CabelloResultados extends StatefulWidget {
 
 class _CabelloResultadosState extends State<CabelloResultados> {
   @override
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Stack(
-      children: [
-        imagen(),
-        ListView(
-          children: [
-            barraNavegacion(context),
-            Padding(padding: EdgeInsets.only(top: 20)),
-            Container(
-              margin: EdgeInsets.only(right: 67),
-              width: double.infinity,
-              height: 200,
-              decoration: BoxDecoration(
-                color: Colors.transparent,
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  FlatButton(
-                    onPressed: () {},
-                    child: Container(
-                      height: 72,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 255, 198, 165),
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Color.fromRGBO(0, 0, 0, 63.75),
-                                blurRadius: 4,
-                                offset: Offset(0, 4))
-                          ]),
-                      child: Center(
-                        child: Text(
-                          'CORTES Y PEINADOS',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  FlatButton(
-                    onPressed: () {},
-                    child: Container(
-                      height: 72,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 255, 198, 165),
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Color.fromRGBO(0, 0, 0, 63.75),
-                                blurRadius: 4,
-                                offset: Offset(0, 4))
-                          ]),
-                      child: Center(
-                        child: Text(
-                          'COLOR Y EFECTOS',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
-      ],
-    ));
+    return new Scaffold(
+      body: ListView(
+        children: [
+          barraNavegacion(context),
+          cabelloYPeinados(context),
+          colorYEfectos(context),
+        ],
+      ),
+    );
   }
+}
+
+Widget cabelloYPeinados(BuildContext context) {
+  return Padding(
+      padding: EdgeInsets.only(top: 20, right: 80),
+      child: SizedBox(
+          width: 100,
+          height: 70,
+          child: RaisedButton(
+              child: Text(
+                "CABELLO Y PEINADOS",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+              onPressed: () {},
+              color: Color.fromARGB(255, 255, 198, 165))));
+}
+
+Widget colorYEfectos(BuildContext context) {
+  return Padding(
+      padding: EdgeInsets.only(top: 20, right: 80),
+      child: SizedBox(
+          width: 410,
+          height: 70,
+          child: RaisedButton(
+              child: Text(
+                "COLOR Y EFECTOS",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+              onPressed: () {},
+              color: Color.fromARGB(255, 255, 198, 165))));
 }
 
 Widget barraNavegacion(BuildContext context) {
@@ -91,26 +56,29 @@ Widget barraNavegacion(BuildContext context) {
     children: [
       Container(
           width: double.infinity,
-          height: 150,
+          height: 130,
           decoration: BoxDecoration(
               color: const Color(0xFFFFEED9),
               borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(60),
-                  bottomRight: Radius.circular(60)),
+                  bottomLeft: Radius.circular(54),
+                  bottomRight: Radius.circular(54)),
               boxShadow: [
                 BoxShadow(
-                    color: Colors.grey, blurRadius: 5, offset: Offset(0, 2.5))
+                    color: Colors.black, blurRadius: 4, offset: Offset(0, 0.5))
               ])),
       IconButton(
           icon: const Icon(Icons.keyboard_arrow_left),
-          onPressed: () {},
-          iconSize: 50,
-          color: Color.fromRGBO(92, 68, 56, 1),
+          onPressed: () {
+            Navigator.of(context).pushNamed('/menu');
+          },
+          iconSize: 48.0,
+          color: new Color.fromRGBO(92, 68, 56, 1),
           padding: const EdgeInsets.only(left: 10.0, top: 20)),
       Column(
         children: [
+          //tu progreso
           Padding(
-            padding: EdgeInsets.only(top: 90),
+            padding: EdgeInsets.only(top: 60),
             child: Center(
               child: Container(
                 child: Text(
@@ -118,7 +86,7 @@ Widget barraNavegacion(BuildContext context) {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Color.fromARGB(255, 92, 68, 46),
-                      fontSize: 35,
+                      fontSize: 30,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -127,14 +95,5 @@ Widget barraNavegacion(BuildContext context) {
         ],
       ),
     ],
-  );
-}
-
-Widget imagen() {
-  return Container(
-    width: double.infinity,
-    padding: EdgeInsets.only(top: 50),
-    decoration: BoxDecoration(color: Colors.white),
-    child: Image.asset('assets/fondo1.png'),
   );
 }

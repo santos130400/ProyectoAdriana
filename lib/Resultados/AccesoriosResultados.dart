@@ -29,7 +29,7 @@ Widget collar(BuildContext context) {
   return Padding(
       padding: EdgeInsets.only(top: 20, right: 80),
       child: SizedBox(
-          width: 410,
+          width: 100,
           height: 70,
           child: RaisedButton(
               child: Text(
@@ -133,7 +133,7 @@ Widget barraNavegacion(BuildContext context) {
       IconButton(
           icon: const Icon(Icons.keyboard_arrow_left),
           onPressed: () {
-            Navigator.of(context).pushNamed('/caracter');
+            Navigator.of(context).pushNamed('/menu');
           },
           iconSize: 48.0,
           color: new Color.fromRGBO(92, 68, 56, 1),

@@ -8,114 +8,94 @@ class RopaResultados extends StatefulWidget {
 class _RopaResultadosState extends State<RopaResultados> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Stack(
-      children: [
-        imagen(),
-        ListView(
-          children: [
-            //imagen(),
-            barraNavegacion(context),
-            botones(),
-          ],
-        ),
-      ],
-    ));
+    return new Scaffold(
+      body: ListView(
+        children: [
+          barraNavegacion(context),
+          parteSuperior(context),
+          parteInferior(context),
+          zapatos(context),
+          vestidos(context),
+          ropaInterior(context)
+        ],
+      ),
+    );
   }
 }
 
-Widget botones() {
+Widget parteSuperior(BuildContext context) {
   return Padding(
-      padding: EdgeInsets.only(top: 30),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Padding(
-                  padding: EdgeInsets.only(top: 25),
-                  child: SizedBox(
-                      height: 70,
-                      width: 300,
-                      child: RaisedButton(
-                        color: const Color(0x0FFFFC6A5),
-                        onPressed: () {},
-                        child: Text("P A R T E   S U P E R I O R",
-                            style: TextStyle(fontSize: 20)),
-                      )))
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                  padding: EdgeInsets.only(top: 25),
-                  child: SizedBox(
-                    height: 70,
-                    width: 300,
-                    child: RaisedButton(
-                      color: const Color(0x0FFFFC6A5),
-                      onPressed: () {},
-                      child: Text("P A R T E   I N F E R I O R",
-                          style: TextStyle(fontSize: 20)),
-                    ),
-                  ))
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                  padding: EdgeInsets.only(top: 25),
-                  child: SizedBox(
-                    height: 70,
-                    width: 300,
-                    child: RaisedButton(
-                      color: const Color(0x0FFFFC6A5),
-                      onPressed: () {},
-                      child: Text(
-                        "Z A P A T O S",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ),
-                  ))
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                  padding: EdgeInsets.only(top: 25),
-                  child: SizedBox(
-                    height: 70,
-                    width: 300,
-                    child: RaisedButton(
-                      color: const Color(0x0FFFFC6A5),
-                      onPressed: () {},
-                      child: Text(
-                        "V E S T I D O S",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ),
-                  ))
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                  padding: EdgeInsets.only(top: 25),
-                  child: SizedBox(
-                    height: 70,
-                    width: 300,
-                    child: RaisedButton(
-                      color: const Color(0x0FFFFC6A5),
-                      onPressed: () {},
-                      child: Text(
-                        "R O P A   I N T E R I O R",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ),
-                  ))
-            ],
-          ),
-        ],
-      ));
+      padding: EdgeInsets.only(top: 20, right: 80),
+      child: SizedBox(
+          width: 100,
+          height: 70,
+          child: RaisedButton(
+              child: Text(
+                "PARTE SUPERIOR",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+              onPressed: () {},
+              color: Color.fromARGB(255, 255, 198, 165))));
+}
+
+Widget parteInferior(BuildContext context) {
+  return Padding(
+      padding: EdgeInsets.only(top: 20, right: 80),
+      child: SizedBox(
+          width: 410,
+          height: 70,
+          child: RaisedButton(
+              child: Text(
+                "PARTE INFERIOR",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+              onPressed: () {},
+              color: Color.fromARGB(255, 255, 198, 165))));
+}
+
+Widget zapatos(BuildContext context) {
+  return Padding(
+      padding: EdgeInsets.only(top: 20, right: 80),
+      child: SizedBox(
+          width: 410,
+          height: 70,
+          child: RaisedButton(
+              child: Text(
+                "ZAPATOS",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+              onPressed: () {},
+              color: Color.fromARGB(255, 255, 198, 165))));
+}
+
+Widget vestidos(BuildContext context) {
+  return Padding(
+      padding: EdgeInsets.only(top: 20, right: 80),
+      child: SizedBox(
+          width: 410,
+          height: 70,
+          child: RaisedButton(
+              child: Text(
+                "VESTIDOS",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+              onPressed: () {},
+              color: Color.fromARGB(255, 255, 198, 165))));
+}
+
+Widget ropaInterior(BuildContext context) {
+  return Padding(
+      padding: EdgeInsets.only(top: 20, right: 80),
+      child: SizedBox(
+          width: 410,
+          height: 70,
+          child: RaisedButton(
+              child: Text(
+                "ROPA INTERIOR",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+              onPressed: () {},
+              color: Color.fromARGB(255, 255, 198, 165))));
 }
 
 Widget barraNavegacion(BuildContext context) {
@@ -123,34 +103,37 @@ Widget barraNavegacion(BuildContext context) {
     children: [
       Container(
           width: double.infinity,
-          height: 150,
+          height: 130,
           decoration: BoxDecoration(
               color: const Color(0xFFFFEED9),
               borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(60),
-                  bottomRight: Radius.circular(60)),
+                  bottomLeft: Radius.circular(54),
+                  bottomRight: Radius.circular(54)),
               boxShadow: [
                 BoxShadow(
-                    color: Colors.grey, blurRadius: 5, offset: Offset(0, 2.5))
+                    color: Colors.black, blurRadius: 4, offset: Offset(0, 0.5))
               ])),
       IconButton(
           icon: const Icon(Icons.keyboard_arrow_left),
-          onPressed: () {},
-          iconSize: 50,
-          color: Color.fromRGBO(92, 68, 56, 1),
+          onPressed: () {
+            Navigator.of(context).pushNamed('/menu');
+          },
+          iconSize: 48.0,
+          color: new Color.fromRGBO(92, 68, 56, 1),
           padding: const EdgeInsets.only(left: 10.0, top: 20)),
       Column(
         children: [
+          //tu progreso
           Padding(
-            padding: EdgeInsets.only(top: 90),
+            padding: EdgeInsets.only(top: 60),
             child: Center(
               child: Container(
                 child: Text(
-                  'MAQUILLAJE',
+                  'ROPA',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Color.fromARGB(255, 92, 68, 46),
-                      fontSize: 35,
+                      fontSize: 30,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -159,12 +142,5 @@ Widget barraNavegacion(BuildContext context) {
         ],
       ),
     ],
-  );
-}
-
-Widget imagen() {
-  return Padding(
-    padding: EdgeInsets.only(top: 50),
-    child: Image.asset('assets/fondo1.png'),
   );
 }

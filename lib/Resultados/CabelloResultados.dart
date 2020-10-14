@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Cabelloresul extends StatefulWidget {
+class CabelloResultados extends StatefulWidget {
   @override
-  _MaquillajeState createState() => _MaquillajeState();
+  _CabelloResultadosState createState() => _CabelloResultadosState();
 }
 
-class _MaquillajeState extends State<Cabelloresul> {
+class _CabelloResultadosState extends State<CabelloResultados> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,9 +15,9 @@ class _MaquillajeState extends State<Cabelloresul> {
         ListView(
           children: [
             barraNavegacion(context),
-            Padding(padding: EdgeInsets.only(top:20)),
+            Padding(padding: EdgeInsets.only(top: 20)),
             Container(
-              margin: EdgeInsets.only(right:67),
+              margin: EdgeInsets.only(right: 67),
               width: double.infinity,
               height: 200,
               decoration: BoxDecoration(
@@ -27,67 +27,64 @@ class _MaquillajeState extends State<Cabelloresul> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   FlatButton(
-                    onPressed: (){},
-                      child: Container(
+                    onPressed: () {},
+                    child: Container(
                       height: 72,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 255, 198, 165),
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
-                        boxShadow:[
-                          BoxShadow(
-                          color: Color.fromRGBO(0, 0, 0, 63.75),
-                          blurRadius: 4,
-                          offset: Offset(0, 4))
-                        ] 
-                      ),
+                          color: Color.fromARGB(255, 255, 198, 165),
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromRGBO(0, 0, 0, 63.75),
+                                blurRadius: 4,
+                                offset: Offset(0, 4))
+                          ]),
                       child: Center(
-                        child: Text('CORTES Y PEINADOS',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
+                        child: Text(
+                          'CORTES Y PEINADOS',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
                         ),
                       ),
                     ),
                   ),
                   FlatButton(
-                    onPressed: (){},
-                      child: Container(
+                    onPressed: () {},
+                    child: Container(
                       height: 72,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 255, 198, 165),
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
-                        boxShadow:[
-                          BoxShadow(
-                          color: Color.fromRGBO(0, 0, 0, 63.75),
-                          blurRadius: 4,
-                          offset: Offset(0, 4))
-                        ] 
-                      ),
+                          color: Color.fromARGB(255, 255, 198, 165),
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromRGBO(0, 0, 0, 63.75),
+                                blurRadius: 4,
+                                offset: Offset(0, 4))
+                          ]),
                       child: Center(
-                        child: Text('COLOR Y EFECTOS',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
+                        child: Text(
+                          'COLOR Y EFECTOS',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
                         ),
                       ),
                     ),
                   ),
-
                 ],
               ),
-            )            
+            )
           ],
         ),
       ],
     ));
   }
 }
-
-
 
 Widget barraNavegacion(BuildContext context) {
   return Stack(
@@ -137,9 +134,7 @@ Widget imagen() {
   return Container(
     width: double.infinity,
     padding: EdgeInsets.only(top: 50),
-    decoration: BoxDecoration(
-      color: Colors.white
-    ),
+    decoration: BoxDecoration(color: Colors.white),
     child: Image.asset('assets/fondo1.png'),
   );
 }

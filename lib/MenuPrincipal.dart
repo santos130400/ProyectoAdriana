@@ -220,7 +220,12 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                             blurRadius: 2,
                             offset: Offset(0, 5))
                       ]),
-                  child: FlatButton(onPressed: () {}, child: null),
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed('/resultadosMaquillaje');
+                      },
+                      child: null),
                 ),
                 Padding(
                     padding: const EdgeInsets.only(top: 10),
@@ -252,7 +257,11 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                             blurRadius: 2,
                             offset: Offset(0, 5))
                       ]),
-                  child: FlatButton(onPressed: () {}, child: null),
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/resultadosRopa');
+                      },
+                      child: null),
                 ),
                 Padding(
                     padding: const EdgeInsets.only(top: 10),
@@ -295,7 +304,12 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                             blurRadius: 2,
                             offset: Offset(0, 5))
                       ]),
-                  child: FlatButton(onPressed: () {}, child: null),
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed('/resultadosAccesorios');
+                      },
+                      child: null),
                 ),
                 Padding(
                     padding: const EdgeInsets.only(top: 10),
@@ -327,7 +341,11 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                             blurRadius: 2,
                             offset: Offset(0, 5))
                       ]),
-                  child: FlatButton(onPressed: () {}, child: null),
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/resultadosCabello');
+                      },
+                      child: null),
                 ),
                 Padding(
                     padding: const EdgeInsets.only(top: 10),

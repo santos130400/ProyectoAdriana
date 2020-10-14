@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:prueba_apliacion/Inicio.dart';
 import 'package:prueba_apliacion/MenuPrincipal.dart';
 import 'package:prueba_apliacion/Registro.dart';
-import 'package:prueba_apliacion/Resul.dart';
+import 'package:prueba_apliacion/Resultados/AccesoriosResultados.dart';
+import 'package:prueba_apliacion/Resultados/RopaResultados.dart';
+import 'package:prueba_apliacion/ResultadosTest.dart';
 import 'package:prueba_apliacion/Test/Cabello.dart';
 import 'package:prueba_apliacion/Test/Cara.dart';
 import 'package:prueba_apliacion/Test/Caracter.dart';
@@ -17,8 +19,8 @@ import 'package:prueba_apliacion/Test/Piel.dart';
 import 'package:prueba_apliacion/Test/Preferencias.dart';
 import 'package:prueba_apliacion/Test/Tejidos.dart';
 import 'package:prueba_apliacion/Test/Labios.dart';
-import 'package:prueba_apliacion/cabelloresul.dart';
-import 'package:prueba_apliacion/maquillaje.dart';
+import 'package:prueba_apliacion/Resultados/CabelloResultados.dart';
+import 'package:prueba_apliacion/Resultados/MaquillajeResultados.dart';
 import 'package:prueba_apliacion/ropa.dart';
 
 Test resul = new Test();
@@ -52,8 +54,13 @@ class MyApp extends StatelessWidget {
           '/caracter': (BuildContext context) => new Caracter(),
           '/paleta': (BuildContext context) => new Paleta(),
           '/pesoEstatura': (BuildContext context) => new PesoEstatura(),
-          '/maquillaje': (BuildContext context) => new Maquillaje(),
-          '/ropa': (BuildContext context) => new Ropa(),
+          '/resultadosCabello': (BuildContext context) =>
+              new CabelloResultados(),
+          '/resultadosMaquillaje': (BuildContext context) =>
+              new MaquillajeResultados(),
+          '/resultadosRopa': (BuildContext context) => new RopaResultados(),
+          '/resultadosAccesorios': (BuildContext context) =>
+              new AccesoriosResultados(),
         });
   }
 }

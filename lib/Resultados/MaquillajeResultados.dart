@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Ropa extends StatefulWidget {
+class MaquillajeResultados extends StatefulWidget {
   @override
-  _RopaState createState() => _RopaState();
+  _MaquillajeResultadosState createState() => _MaquillajeResultadosState();
 }
 
-class _RopaState extends State<Ropa> {
+class _MaquillajeResultadosState extends State<MaquillajeResultados> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,8 +39,7 @@ Widget botones() {
                       child: RaisedButton(
                         color: const Color(0x0FFFFC6A5),
                         onPressed: () {},
-                        child: Text("P A R T E   S U P E R I O R",
-                            style: TextStyle(fontSize: 20)),
+                        child: Text("O J O S", style: TextStyle(fontSize: 20)),
                       )))
             ],
           ),
@@ -54,8 +53,8 @@ Widget botones() {
                     child: RaisedButton(
                       color: const Color(0x0FFFFC6A5),
                       onPressed: () {},
-                      child: Text("P A R T E   I N F E R I O R",
-                          style: TextStyle(fontSize: 20)),
+                      child:
+                          Text("L A B I O S", style: TextStyle(fontSize: 20)),
                     ),
                   ))
             ],
@@ -71,43 +70,7 @@ Widget botones() {
                       color: const Color(0x0FFFFC6A5),
                       onPressed: () {},
                       child: Text(
-                        "Z A P A T O S",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ),
-                  ))
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                  padding: EdgeInsets.only(top: 25),
-                  child: SizedBox(
-                    height: 70,
-                    width: 300,
-                    child: RaisedButton(
-                      color: const Color(0x0FFFFC6A5),
-                      onPressed: () {},
-                      child: Text(
-                        "V E S T I D O S",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ),
-                  ))
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                  padding: EdgeInsets.only(top: 25),
-                  child: SizedBox(
-                    height: 70,
-                    width: 300,
-                    child: RaisedButton(
-                      color: const Color(0x0FFFFC6A5),
-                      onPressed: () {},
-                      child: Text(
-                        "R O P A   I N T E R I O R",
+                        "P I E L",
                         style: TextStyle(fontSize: 20),
                       ),
                     ),

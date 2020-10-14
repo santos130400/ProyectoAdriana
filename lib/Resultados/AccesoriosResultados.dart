@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Accesorios extends StatefulWidget {
-  Accesorios({Key key}) : super(key: key);
+class AccesoriosResultados extends StatefulWidget {
+  AccesoriosResultados({Key key}) : super(key: key);
   @override
-  _Accesorios createState() => new _Accesorios();
+  _AccesoriosResultadosState createState() => new _AccesoriosResultadosState();
 }
 
-class _Accesorios extends State<Accesorios> {
+class _AccesoriosResultadosState extends State<AccesoriosResultados> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

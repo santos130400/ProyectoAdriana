@@ -19,6 +19,7 @@ import 'package:prueba_apliacion/Test/Tejidos.dart';
 import 'package:prueba_apliacion/Test/Labios.dart';
 import 'package:prueba_apliacion/cabelloresul.dart';
 import 'package:prueba_apliacion/maquillaje.dart';
+import 'package:prueba_apliacion/ropa.dart';
 
 Test resul = new Test();
 void main() {
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
           '/paleta': (BuildContext context) => new Paleta(),
           '/pesoEstatura': (BuildContext context) => new PesoEstatura(),
           '/maquillaje': (BuildContext context) => new Maquillaje(),
-          '/cabelloresul': (BuildContext context)=> new Cabelloresul()
+          '/ropa': (BuildContext context) => new Ropa(),
         });
   }
 }

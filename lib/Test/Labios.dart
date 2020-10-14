@@ -4,8 +4,7 @@ import 'package:prueba_apliacion/main.dart';
 int selected = 0;
 double borderCon1 = 1;
 double borderCon2 = 1;
-int opacity20=0;
-//hola santi
+int opacity20 = 0;
 
 class Labios extends StatefulWidget {
   Labios({Key key}) : super(key: key);
@@ -30,7 +29,8 @@ class _Labios extends State<Labios> {
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(
-                      width: borderCon1, color: const Color.fromRGBO(0, 0, 0, 63.75)),
+                      width: borderCon1,
+                      color: const Color.fromRGBO(0, 0, 0, 63.75)),
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
@@ -42,9 +42,9 @@ class _Labios extends State<Labios> {
                 child: FlatButton(
                   onPressed: () {
                     setState(() {
-                      selected=1;
-                      borderCon1=5;
-                      borderCon2=1;
+                      selected = 1;
+                      borderCon1 = 5;
+                      borderCon2 = 1;
                     });
                   },
                   child: Container(
@@ -97,106 +97,105 @@ class _Labios extends State<Labios> {
                 ),
               ),
               Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                      width: borderCon2, color: const Color.fromRGBO(0, 0, 0, 63.75)),
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                        color: Color.fromRGBO(0, 0, 0, 63.75),
-                        blurRadius: 4,
-                        offset: Offset(0, 4))
-                  ],
-                ),
-                child: FlatButton(
-                  onPressed: () {
-                    setState(() {
-                      selected=2;
-                      borderCon1=1;
-                      borderCon2=5;
-                    });
-                  },
-                child: Container(
-                  height: 175,
-                  child: ListView(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: Text(
-                          'PALETA 2',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Color.fromRGBO(92, 68, 56, 1),
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                            width: 58,
-                            height: 115,
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 236, 170, 133)),
-                          ),
-                          Container(
-                            width: 58,
-                            height: 115,
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 175, 122, 122)),
-                          ),
-                          Container(
-                            width: 58,
-                            height: 115,
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 197, 178, 143)),
-                          ),
-                          Container(
-                            width: 58,
-                            height: 115,
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 138, 90, 90)),
-                          ),
-                        ],
-                      )
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                        width: borderCon2,
+                        color: const Color.fromRGBO(0, 0, 0, 63.75)),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Color.fromRGBO(0, 0, 0, 63.75),
+                          blurRadius: 4,
+                          offset: Offset(0, 4))
                     ],
                   ),
-                ),
-              )
-              )],
-              ),
+                  child: FlatButton(
+                    onPressed: () {
+                      setState(() {
+                        selected = 2;
+                        borderCon1 = 1;
+                        borderCon2 = 5;
+                      });
+                    },
+                    child: Container(
+                      height: 175,
+                      child: ListView(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10, bottom: 10),
+                            child: Text(
+                              'PALETA 2',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color.fromRGBO(92, 68, 56, 1),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                width: 58,
+                                height: 115,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 236, 170, 133)),
+                              ),
+                              Container(
+                                width: 58,
+                                height: 115,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 175, 122, 122)),
+                              ),
+                              Container(
+                                width: 58,
+                                height: 115,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 197, 178, 143)),
+                              ),
+                              Container(
+                                width: 58,
+                                height: 115,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 138, 90, 90)),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ))
+            ],
           ),
+        ),
 
         //boton
         Column(
           children: [
-            Text('Seleccione una opción', 
-      style: TextStyle(
-        color: Color.fromARGB(opacity20, 255, 0, 0)
-      ),),
+            Text(
+              'Seleccione una opción',
+              style: TextStyle(color: Color.fromARGB(opacity20, 255, 0, 0)),
+            ),
             Container(
                 height: 63.0,
                 width: MediaQuery.of(context).size.width,
                 padding: const EdgeInsets.only(
                   top: 15,
                 ),
-                decoration:
-                    new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
+                decoration: new BoxDecoration(
+                    color: new Color.fromRGBO(255, 198, 165, 1)),
                 child: FlatButton(
                     onPressed: () {
-                      if(selected!=0){
-                         setState(() {
-                        opacity20=0;
-                      });
-                      resul.labios = selected.toInt();
-                      Navigator.of(context).pushNamed('/cabello');
-                      }else{
+                      if (selected != 0) {
                         setState(() {
-                        opacity20=255;
-                      });
-
-
+                          opacity20 = 0;
+                        });
+                        resul.labios = selected.toInt();
+                        Navigator.of(context).pushNamed('/cabello');
+                      } else {
+                        setState(() {
+                          opacity20 = 255;
+                        });
                       }
                     },
                     child: Column(
@@ -206,8 +205,8 @@ class _Labios extends State<Labios> {
                             'CONTINUAR',
                             textAlign: TextAlign.center,
                             textScaleFactor: 2.0,
-                            style:
-                                TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
+                            style: TextStyle(
+                                color: new Color.fromRGBO(92, 68, 56, 1)),
                           ),
                         ]))),
           ],

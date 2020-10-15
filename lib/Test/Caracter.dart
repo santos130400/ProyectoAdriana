@@ -17,134 +17,142 @@ class _Caracter extends State<Caracter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: ListView(
+        body: Stack(
       children: [
-        barraNavegacion(context),
-        texto(),
-        //opciones
-        RadioListTile(
-          groupValue: radioItem1,
-          value: 1,
-          title: Text(
-              'Ligero y femenino, prenses, tablas, drapeados y mangas voluminosas'),
-          activeColor: new Color.fromRGBO(92, 68, 56, 1),
-          onChanged: (val) {
-            setState(() {
-              radioItem1 = val;
-            });
-          },
+        ListView(
+          children: [
+            barraNavegacion(context),
+            texto(),
+            //opciones
+            RadioListTile(
+              groupValue: radioItem1,
+              value: 1,
+              title: Text(
+                  'Ligero y femenino, prenses, tablas, drapeados y mangas voluminosas'),
+              activeColor: new Color.fromRGBO(92, 68, 56, 1),
+              onChanged: (val) {
+                setState(() {
+                  radioItem1 = val;
+                });
+              },
+            ),
+            RadioListTile(
+              groupValue: radioItem1,
+              value: 2,
+              title: Text(
+                  'Gemelos (juego de cárdigan y blusa), chaquetas y pantalones clásicos'),
+              activeColor: new Color.fromRGBO(92, 68, 56, 1),
+              onChanged: (val) {
+                setState(() {
+                  radioItem1 = val;
+                });
+              },
+            ),
+            RadioListTile(
+              groupValue: radioItem1,
+              value: 3,
+              title: Text('Detalles a la moda y cortes decisivos'),
+              activeColor: new Color.fromRGBO(92, 68, 56, 1),
+              onChanged: (val) {
+                setState(() {
+                  radioItem1 = val;
+                });
+              },
+            ),
+            RadioListTile(
+              groupValue: radioItem1,
+              value: 4,
+              title: Text(
+                  'Facilidad y cortes poco estructurados (anchos y comodos)'),
+              activeColor: new Color.fromRGBO(92, 68, 56, 1),
+              onChanged: (val) {
+                setState(() {
+                  radioItem1 = val;
+                });
+              },
+            ),
+            RadioListTile(
+              groupValue: radioItem1,
+              value: 5,
+              title: Text(
+                  'Coordinados (chaqueta y pantalón iguales), faldas tubo y vestidos de Coctel'),
+              activeColor: new Color.fromRGBO(92, 68, 56, 1),
+              onChanged: (val) {
+                setState(() {
+                  radioItem1 = val;
+                });
+              },
+            ),
+            RadioListTile(
+              groupValue: radioItem1,
+              value: 6,
+              title: Text('Piezas vintage o étnicas'),
+              activeColor: new Color.fromRGBO(92, 68, 56, 1),
+              onChanged: (val) {
+                setState(() {
+                  radioItem1 = val;
+                });
+              },
+            ),
+            RadioListTile(
+              groupValue: radioItem1,
+              value: 7,
+              title: Text('Vestidos ajustados y escotes profundos'),
+              activeColor: new Color.fromRGBO(92, 68, 56, 1),
+              onChanged: (val) {
+                setState(() {
+                  radioItem1 = val;
+                });
+              },
+            ),
+          ],
         ),
-        RadioListTile(
-          groupValue: radioItem1,
-          value: 2,
-          title: Text(
-              'Gemelos (juego de cárdigan y blusa), chaquetas y pantalones clásicos'),
-          activeColor: new Color.fromRGBO(92, 68, 56, 1),
-          onChanged: (val) {
-            setState(() {
-              radioItem1 = val;
-            });
-          },
-        ),
-        RadioListTile(
-          groupValue: radioItem1,
-          value: 3,
-          title: Text('Detalles a la moda y cortes decisivos'),
-          activeColor: new Color.fromRGBO(92, 68, 56, 1),
-          onChanged: (val) {
-            setState(() {
-              radioItem1 = val;
-            });
-          },
-        ),
-        RadioListTile(
-          groupValue: radioItem1,
-          value: 4,
-          title:
-              Text('Facilidad y cortes poco estructurados (anchos y comodos)'),
-          activeColor: new Color.fromRGBO(92, 68, 56, 1),
-          onChanged: (val) {
-            setState(() {
-              radioItem1 = val;
-            });
-          },
-        ),
-        RadioListTile(
-          groupValue: radioItem1,
-          value: 5,
-          title: Text(
-              'Coordinados (chaqueta y pantalón iguales), faldas tubo y vestidos de Coctel'),
-          activeColor: new Color.fromRGBO(92, 68, 56, 1),
-          onChanged: (val) {
-            setState(() {
-              radioItem1 = val;
-            });
-          },
-        ),
-        RadioListTile(
-          groupValue: radioItem1,
-          value: 6,
-          title: Text('Piezas vintage o étnicas'),
-          activeColor: new Color.fromRGBO(92, 68, 56, 1),
-          onChanged: (val) {
-            setState(() {
-              radioItem1 = val;
-            });
-          },
-        ),
-        RadioListTile(
-          groupValue: radioItem1,
-          value: 7,
-          title: Text('Vestidos ajustados y escotes profundos'),
-          activeColor: new Color.fromRGBO(92, 68, 56, 1),
-          onChanged: (val) {
-            setState(() {
-              radioItem1 = val;
-            });
-          },
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 0),
-          child: Column(
-            children: [
-              Text(
-                'Seleccione una Opción',
-                style: TextStyle(color: Color.fromARGB(opacity10, 255, 0, 0)),
-              ),
-              Container(
-                  height: 63.0,
-                  width: MediaQuery.of(context).size.width,
-                  padding: const EdgeInsets.only(top: 15, bottom: 15),
-                  decoration: new BoxDecoration(
-                      color: new Color.fromRGBO(255, 198, 165, 1)),
-                  child: FlatButton(
-                      onPressed: () {
-                        if (radioItem1 != 0) {
-                          setState(() {
-                            opacity10 = 0;
-                          });
-                          Navigator.of(context).pushNamed('/preferencias');
-                          resul.carac = radioItem1;
-                        } else {
-                          setState(() {
-                            opacity10 = 255;
-                          });
-                        }
-                      },
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              'CONTINUAR',
-                              textAlign: TextAlign.center,
-                              textScaleFactor: 2.0,
-                              style: TextStyle(
-                                  color: new Color.fromRGBO(92, 68, 56, 1)),
-                            ),
-                          ]))),
-            ],
-          ),
-        )
+        Container(
+            alignment: Alignment.bottomCenter,
+            height: double.infinity,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'Seleccione una Opción',
+                  style: TextStyle(color: Color.fromARGB(opacity10, 255, 0, 0)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Container(
+                      height: 63.0,
+                      width: MediaQuery.of(context).size.width,
+                      padding: const EdgeInsets.only(top: 15, bottom: 15),
+                      decoration: new BoxDecoration(
+                          color: new Color.fromRGBO(255, 198, 165, 1)),
+                      child: FlatButton(
+                          onPressed: () {
+                            if (radioItem1 != 0) {
+                              setState(() {
+                                opacity10 = 0;
+                              });
+                              Navigator.of(context).pushNamed('/preferencias');
+                              resul.carac = radioItem1;
+                            } else {
+                              setState(() {
+                                opacity10 = 255;
+                              });
+                            }
+                          },
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  'CONTINUAR',
+                                  textAlign: TextAlign.center,
+                                  textScaleFactor: 2.0,
+                                  style: TextStyle(
+                                      color: new Color.fromRGBO(92, 68, 56, 1)),
+                                ),
+                              ]))),
+                )
+              ],
+            ))
       ],
     ));
   }

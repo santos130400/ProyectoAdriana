@@ -17,157 +17,166 @@ class _Detalles extends State<Detalles> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
+      body: Stack(
         children: [
-          Column(children: [
-            barraNavegacion(context),
-            //texto
-            Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Column(children: [
-                  Text(
-                    "¿QUÉ DETALLES Y ACCESORIOS SON",
-                    textAlign: TextAlign.center,
-                    style:
-                        TextStyle(fontSize: 20, color: const Color(0xFF5C4438)),
-                  ),
-                  Text(
-                    "RECURRENTES EN TU ARMARIO?",
-                    textAlign: TextAlign.center,
-                    style:
-                        TextStyle(fontSize: 20, color: const Color(0xFF5C4438)),
-                  )
-                ])),
-            //opciones
-            Padding(
-              padding: const EdgeInsets.only(top: 5),
-              child: RadioListTile(
-                groupValue: radioItem1,
-                value: 1,
-                title:
-                    Text('Detalles femeninos: flores, cintas, corazon, moños.'),
-                activeColor: new Color.fromRGBO(92, 68, 56, 1),
-                onChanged: (val) {
-                  setState(() {
-                    radioItem1 = val;
-                  });
-                },
-              ),
-            ),
-            RadioListTile(
-              groupValue: radioItem1,
-              value: 2,
-              title: Text(
-                  'Pocas piezas calidas: piezas de oro y plata discretas, perlas, cadenas delicadas'),
-              activeColor: new Color.fromRGBO(92, 68, 56, 1),
-              onChanged: (val) {
-                setState(() {
-                  radioItem1 = val;
-                });
-              },
-            ),
-            RadioListTile(
-              groupValue: radioItem1,
-              value: 3,
-              title: Text(
-                  'Accesorios numerosos: piezas de colores fuertes y decisivos, piezas de tendencia'),
-              activeColor: new Color.fromRGBO(92, 68, 56, 1),
-              onChanged: (val) {
-                setState(() {
-                  radioItem1 = val;
-                });
-              },
-            ),
-            RadioListTile(
-              groupValue: radioItem1,
-              value: 4,
-              title: Text(
-                  'Pocos o ningun accesorio: joyas muy pequeñas que no se quitan nunca'),
-              activeColor: new Color.fromRGBO(92, 68, 56, 1),
-              onChanged: (val) {
-                setState(() {
-                  radioItem1 = val;
-                });
-              },
-            ),
-            RadioListTile(
-              groupValue: radioItem1,
-              value: 5,
-              title: Text('Pocas piezas pero de alta gama'),
-              activeColor: new Color.fromRGBO(92, 68, 56, 1),
-              onChanged: (val) {
-                setState(() {
-                  radioItem1 = val;
-                });
-              },
-            ),
-            RadioListTile(
-              groupValue: radioItem1,
-              value: 6,
-              title: Text('Detalles sexys y aparentes'),
-              activeColor: new Color.fromRGBO(92, 68, 56, 1),
-              onChanged: (val) {
-                setState(() {
-                  radioItem1 = val;
-                });
-              },
-            ),
-            RadioListTile(
-              groupValue: radioItem1,
-              value: 7,
-              title: Text('Detalles extravagantes e inusuales'),
-              activeColor: new Color.fromRGBO(92, 68, 56, 1),
-              onChanged: (val) {
-                setState(() {
-                  radioItem1 = val;
-                });
-              },
-            )
-          ]),
-          Column(
+          ListView(
             children: [
-              Text(
-                'Seleccione una Opción',
-                style: TextStyle(color: Color.fromARGB(opacity7, 255, 0, 0)),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 8),
-                child: Container(
-                    height: 63.0,
-                    width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.only(
-                      top: 15,
-                    ),
-                    decoration: new BoxDecoration(
-                        color: new Color.fromRGBO(255, 198, 165, 1)),
-                    child: FlatButton(
-                        onPressed: () {
-                          if (radioItem1 != 0) {
-                            setState(() {
-                              opacity7 = 0;
-                            });
-
-                            Navigator.of(context).pushNamed('/paleta');
-                            resul.acces = radioItem1;
-                          } else {
-                            setState(() {
-                              opacity7 = 255;
-                            });
-                          }
-                        },
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                'CONTINUAR',
-                                textAlign: TextAlign.center,
-                                textScaleFactor: 2.0,
-                                style: TextStyle(
-                                    color: new Color.fromRGBO(92, 68, 56, 1)),
-                              ),
-                            ]))),
-              ),
+              Column(children: [
+                barraNavegacion(context),
+                //texto
+                Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Column(children: [
+                      Text(
+                        "¿QUÉ DETALLES Y ACCESORIOS SON",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 20, color: const Color(0xFF5C4438)),
+                      ),
+                      Text(
+                        "RECURRENTES EN TU ARMARIO?",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 20, color: const Color(0xFF5C4438)),
+                      )
+                    ])),
+                //opciones
+                Padding(
+                  padding: const EdgeInsets.only(top: 5),
+                  child: RadioListTile(
+                    groupValue: radioItem1,
+                    value: 1,
+                    title: Text(
+                        'Detalles femeninos: flores, cintas, corazon, moños.'),
+                    activeColor: new Color.fromRGBO(92, 68, 56, 1),
+                    onChanged: (val) {
+                      setState(() {
+                        radioItem1 = val;
+                      });
+                    },
+                  ),
+                ),
+                RadioListTile(
+                  groupValue: radioItem1,
+                  value: 2,
+                  title: Text(
+                      'Pocas piezas calidas: piezas de oro y plata discretas, perlas, cadenas delicadas'),
+                  activeColor: new Color.fromRGBO(92, 68, 56, 1),
+                  onChanged: (val) {
+                    setState(() {
+                      radioItem1 = val;
+                    });
+                  },
+                ),
+                RadioListTile(
+                  groupValue: radioItem1,
+                  value: 3,
+                  title: Text(
+                      'Accesorios numerosos: piezas de colores fuertes y decisivos, piezas de tendencia'),
+                  activeColor: new Color.fromRGBO(92, 68, 56, 1),
+                  onChanged: (val) {
+                    setState(() {
+                      radioItem1 = val;
+                    });
+                  },
+                ),
+                RadioListTile(
+                  groupValue: radioItem1,
+                  value: 4,
+                  title: Text(
+                      'Pocos o ningun accesorio: joyas muy pequeñas que no se quitan nunca'),
+                  activeColor: new Color.fromRGBO(92, 68, 56, 1),
+                  onChanged: (val) {
+                    setState(() {
+                      radioItem1 = val;
+                    });
+                  },
+                ),
+                RadioListTile(
+                  groupValue: radioItem1,
+                  value: 5,
+                  title: Text('Pocas piezas pero de alta gama'),
+                  activeColor: new Color.fromRGBO(92, 68, 56, 1),
+                  onChanged: (val) {
+                    setState(() {
+                      radioItem1 = val;
+                    });
+                  },
+                ),
+                RadioListTile(
+                  groupValue: radioItem1,
+                  value: 6,
+                  title: Text('Detalles sexys y aparentes'),
+                  activeColor: new Color.fromRGBO(92, 68, 56, 1),
+                  onChanged: (val) {
+                    setState(() {
+                      radioItem1 = val;
+                    });
+                  },
+                ),
+                RadioListTile(
+                  groupValue: radioItem1,
+                  value: 7,
+                  title: Text('Detalles extravagantes e inusuales'),
+                  activeColor: new Color.fromRGBO(92, 68, 56, 1),
+                  onChanged: (val) {
+                    setState(() {
+                      radioItem1 = val;
+                    });
+                  },
+                )
+              ]),
             ],
+          ),
+          Container(
+            height: double.infinity,
+            alignment: Alignment.bottomCenter,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'Seleccione una Opción',
+                  style: TextStyle(color: Color.fromARGB(opacity7, 255, 0, 0)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: Container(
+                      height: 63.0,
+                      width: MediaQuery.of(context).size.width,
+                      padding: const EdgeInsets.only(
+                        top: 15,
+                      ),
+                      decoration: new BoxDecoration(
+                          color: new Color.fromRGBO(255, 198, 165, 1)),
+                      child: FlatButton(
+                          onPressed: () {
+                            if (radioItem1 != 0) {
+                              setState(() {
+                                opacity7 = 0;
+                              });
+
+                              Navigator.of(context).pushNamed('/paleta');
+                              resul.acces = radioItem1;
+                            } else {
+                              setState(() {
+                                opacity7 = 255;
+                              });
+                            }
+                          },
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  'CONTINUAR',
+                                  textAlign: TextAlign.center,
+                                  textScaleFactor: 2.0,
+                                  style: TextStyle(
+                                      color: new Color.fromRGBO(92, 68, 56, 1)),
+                                ),
+                              ]))),
+                ),
+              ],
+            ),
           )
         ],
       ),

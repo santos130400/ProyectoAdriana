@@ -190,31 +190,37 @@ class Inicio extends StatelessWidget {
   }
 
   Widget cajaPasword() {
-    return Stack(children: [
-      Center(
-        child: Padding(
-          padding: EdgeInsets.only(
-            top: 20,
+    return Align(
+      alignment: Alignment.center,
+      child: Stack(children: [
+        Center(
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: 20,
+            ),
+            child: Container(
+                width: 350,
+                height: 50,
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 2,
+                          offset: Offset(0, 1))
+                    ],
+                    border:
+                        Border.all(width: 2, color: const Color(0xFFFFC6A5)),
+                    color: Colors.grey[100],
+                    borderRadius: BorderRadius.circular(10))),
           ),
-          child: Container(
-              width: 350,
-              height: 50,
-              decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey, blurRadius: 2, offset: Offset(0, 1))
-                  ],
-                  border: Border.all(width: 2, color: const Color(0xFFFFC6A5)),
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(10))),
         ),
-      ),
-      Center(
-        child: Padding(
-            padding: EdgeInsets.only(top: 20, left: 0),
-            child: textoContrasena()),
-      ),
-    ]);
+        Center(
+          child: Padding(
+              padding: EdgeInsets.only(top: 20, left: 0),
+              child: textoContrasena()),
+        ),
+      ]),
+    );
   }
 
   Widget olvidasteContrasena() {
@@ -230,12 +236,15 @@ class Inicio extends StatelessWidget {
   }
 
   Widget textoCrearCuenta() {
-    return Padding(
-        padding: const EdgeInsets.only(top: 100, right: 100),
-        child: Text(
-          '¿No tienes aún una cuenta?',
-          style: TextStyle(color: const Color(0xFF5C4438)),
-        ));
+    return Center(
+      child: Padding(
+          padding: const EdgeInsets.only(top: 100),
+          child: Text(
+            '¿No tienes aún una cuenta?',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: const Color(0xFF5C4438)),
+          )),
+    );
   }
 
   Widget textoCorreoOUsuario() {
@@ -253,7 +262,6 @@ class Inicio extends StatelessWidget {
             onSaved: (entrada) {
               _correo = entrada;
             },
-            textAlign: TextAlign.center,
             decoration: InputDecoration(
                 icon: Icon(
                   Icons.mail_outline,
@@ -265,27 +273,24 @@ class Inicio extends StatelessWidget {
   }
 
   Widget textoContrasena() {
-    return Center(
-      child: Container(
-        width: 300,
-        color: Color(0x00000000),
-        child: TextFormField(
-          // ignore: missing_return
-          validator: (input) {
-            if (input.length < 8) {
-              return 'La contraseña es minimo de 8 caracteres';
-            }
-          },
-          onSaved: (entrada) {
-            _contrasena = entrada;
-          },
-          textAlign: TextAlign.center,
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            icon: Icon(Icons.lock_outline, color: const Color(0xFF5C4438)),
-          ),
-          obscureText: true,
+    return Container(
+      width: 300,
+      color: Color(0x00000000),
+      child: TextFormField(
+        // ignore: missing_return
+        validator: (input) {
+          if (input.length < 8) {
+            return 'La contraseña es minimo de 8 caracteres';
+          }
+        },
+        onSaved: (entrada) {
+          _contrasena = entrada;
+        },
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          icon: Icon(Icons.lock_outline, color: const Color(0xFF5C4438)),
         ),
+        obscureText: true,
       ),
     );
   }

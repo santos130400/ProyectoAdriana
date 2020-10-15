@@ -10,44 +10,11 @@ class _Hola extends State<Hola> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(children: [
-        Column(children: [
-          //progress bar
-          barraNavegacion(context),
-          //CONTAINER INFORMACION
-          Stack(
-            children: [
-              cajaContieneDatos(),
-              Column(
-                children: [
-                  cajaRosada(),
-                  bienvenidos1(),
-                  bienvenidos2(),
-                  info(),
-                  Row(children: [
-                    Column(children: [tiempo1(), tiempo2()]),
-                    Padding(
-                        padding: EdgeInsets.only(top: 10),
-                        child: RaisedButton(
-                            color: Color.fromARGB(255, 255, 197, 163),
-                            child: Text(
-                              "EMPEZAR",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 92, 68, 56),
-                                  fontSize: 18),
-                            ),
-                            onPressed: () {
-                              Navigator.of(context).pushNamed('/piel');
-                            }))
-                  ]),
-                ],
-              ),
-              hola(),
-            ],
-          ),
-        ])
-      ]),
-    );
+        body: ListView(children: [
+      //progress bar
+      barraNavegacion(context),
+      cajaContieneDatos(context)
+    ]));
   }
 }
 
@@ -76,88 +43,122 @@ Widget barraNavegacion(BuildContext context) {
   ]);
 }
 
-Widget cajaContieneDatos() {
+Widget cajaContieneDatos(BuildContext context) {
   return Center(
     child: Padding(
         padding: EdgeInsets.only(top: 20),
         child: Container(
-            height: 460,
-            width: 350,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(17),
-                color: const Color(0xffffeed9),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.grey[400],
-                      blurRadius: 4,
-                      offset: Offset(0, 5))
-                ]))),
-  );
-}
-
-Widget cajaRosada() {
-  return Center(
-    child: Padding(
-        padding: EdgeInsets.only(top: 20),
-        child: Container(
-            height: 160,
-            width: 350,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: Color.fromRGBO(255, 197, 163, 1),
-            ))),
+          height: 500,
+          width: 350,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(17),
+              color: const Color(0xffffeed9),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.grey[400],
+                    blurRadius: 4,
+                    offset: Offset(0, 5))
+              ]),
+          child: Column(
+            children: [
+              Center(
+                child: Container(
+                    height: 160,
+                    width: 350,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Color.fromRGBO(255, 197, 163, 1),
+                    )),
+              ),
+              Container(
+                  margin: EdgeInsets.only(left: 10),
+                  child: Align(alignment: Alignment.centerLeft, child: hola())),
+              Container(
+                  margin: EdgeInsets.only(right: 7),
+                  child: Align(
+                      alignment: Alignment.centerRight, child: bienvenidos())),
+              Container(
+                  margin: EdgeInsets.only(left: 12, top: 29), child: info()),
+              Container(
+                margin: EdgeInsets.only(top: 10),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                          alignment: Alignment.center,
+                          child: Column(children: [tiempo1(), tiempo2()])),
+                      Container(
+                        width: 153,
+                        height: 45,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 255, 197, 163),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Color.fromARGB(51, 0, 0, 0),
+                                  blurRadius: 5,
+                                  offset: Offset(0, 5),
+                                  spreadRadius: 1)
+                            ]),
+                        child: FlatButton(
+                          child: Text(
+                            "EMPEZAR",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromARGB(255, 92, 68, 56),
+                                fontSize: 18),
+                          ),
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('/piel');
+                          },
+                        ),
+                      )
+                    ]),
+              ),
+            ],
+          ),
+        )),
   );
 }
 
 Widget hola() {
-  return Padding(
-      padding: EdgeInsets.only(top: 180, left: 40),
-      child: Text("HOLA!",
-          style: TextStyle(
-              color: Color.fromARGB(255, 92, 68, 56),
-              fontWeight: FontWeight.bold,
-              fontSize: 60)));
+  return Text("HOLA!",
+      style: TextStyle(
+          color: Color.fromARGB(255, 92, 68, 56),
+          fontWeight: FontWeight.bold,
+          fontSize: 60));
 }
 
-Widget bienvenidos1() {
-  return Padding(
-      padding: EdgeInsets.only(left: 100, top: 70),
-      child: Text("Bienvenido a la aplicación de",
+Widget bienvenidos() {
+  return Column(
+    children: [
+      Text("Bienvenido a la aplicación de",
           style: TextStyle(
-              color: Colors.brown, fontWeight: FontWeight.bold, fontSize: 15)));
-}
-
-Widget bienvenidos2() {
-  return Padding(
-      padding: EdgeInsets.only(left: 100),
-      child: Text("Adriana Rojas",
+              color: Colors.brown, fontWeight: FontWeight.bold, fontSize: 15)),
+      Text("Adriana Rojas",
           style: TextStyle(
-              color: Colors.brown, fontWeight: FontWeight.bold, fontSize: 15)));
+              color: Colors.brown, fontWeight: FontWeight.bold, fontSize: 15)),
+    ],
+  );
 }
 
 Widget info() {
-  return Padding(
-      padding: EdgeInsets.only(right: 50, left: 50, top: 15),
-      child: Text(
-          "Realizar el siguiente Test le proporciona a la aplicación la información adecuada para    poder entregarte un perfil personal y una mejor experiencia.",
-          style: TextStyle(
-              color: Color.fromARGB(255, 92, 68, 56),
-              fontWeight: FontWeight.bold,
-              fontSize: 20)));
+  return Text(
+      "Realizar el siguiente Test le proporciona a la aplicación la información adecuada para poder entregarte un perfil personal y una mejor experiencia.",
+      style: TextStyle(
+          color: Color.fromARGB(255, 92, 68, 56),
+          fontWeight: FontWeight.bold,
+          fontSize: 20));
 }
 
 Widget tiempo1() {
-  return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 70),
-      child: Text("Tiempo estimado",
-          style: TextStyle(color: Colors.grey, fontSize: 12)));
+  return Text("Tiempo estimado",
+      style: TextStyle(color: Colors.grey, fontSize: 12));
 }
 
 Widget tiempo2() {
-  return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 50),
-      child: Text("30 minutos",
-          style: TextStyle(color: Colors.grey, fontSize: 12)));
+  return Text("30 minutos", style: TextStyle(color: Colors.grey, fontSize: 12));
 }
 
 void iconButtonPressed() {}

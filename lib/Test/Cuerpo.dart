@@ -19,114 +19,122 @@ class _Cuerpo extends State<Cuerpo> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: ListView(
-        children: <Widget>[
-          barraNavegacion(context),
-          Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: Text(
-                  "SELECCIONA LA FORMA",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 20, color: Color.fromRGBO(92, 68, 56, 1)),
+      body: Stack(
+        children: [
+          Container(
+            child: ListView(
+              children: <Widget>[
+                barraNavegacion(context),
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15),
+                      child: Text(
+                        "SELECCIONA LA FORMA",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 20, color: Color.fromRGBO(92, 68, 56, 1)),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 0),
+                      child: Text(
+                        "DE TU CUERPO",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 20, color: Color.fromRGBO(92, 68, 56, 1)),
+                      ),
+                    )
+                  ],
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 0),
-                child: Text(
-                  "DE TU CUERPO",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 20, color: Color.fromRGBO(92, 68, 56, 1)),
+                SizedBox(
+                  height: 20.0,
                 ),
-              )
-            ],
-          ),
-          SizedBox(
-            height: 20.0,
-          ),
-          CarouselSlider(
-            options: CarouselOptions(
-              height: 360,
-              aspectRatio: 16 / 9,
-              enlargeCenterPage: true,
-              scrollDirection: Axis.horizontal,
-              enableInfiniteScroll: true,
+                CarouselSlider(
+                  options: CarouselOptions(
+                    height: 360,
+                    aspectRatio: 16 / 9,
+                    enlargeCenterPage: true,
+                    scrollDirection: Axis.horizontal,
+                    enableInfiniteScroll: true,
+                  ),
+                  items: [
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          seleccionado = 1;
+                          cuerpo1 = 5;
+                          cuerpo2 = 0;
+                          cuerpo3 = 0;
+                        });
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12.0),
+                          border:
+                              Border.all(width: cuerpo1, color: Colors.brown),
+                        ),
+                        child: Image.asset('assets/cuerpo1.png'),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          seleccionado = 2;
+                          cuerpo1 = 0;
+                          cuerpo2 = 5;
+                          cuerpo3 = 0;
+                        });
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12.0),
+                          border:
+                              Border.all(width: cuerpo2, color: Colors.brown),
+                        ),
+                        child: Image.asset('assets/cuerpo2.png'),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          seleccionado = 3;
+                          cuerpo1 = 0;
+                          cuerpo2 = 0;
+                          cuerpo3 = 5;
+                        });
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12.0),
+                          border:
+                              Border.all(width: cuerpo3, color: Colors.brown),
+                        ),
+                        child: Image.asset('assets/cuerpo3.png'),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
-            items: [
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    seleccionado = 1;
-                    cuerpo1 = 5;
-                    cuerpo2 = 0;
-                    cuerpo3 = 0;
-                  });
-                },
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12.0),
-                    border: Border.all(width: cuerpo1, color: Colors.brown),
-                  ),
-                  child: Image.asset('assets/cuerpo1.png'),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    seleccionado = 2;
-                    cuerpo1 = 0;
-                    cuerpo2 = 5;
-                    cuerpo3 = 0;
-                  });
-                },
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12.0),
-                    border: Border.all(width: cuerpo2, color: Colors.brown),
-                  ),
-                  child: Image.asset('assets/cuerpo2.png'),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    seleccionado = 3;
-                    cuerpo1 = 0;
-                    cuerpo2 = 0;
-                    cuerpo3 = 5;
-                  });
-                },
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12.0),
-                    border: Border.all(width: cuerpo3, color: Colors.brown),
-                  ),
-                  child: Image.asset('assets/cuerpo3.png'),
-                ),
-              ),
-            ],
           ),
-          SizedBox(
-            height: 7,
-          ),
-          Column(
-            children: [
-              Text(
-                'Seleccione una opción',
-                style: TextStyle(color: Color.fromARGB(opacity5, 255, 0, 0)),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Container(
+          Container(
+            height: double.infinity,
+            alignment: Alignment.bottomCenter,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'Seleccione una opción',
+                  style: TextStyle(color: Color.fromARGB(opacity5, 255, 0, 0)),
+                ),
+                Container(
                     height: 63.0,
                     width: MediaQuery.of(context).size.width,
                     padding: const EdgeInsets.only(top: 15, bottom: 15),
@@ -158,8 +166,8 @@ class _Cuerpo extends State<Cuerpo> {
                                     color: new Color.fromRGBO(92, 68, 56, 1)),
                               ),
                             ]))),
-              ),
-            ],
+              ],
+            ),
           )
         ],
       ),

@@ -15,134 +15,143 @@ class _Estilos extends State<Estilos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: ListView(
+        body: Stack(
       children: [
-        barraNavegacion(context),
-        texto(),
-        Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: Column(children: [
-              //opciones
-              RadioListTile(
-                groupValue: radioItem1,
-                value: 1,
-                title: Text('Feminidad'),
-                activeColor: new Color.fromRGBO(92, 68, 56, 1),
-                onChanged: (val) {
-                  setState(() {
-                    radioItem1 = val;
-                  });
-                },
-              ),
-              RadioListTile(
-                groupValue: radioItem1,
-                value: 2,
-                title: Text('Sobriedad'),
-                activeColor: new Color.fromRGBO(92, 68, 56, 1),
-                onChanged: (val) {
-                  setState(() {
-                    radioItem1 = val;
-                  });
-                },
-              ),
-              RadioListTile(
-                groupValue: radioItem1,
-                value: 3,
-                title: Text('Tendencia'),
-                activeColor: new Color.fromRGBO(92, 68, 56, 1),
-                onChanged: (val) {
-                  setState(() {
-                    radioItem1 = val;
-                  });
-                },
-              ),
-              RadioListTile(
-                groupValue: radioItem1,
-                value: 4,
-                title: Text('Practicidad'),
-                activeColor: new Color.fromRGBO(92, 68, 56, 1),
-                onChanged: (val) {
-                  setState(() {
-                    radioItem1 = val;
-                  });
-                },
-              ),
-              RadioListTile(
-                groupValue: radioItem1,
-                value: 5,
-                title: Text('Elegancia'),
-                activeColor: new Color.fromRGBO(92, 68, 56, 1),
-                onChanged: (val) {
-                  setState(() {
-                    radioItem1 = val;
-                  });
-                },
-              ),
-              RadioListTile(
-                groupValue: radioItem1,
-                value: 6,
-                title: Text('Originalidad'),
-                activeColor: new Color.fromRGBO(92, 68, 56, 1),
-                onChanged: (val) {
-                  setState(() {
-                    radioItem1 = val;
-                  });
-                },
-              ),
-              RadioListTile(
-                groupValue: radioItem1,
-                value: 7,
-                title: Text('Seducción'),
-                activeColor: new Color.fromRGBO(92, 68, 56, 1),
-                onChanged: (val) {
-                  setState(() {
-                    radioItem1 = val;
-                  });
-                },
-              )
-            ])),
-        Column(
+        ListView(
           children: [
-            Text(
-              'Seleccione una Opción',
-              style: TextStyle(color: Color.fromARGB(opacity6, 255, 0, 0)),
-            ),
+            barraNavegacion(context),
+            texto(),
             Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: Container(
-                  height: 63.0,
-                  width: MediaQuery.of(context).size.width,
-                  padding: const EdgeInsets.only(top: 15, bottom: 15),
-                  decoration: new BoxDecoration(
-                      color: new Color.fromRGBO(255, 198, 165, 1)),
-                  child: FlatButton(
-                      onPressed: () {
-                        if (radioItem1 != 0) {
-                          setState(() {
-                            opacity6 = 0;
-                          });
-
-                          Navigator.of(context).pushNamed('/detalles');
-                          resul.valores = radioItem1;
-                        } else {
-                          setState(() {
-                            opacity6 = 255;
-                          });
-                        }
-                      },
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              'CONTINUAR',
-                              textAlign: TextAlign.center,
-                              textScaleFactor: 2.0,
-                              style: TextStyle(
-                                  color: new Color.fromRGBO(92, 68, 56, 1)),
-                            ),
-                          ]))),
-            ),
+                padding: const EdgeInsets.only(left: 20),
+                child: Column(children: [
+                  //opciones
+                  RadioListTile(
+                    groupValue: radioItem1,
+                    value: 1,
+                    title: Text('Feminidad'),
+                    activeColor: new Color.fromRGBO(92, 68, 56, 1),
+                    onChanged: (val) {
+                      setState(() {
+                        radioItem1 = val;
+                      });
+                    },
+                  ),
+                  RadioListTile(
+                    groupValue: radioItem1,
+                    value: 2,
+                    title: Text('Sobriedad'),
+                    activeColor: new Color.fromRGBO(92, 68, 56, 1),
+                    onChanged: (val) {
+                      setState(() {
+                        radioItem1 = val;
+                      });
+                    },
+                  ),
+                  RadioListTile(
+                    groupValue: radioItem1,
+                    value: 3,
+                    title: Text('Tendencia'),
+                    activeColor: new Color.fromRGBO(92, 68, 56, 1),
+                    onChanged: (val) {
+                      setState(() {
+                        radioItem1 = val;
+                      });
+                    },
+                  ),
+                  RadioListTile(
+                    groupValue: radioItem1,
+                    value: 4,
+                    title: Text('Practicidad'),
+                    activeColor: new Color.fromRGBO(92, 68, 56, 1),
+                    onChanged: (val) {
+                      setState(() {
+                        radioItem1 = val;
+                      });
+                    },
+                  ),
+                  RadioListTile(
+                    groupValue: radioItem1,
+                    value: 5,
+                    title: Text('Elegancia'),
+                    activeColor: new Color.fromRGBO(92, 68, 56, 1),
+                    onChanged: (val) {
+                      setState(() {
+                        radioItem1 = val;
+                      });
+                    },
+                  ),
+                  RadioListTile(
+                    groupValue: radioItem1,
+                    value: 6,
+                    title: Text('Originalidad'),
+                    activeColor: new Color.fromRGBO(92, 68, 56, 1),
+                    onChanged: (val) {
+                      setState(() {
+                        radioItem1 = val;
+                      });
+                    },
+                  ),
+                  RadioListTile(
+                    groupValue: radioItem1,
+                    value: 7,
+                    title: Text('Seducción'),
+                    activeColor: new Color.fromRGBO(92, 68, 56, 1),
+                    onChanged: (val) {
+                      setState(() {
+                        radioItem1 = val;
+                      });
+                    },
+                  )
+                ])),
           ],
+        ),
+        Container(
+          alignment: Alignment.bottomCenter,
+          height: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(
+                'Seleccione una Opción',
+                style: TextStyle(color: Color.fromARGB(opacity6, 255, 0, 0)),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Container(
+                    height: 63.0,
+                    width: MediaQuery.of(context).size.width,
+                    padding: const EdgeInsets.only(top: 15, bottom: 15),
+                    decoration: new BoxDecoration(
+                        color: new Color.fromRGBO(255, 198, 165, 1)),
+                    child: FlatButton(
+                        onPressed: () {
+                          if (radioItem1 != 0) {
+                            setState(() {
+                              opacity6 = 0;
+                            });
+
+                            Navigator.of(context).pushNamed('/detalles');
+                            resul.valores = radioItem1;
+                          } else {
+                            setState(() {
+                              opacity6 = 255;
+                            });
+                          }
+                        },
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                'CONTINUAR',
+                                textAlign: TextAlign.center,
+                                textScaleFactor: 2.0,
+                                style: TextStyle(
+                                    color: new Color.fromRGBO(92, 68, 56, 1)),
+                              ),
+                            ]))),
+              ),
+            ],
+          ),
         )
       ],
     ));

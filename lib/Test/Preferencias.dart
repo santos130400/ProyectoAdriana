@@ -12,38 +12,46 @@ class _Preferencias extends State<Preferencias> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        body: ListView(
+        body: Stack(
       children: [
-        barraNavegacion(context),
-        texto(),
-        RadioListTile(
-          groupValue: radioItem,
-          title: Text(
-              'Quiero conocer los resultados de mi test y mis recomendaciones inmediatamente'),
-          value: '0',
-          activeColor: new Color.fromRGBO(92, 68, 56, 1),
-          onChanged: (val) {
-            setState(() {
-              radioItem = val;
-            });
-          },
-        ),
-        RadioListTile(
-          groupValue: radioItem,
-          title: Text(
-              'Deseo que Adriana revise mi Test para obtener resultados mucho más personalizados (*premium)'),
-          value: '1',
-          activeColor: new Color.fromRGBO(92, 68, 56, 1),
-          onChanged: (val) {
-            setState(() {
-              radioItem = val;
-            });
-          },
+        ListView(
+          children: [
+            barraNavegacion(context),
+            texto(),
+            RadioListTile(
+              groupValue: radioItem,
+              title: Text(
+                  'Quiero conocer los resultados de mi test y mis recomendaciones inmediatamente'),
+              value: '0',
+              activeColor: new Color.fromRGBO(92, 68, 56, 1),
+              onChanged: (val) {
+                setState(() {
+                  radioItem = val;
+                });
+              },
+            ),
+            RadioListTile(
+              groupValue: radioItem,
+              title: Text(
+                  'Deseo que Adriana revise mi Test para obtener resultados mucho más personalizados (*premium)'),
+              value: '1',
+              activeColor: new Color.fromRGBO(92, 68, 56, 1),
+              onChanged: (val) {
+                setState(() {
+                  radioItem = val;
+                });
+              },
+            ),
+            Container(
+              height: 210,
+            ),
+          ],
         ),
         Container(
-          height: 210,
-        ),
-        continuar(context)
+          height: double.infinity,
+          alignment: Alignment.bottomCenter,
+          child: continuar(context),
+        )
       ],
     ));
   }

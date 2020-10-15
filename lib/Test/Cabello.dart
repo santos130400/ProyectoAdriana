@@ -25,299 +25,313 @@ class _Cabello extends State<Cabello> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        body: ListView(
-      children: [
-        Column(
+        body: Stack(
           children: [
-            barraNavegacion(context),
-            texto(),
             Container(
-                padding: EdgeInsets.only(
-                  right: 20,
-                  left:20,
-                  bottom: 15,
-                ),
-                child: CarouselSlider(
-                  options: CarouselOptions(
-                    scrollDirection: Axis.vertical,
-                    autoPlay: true,
-                    viewportFraction: 0.3,
-                    autoPlayInterval: Duration(seconds: 5),
-                    enlargeCenterPage: true,
-                    enlargeStrategy: CenterPageEnlargeStrategy.height,
-                    height: 385,
-                  ),
-                  items: [
-                    Container(
-                      child: GestureDetector(
-                        child: Container(
-                          width: 20,
-                          height: 100,
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 222, 190, 153),
-                              border: Border.all(
-                                  color: Colors.brown, width: border1)),
-                        ),
-                        onTap: () {
-                          setState(() {
-                            selected = 1;
-                            border1 = 5;
-                            border2 = 0;
-                            border3 = 0;
-                            border4 = 0;
-                            border5 = 0;
-                            border6 = 0;
-                            border7 = 0;
-                            border8 = 0;
-                            border9 = 0;
-                          });
-                        },
+              child: ListView(
+      children: [
+              Column(
+                children: [
+                  barraNavegacion(context),
+                  texto(),
+                  Container(
+                      padding: EdgeInsets.only(
+                        right: 20,
+                        left:20,
+                        bottom: 15,
                       ),
-                    ),
-                    Container(
-                      child: GestureDetector(
-                        child: Container(
-                          width: 20,
-                          height: 100,
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 170, 136, 102),
-                              border: Border.all(
-                                  color: Colors.brown, width: border2)),
+                      child: CarouselSlider(
+                        options: CarouselOptions(
+                          scrollDirection: Axis.vertical,
+                          autoPlay: true,
+                          viewportFraction: 0.3,
+                          autoPlayInterval: Duration(seconds: 5),
+                          enlargeCenterPage: true,
+                          enlargeStrategy: CenterPageEnlargeStrategy.height,
+                          height: 385,
                         ),
-                        onTap: () {
-                          setState(() {
-                            selected = 2;
-                            border1 = 0;
-                            border2 = 5;
-                            border3 = 0;
-                            border4 = 0;
-                            border5 = 0;
-                            border6 = 0;
-                            border7 = 0;
-                            border8 = 0;
-                            border9 = 0;
-                          });
-                        },
-                      ),
-                    ),
-                    Container(
-                      child: GestureDetector(
-                        child: Container(
-                          width: 20,
-                          height: 100,
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 213, 176, 113),
-                              border: Border.all(
-                                  color: Colors.brown, width: border3)),
-                        ),
-                        onTap: () {
-                          setState(() {
-                            selected = 3;
-                            border1 = 0;
-                            border2 = 0;
-                            border3 = 5;
-                            border4 = 0;
-                            border5 = 0;
-                            border6 = 0;
-                            border7 = 0;
-                            border8 = 0;
-                            border9 = 0;
-                          });
-                        },
-                      ),
-                    ),
-                    Container(
-                      child: GestureDetector(
-                        child: Container(
-                          width: 20,
-                          height: 100,
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 239, 197, 97),
-                              border: Border.all(
-                                  color: Colors.brown, width: border4)),
-                        ),
-                        onTap: () {
-                          setState(() {
-                            selected = 4;
-                            border1 = 0;
-                            border2 = 0;
-                            border3 = 0;
-                            border4 = 5;
-                            border5 = 0;
-                            border6 = 0;
-                            border7 = 0;
-                            border8 = 0;
-                            border9 = 0;
-                          });
-                        },
-                      ),
-                    ),
-                    Container(
-                      child: GestureDetector(
-                        child: Container(
-                          width: 20,
-                          height: 100,
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 192, 99, 53),
-                              border: Border.all(
-                                  color: Colors.brown, width: border5)),
-                        ),
-                        onTap: () {
-                          setState(() {
-                            selected = 5;
-                            border1 = 0;
-                            border2 = 0;
-                            border3 = 0;
-                            border4 = 0;
-                            border5 = 5;
-                            border6 = 0;
-                            border7 = 0;
-                            border8 = 0;
-                            border9 = 0;
-                          });
-                        },
-                      ),
-                    ),
-                    Container(
-                      child: GestureDetector(
-                        child: Container(
-                          width: 20,
-                          height: 100,
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 154, 51, 0),
-                              border: Border.all(
-                                  color: Colors.brown, width: border6)),
-                        ),
-                        onTap: () {
-                          setState(() {
-                            selected = 6;
-                            border1 = 0;
-                            border2 = 0;
-                            border3 = 0;
-                            border4 = 0;
-                            border5 = 0;
-                            border6 = 5;
-                            border7 = 0;
-                            border8 = 0;
-                            border9 = 0;
-                          });
-                        },
-                      ),
-                    ),
-                    Container(
-                      child: GestureDetector(
-                        child: Container(
-                          width: 20,
-                          height: 100,
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 79, 26, 0),
-                              border: Border.all(
-                                  color: Colors.brown, width: border7)),
-                        ),
-                        onTap: () {
-                          setState(() {
-                            selected = 7;
-                            border1 = 0;
-                            border2 = 0;
-                            border3 = 0;
-                            border4 = 0;
-                            border5 = 0;
-                            border6 = 0;
-                            border7 = 5;
-                            border8 = 0;
-                            border9 = 0;
-                          });
-                        },
-                      ),
-                    ),
-                    Container(
-                      child: GestureDetector(
-                        child: Container(
-                          width: 20,
-                          height: 100,
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 31, 10, 0),
-                              border: Border.all(
-                                  color: Colors.brown, width: border8)),
-                        ),
-                        onTap: () {
-                          setState(() {
-                            selected = 8;
-                            border1 = 0;
-                            border2 = 0;
-                            border3 = 0;
-                            border4 = 0;
-                            border5 = 0;
-                            border6 = 0;
-                            border7 = 0;
-                            border8 = 5;
-                            border9 = 0;
-                          });
-                        },
-                      ),
-                    ),
-                    Container(
-                      child: GestureDetector(
-                        child: Container(
-                          width: 20,
-                          height: 100,
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 196, 193, 186),
-                              border: Border.all(
-                                  color: Colors.brown, width: border9)),
-                        ),
-                        onTap: () {
-                          setState(() {
-                            selected = 9;
-                            border1 = 0;
-                            border2 = 0;
-                            border3 = 0;
-                            border4 = 0;
-                            border5 = 0;
-                            border6 = 0;
-                            border7 = 0;
-                            border8 = 0;
-                            border9 = 5;
-                          });
-                        },
-                      ),
-                    ),
-                  ].map((i) {
-                    return Builder(
-                      builder: (BuildContext context) {
-                        return Container(
-                            width: MediaQuery.of(context).size.width,
-                            margin: EdgeInsets.symmetric(horizontal: 1.0),
-
-                            // child: FittedBox(
+                        items: [
+                          Container(
                             child: GestureDetector(
-                              onTap: () {},
-                              child: i,
-                            )
+                              child: Container(
+                                width: 20,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 222, 190, 153),
+                                    border: Border.all(
+                                        color: Colors.brown, width: border1)),
+                              ),
+                              onTap: () {
+                                setState(() {
+                                  selected = 1;
+                                  border1 = 5;
+                                  border2 = 0;
+                                  border3 = 0;
+                                  border4 = 0;
+                                  border5 = 0;
+                                  border6 = 0;
+                                  border7 = 0;
+                                  border8 = 0;
+                                  border9 = 0;
+                                });
+                              },
+                            ),
+                          ),
+                          Container(
+                            child: GestureDetector(
+                              child: Container(
+                                width: 20,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 170, 136, 102),
+                                    border: Border.all(
+                                        color: Colors.brown, width: border2)),
+                              ),
+                              onTap: () {
+                                setState(() {
+                                  selected = 2;
+                                  border1 = 0;
+                                  border2 = 5;
+                                  border3 = 0;
+                                  border4 = 0;
+                                  border5 = 0;
+                                  border6 = 0;
+                                  border7 = 0;
+                                  border8 = 0;
+                                  border9 = 0;
+                                });
+                              },
+                            ),
+                          ),
+                          Container(
+                            child: GestureDetector(
+                              child: Container(
+                                width: 20,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 213, 176, 113),
+                                    border: Border.all(
+                                        color: Colors.brown, width: border3)),
+                              ),
+                              onTap: () {
+                                setState(() {
+                                  selected = 3;
+                                  border1 = 0;
+                                  border2 = 0;
+                                  border3 = 5;
+                                  border4 = 0;
+                                  border5 = 0;
+                                  border6 = 0;
+                                  border7 = 0;
+                                  border8 = 0;
+                                  border9 = 0;
+                                });
+                              },
+                            ),
+                          ),
+                          Container(
+                            child: GestureDetector(
+                              child: Container(
+                                width: 20,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 239, 197, 97),
+                                    border: Border.all(
+                                        color: Colors.brown, width: border4)),
+                              ),
+                              onTap: () {
+                                setState(() {
+                                  selected = 4;
+                                  border1 = 0;
+                                  border2 = 0;
+                                  border3 = 0;
+                                  border4 = 5;
+                                  border5 = 0;
+                                  border6 = 0;
+                                  border7 = 0;
+                                  border8 = 0;
+                                  border9 = 0;
+                                });
+                              },
+                            ),
+                          ),
+                          Container(
+                            child: GestureDetector(
+                              child: Container(
+                                width: 20,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 192, 99, 53),
+                                    border: Border.all(
+                                        color: Colors.brown, width: border5)),
+                              ),
+                              onTap: () {
+                                setState(() {
+                                  selected = 5;
+                                  border1 = 0;
+                                  border2 = 0;
+                                  border3 = 0;
+                                  border4 = 0;
+                                  border5 = 5;
+                                  border6 = 0;
+                                  border7 = 0;
+                                  border8 = 0;
+                                  border9 = 0;
+                                });
+                              },
+                            ),
+                          ),
+                          Container(
+                            child: GestureDetector(
+                              child: Container(
+                                width: 20,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 154, 51, 0),
+                                    border: Border.all(
+                                        color: Colors.brown, width: border6)),
+                              ),
+                              onTap: () {
+                                setState(() {
+                                  selected = 6;
+                                  border1 = 0;
+                                  border2 = 0;
+                                  border3 = 0;
+                                  border4 = 0;
+                                  border5 = 0;
+                                  border6 = 5;
+                                  border7 = 0;
+                                  border8 = 0;
+                                  border9 = 0;
+                                });
+                              },
+                            ),
+                          ),
+                          Container(
+                            child: GestureDetector(
+                              child: Container(
+                                width: 20,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 79, 26, 0),
+                                    border: Border.all(
+                                        color: Colors.brown, width: border7)),
+                              ),
+                              onTap: () {
+                                setState(() {
+                                  selected = 7;
+                                  border1 = 0;
+                                  border2 = 0;
+                                  border3 = 0;
+                                  border4 = 0;
+                                  border5 = 0;
+                                  border6 = 0;
+                                  border7 = 5;
+                                  border8 = 0;
+                                  border9 = 0;
+                                });
+                              },
+                            ),
+                          ),
+                          Container(
+                            child: GestureDetector(
+                              child: Container(
+                                width: 20,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 31, 10, 0),
+                                    border: Border.all(
+                                        color: Colors.brown, width: border8)),
+                              ),
+                              onTap: () {
+                                setState(() {
+                                  selected = 8;
+                                  border1 = 0;
+                                  border2 = 0;
+                                  border3 = 0;
+                                  border4 = 0;
+                                  border5 = 0;
+                                  border6 = 0;
+                                  border7 = 0;
+                                  border8 = 5;
+                                  border9 = 0;
+                                });
+                              },
+                            ),
+                          ),
+                          Container(
+                            child: GestureDetector(
+                              child: Container(
+                                width: 20,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 196, 193, 186),
+                                    border: Border.all(
+                                        color: Colors.brown, width: border9)),
+                              ),
+                              onTap: () {
+                                setState(() {
+                                  selected = 9;
+                                  border1 = 0;
+                                  border2 = 0;
+                                  border3 = 0;
+                                  border4 = 0;
+                                  border5 = 0;
+                                  border6 = 0;
+                                  border7 = 0;
+                                  border8 = 0;
+                                  border9 = 5;
+                                });
+                              },
+                            ),
+                          ),
+                        ].map((i) {
+                          return Builder(
+                            builder: (BuildContext context) {
+                              return Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  margin: EdgeInsets.symmetric(horizontal: 1.0),
 
-                            //    fit: BoxFit.fill,
-                            // )
-                            //Este codigo es de prueba
-                            );
-                      },
-                    );
-                  }).toList(),
-                )),
-            Column(
-    children: [
-      Text('Seleccione una opción', 
+                                  // child: FittedBox(
+                                  child: GestureDetector(
+                                    onTap: () {},
+                                    child: i,
+                                  )
+
+                                  //    fit: BoxFit.fill,
+                                  // )
+                                  //Este codigo es de prueba
+                                  );
+                            },
+                          );
+                        }).toList(),
+                      )),
+                  
+                ],
+              ),
+      ],
+    ),
+            ),
+
+            Container(
+              height: double.infinity,
+              alignment: Alignment.bottomCenter,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text('Seleccione una opción', 
       style: TextStyle(
-        color: Color.fromARGB(opacity, 255, 0, 0)
+              color: Color.fromARGB(opacity, 255, 0, 0)
       ),),
-      Container(
-          height: 63.0,
-          width: MediaQuery.of(context).size.width,
-          padding: const EdgeInsets.only(top: 15, bottom: 15),
-          decoration:
-              new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
-          child: FlatButton(
-              onPressed: () {
-                if(selected!=0){
+                  Container(
+                      height: 63.0,
+                      width: MediaQuery.of(context).size.width,
+                      padding: const EdgeInsets.only(top: 15, bottom: 15),
+                      decoration:
+            new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
+                      child: FlatButton(
+            onPressed: () {
+              if(selected!=0){
                   setState(() {
                     opacity=0;
                   });
@@ -325,27 +339,26 @@ class _Cabello extends State<Cabello> {
                 }else{
                   setState(() {
                     opacity=255;
-                  });
-                  
-
-                }
-              },
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'CONTINUAR',
-                      textAlign: TextAlign.center,
-                      textScaleFactor: 2.0,
-                      style: TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
-                    ),
-                  ]))),
-    ],
-  )
+              });
+              }
+              
+            },
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'CONTINUAR',
+                    textAlign: TextAlign.center,
+                    textScaleFactor: 2.0,
+                    style:
+                        TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
+                  ),
+                ]))),
+                ],
+              ),
+          )
           ],
-        ),
-      ],
-    ));
+        ));
   }
 }
 

@@ -18,19 +18,32 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
       drawer: Drawer(
         child: Container(
           color: Color(0xFFEBA47A),
-          child: menuHamburguesa(context),
-        ),
-      ),
-      body: ListView(
-        children: [
-          Stack(
-            children: <Widget>[
-              cuerpo(),
-              recuadroPerfil(),
-              fotoPerfil(),
-              botonesArriba()
+          child: ListView(
+            children: [
+              menuHamburguesa(context),
             ],
           ),
+        ),
+      ),
+      body: Stack(
+        children: [
+          ListView(
+            children: [
+              Stack(
+                children: <Widget>[
+                  cuerpo(),
+                  recuadroPerfil(),
+                  fotoPerfil(),
+                  botonesArriba()
+                ],
+              ),
+            ],
+          ),
+          Container(
+            height: double.infinity,
+            alignment: Alignment.bottomCenter,
+            child: botonesFinales(),
+          )
         ],
       ),
     );
@@ -143,7 +156,6 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
         parteArriba(),
         fila1Botones(),
         fila2Botones(),
-        botonesFinales()
       ],
     );
   }
@@ -413,7 +425,6 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
           menu1(),
           menu2(),
           menu3(context),
-          Expanded(child: Container()),
           configuraciones(),
           cerrarSesion()
         ]),

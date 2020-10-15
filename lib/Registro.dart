@@ -147,7 +147,7 @@ class _RegistroState extends State<Registro> {
               padding: const EdgeInsets.only(top: 1, left: 20),
               child: Text(
                 'Nombre completo',
-                style: TextStyle(color: const Color(0xFF5C4438)),
+                style: TextStyle(color: const Color(0xFF5C4438), fontSize: 13),
               ))
         ]));
   }
@@ -167,7 +167,7 @@ class _RegistroState extends State<Registro> {
               padding: const EdgeInsets.only(top: 1, left: 20),
               child: Text(
                 'Correo electronico',
-                style: TextStyle(color: const Color(0xFF5C4438)),
+                style: TextStyle(color: const Color(0xFF5C4438), fontSize: 13),
               ))
         ]));
   }
@@ -187,7 +187,7 @@ class _RegistroState extends State<Registro> {
               padding: const EdgeInsets.only(top: 1, left: 50),
               child: Text(
                 'Teléfono',
-                style: TextStyle(color: const Color(0xFF5C4438)),
+                style: TextStyle(color: const Color(0xFF5C4438), fontSize: 13),
               ))
         ]));
   }
@@ -207,7 +207,7 @@ class _RegistroState extends State<Registro> {
               padding: const EdgeInsets.only(top: 1, left: 40),
               child: Text(
                 'Contraseña',
-                style: TextStyle(color: const Color(0xFF5C4438)),
+                style: TextStyle(color: const Color(0xFF5C4438), fontSize: 13),
               ))
         ]));
   }
@@ -224,10 +224,10 @@ class _RegistroState extends State<Registro> {
                 color: const Color(0xffffc6a5),
               )),
           Padding(
-              padding: const EdgeInsets.only(top: 1, left: 8),
+              padding: const EdgeInsets.only(top: 1, left: 10),
               child: Text(
                 'Confirmar contraseña',
-                style: TextStyle(color: const Color(0xFF5C4438)),
+                style: TextStyle(color: const Color(0xFF5C4438), fontSize: 13),
               ))
         ]));
   }

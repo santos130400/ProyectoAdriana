@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Pago(),
+        home: Inicio(),
         routes: <String, WidgetBuilder>{
           '/inicio': (BuildContext context) => new Inicio(),
           '/menu': (BuildContext context) => new MenuPrincipal(),
@@ -61,6 +61,7 @@ class MyApp extends StatelessWidget {
           '/resultadosRopa': (BuildContext context) => new RopaResultados(),
           '/resultadosAccesorios': (BuildContext context) =>
               new AccesoriosResultados(),
+          '/pago': (BuildContext context) => new Pago(),
         });
   }
 }

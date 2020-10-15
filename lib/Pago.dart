@@ -16,101 +16,115 @@ class _PagoState extends State<Pago> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
+      body: Stack(
         children: [
-          barraNavegacion(context),
-          textos1(),
-          Stack(children: [
-            caja(),
-            Column(children: [
-              cajaNumero(),
-              cajaFecha(),
-              cajaNombre(),
-            ])
-          ]),
-          //START BOTTOM BUTTONS
-          Column(
+          ListView(
             children: [
-              Row(
+              barraNavegacion(context),
+              textos1(),
+              Stack(children: [
+                caja(),
+                Align(
+                  alignment: Alignment.center,
+                  child: Column(children: [
+                    cajaNumero(),
+                    cajaFecha(),
+                    cajaNombre(),
+                  ]),
+                )
+              ]),
+              //START BOTTOM BUTTONS
+              Column(
                 children: [
-                  Padding(
-                      padding: EdgeInsets.only(left: 20, top: 20),
-                      child: SizedBox(
-                        width: 25,
-                        height: 25,
-                        child: RaisedButton(
-                          shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Colors.black)),
-                          color: selected1,
-                          onPressed: () {
-                            setState(() {
-                              if (isSelected1 == 0) {
-                                selected1 = Color(0xFFFFE3C0);
-                                isSelected1 = 1;
-                              } else {
-                                selected1 = Colors.white;
-                                isSelected1 = 0;
-                              }
-                            });
-                          },
-                        ),
-                      )),
-                  Padding(
-                      padding: EdgeInsets.only(left: 20, top: 20),
-                      child: Row(children: [
-                        Text(
-                          'Acepto los ',
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                          padding: EdgeInsets.only(left: 20, top: 20),
+                          child: SizedBox(
+                            width: 25,
+                            height: 25,
+                            child: RaisedButton(
+                              shape: RoundedRectangleBorder(
+                                  side: BorderSide(color: Colors.black)),
+                              color: selected1,
+                              onPressed: () {
+                                setState(() {
+                                  if (isSelected1 == 0) {
+                                    selected1 = Color(0xFFFFE3C0);
+                                    isSelected1 = 1;
+                                  } else {
+                                    selected1 = Colors.white;
+                                    isSelected1 = 0;
+                                  }
+                                });
+                              },
+                            ),
+                          )),
+                      Padding(
+                          padding: EdgeInsets.only(left: 20, top: 20),
+                          child: Row(children: [
+                            Text(
+                              'Acepto los ',
+                              style: TextStyle(
+                                fontSize: 13,
+                              ),
+                            ),
+                            Text(
+                              'Términos y Condiciones ',
+                              style: TextStyle(
+                                fontSize: 13,
+                                color: Color(0xFFF19C6A),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ]))
+                    ],
+                  ),
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    Padding(
+                        padding: EdgeInsets.only(left: 20, top: 20, bottom: 20),
+                        child: SizedBox(
+                          width: 25,
+                          height: 25,
+                          child: RaisedButton(
+                            shape: RoundedRectangleBorder(
+                                side: BorderSide(color: Colors.black)),
+                            color: selected2,
+                            onPressed: () {
+                              setState(() {
+                                if (isSelected2 == 0) {
+                                  selected2 = Color(0xFFFFE3C0);
+                                  isSelected2 = 1;
+                                } else {
+                                  selected2 = Colors.white;
+                                  isSelected2 = 0;
+                                }
+                              });
+                            },
+                          ),
+                        )),
+                    Padding(
+                        padding: EdgeInsets.only(left: 20, bottom: 20),
+                        child: Text(
+                          'Autorizo el cargo automático mensual de mi tarjeta',
                           style: TextStyle(
                             fontSize: 13,
                           ),
-                        ),
-                        Text(
-                          'Términos y Condiciones ',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Color(0xFFF19C6A),
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ]))
+                        )),
+                  ]),
+                  Container(
+                    height: 40,
+                  )
                 ],
               ),
-              Row(children: [
-                Padding(
-                    padding: EdgeInsets.only(left: 20, top: 20, bottom: 20),
-                    child: SizedBox(
-                      width: 25,
-                      height: 25,
-                      child: RaisedButton(
-                        shape: RoundedRectangleBorder(
-                            side: BorderSide(color: Colors.black)),
-                        color: selected2,
-                        onPressed: () {
-                          setState(() {
-                            if (isSelected2 == 0) {
-                              selected2 = Color(0xFFFFE3C0);
-                              isSelected2 = 1;
-                            } else {
-                              selected2 = Colors.white;
-                              isSelected2 = 0;
-                            }
-                          });
-                        },
-                      ),
-                    )),
-                Padding(
-                    padding: EdgeInsets.only(left: 20, top: 20, bottom: 20),
-                    child: Text(
-                      'Autorizo el cargo automático mensual de mi tarjeta',
-                      style: TextStyle(
-                        fontSize: 13,
-                      ),
-                    ))
-              ]),
             ],
           ),
           //END BOTTOM BUTTONS
-          botonPago(),
+          Container(
+              height: double.infinity,
+              alignment: Alignment.bottomCenter,
+              child: botonPago())
         ],
       ),
     );
@@ -122,7 +136,7 @@ Widget barraNavegacion(BuildContext context) {
     children: [
       Container(
           width: double.infinity,
-          height: 150,
+          height: 100,
           decoration: BoxDecoration(
               color: const Color(0xFFFFEED9),
               borderRadius: BorderRadius.only(
@@ -143,42 +157,47 @@ Widget barraNavegacion(BuildContext context) {
 }
 
 Widget textos1() {
-  return Container(
-      child: Column(children: [
-    Row(
-      children: [
-        Padding(
-            padding: EdgeInsets.only(left: 80, top: 20),
-            child: Text("ADQUIRIR LA MEMBRESIA",
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Color(0xFF5C4438),
-                ))),
-      ],
-    ),
-    Row(
-      children: [
-        Padding(
-            padding: EdgeInsets.only(left: 80, top: 10),
-            child: Text("\$ 50.000",
-                style: TextStyle(
-                  fontSize: 60,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF5C4438),
-                ))),
-      ],
-    ),
-    Padding(
-        padding: EdgeInsets.only(left: 5, right: 5),
-        child: Text(
-            " Este cargo se realiza mensualmente y puede ser cancelado en cualquier momento",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.normal,
-              color: Color(0xFF5C4438),
-            ))),
-  ]));
+  return Center(
+    child: Container(
+        child: Column(children: [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Text("ADQUIRIR LA MEMBRESIA",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Color(0xFF5C4438),
+                  ))),
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+              padding: EdgeInsets.only(top: 10),
+              child: Text("\$ 50.000",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 60,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF5C4438),
+                  ))),
+        ],
+      ),
+      Padding(
+          padding: EdgeInsets.only(top: 0),
+          child: Text(
+              " Este cargo se realiza mensualmente y puede ser cancelado en cualquier momento",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.normal,
+                color: Color(0xFF5C4438),
+              ))),
+    ])),
+  );
 }
 
 Widget cajaNumero() {
@@ -190,7 +209,7 @@ Widget cajaNumero() {
           top: 40,
         ),
         child: Container(
-            width: 350,
+            width: 340,
             height: 50,
             decoration: BoxDecoration(
                 boxShadow: [
@@ -234,56 +253,118 @@ Widget cajaNumero() {
 
 Widget cajaFecha() {
   //fecha
-  return Stack(children: [
-    //textBox
-    Padding(
-      padding: EdgeInsets.only(
-        top: 40,
-        left: 25,
+  return Center(
+    child: Container(
+      width: 370,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Stack(children: [
+            //textBox
+            Padding(
+              padding: EdgeInsets.only(top: 20, left: 15),
+              child: Container(
+                  width: 200,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 2,
+                            offset: Offset(0, 1))
+                      ],
+                      border:
+                          Border.all(width: 2, color: const Color(0xFFFFC6A5)),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10))),
+            ),
+            //icono
+            Center(
+              child: Padding(
+                  padding: EdgeInsets.only(top: 25, left: 32),
+                  child: textoFecha()),
+            ),
+            //titulo
+            Padding(
+                padding: EdgeInsets.only(
+                  top: 10,
+                  left: 37,
+                ),
+                child: Stack(children: [
+                  Center(
+                    child: Container(
+                        height: 20,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: const Color(0xffffc6a5),
+                        )),
+                  ),
+                  Center(
+                    child: Padding(
+                        padding: const EdgeInsets.only(top: 3, left: 15),
+                        child: Text(
+                          'Fecha de Expiración',
+                          style: TextStyle(color: const Color(0xFF5C4438)),
+                        )),
+                  )
+                ])),
+          ]),
+          Stack(children: [
+            //textBox
+            Padding(
+              padding: EdgeInsets.only(top: 20, left: 30),
+              child: Container(
+                  width: 110,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 2,
+                            offset: Offset(0, 1))
+                      ],
+                      border:
+                          Border.all(width: 2, color: const Color(0xFFFFC6A5)),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10))),
+            ),
+            //icono
+            Center(
+              child: Padding(
+                  padding: EdgeInsets.only(top: 25, left: 45),
+                  child: textoCCV()),
+            ),
+            //titulo
+            Padding(
+                padding: EdgeInsets.only(
+                  top: 10,
+                  left: 55,
+                ),
+                child: Stack(children: [
+                  Center(
+                    child: Container(
+                        height: 20,
+                        width: 70,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: const Color(0xffffc6a5),
+                        )),
+                  ),
+                  Center(
+                    child: Padding(
+                        padding: const EdgeInsets.only(top: 3, left: 20),
+                        child: Text(
+                          'CVV',
+                          style: TextStyle(color: const Color(0xFF5C4438)),
+                        )),
+                  )
+                ])),
+          ])
+        ],
       ),
-      child: Container(
-          width: 200,
-          height: 50,
-          decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.grey, blurRadius: 2, offset: Offset(0, 1))
-              ],
-              border: Border.all(width: 2, color: const Color(0xFFFFC6A5)),
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10))),
     ),
-    //icono
-    Center(
-      child: Padding(
-          padding: EdgeInsets.only(top: 40, left: 0), child: textoFecha()),
-    ),
-    //titulo
-    Padding(
-        padding: EdgeInsets.only(
-          top: 30,
-          right: 120,
-        ),
-        child: Stack(children: [
-          Center(
-            child: Container(
-                height: 20,
-                width: 150,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: const Color(0xffffc6a5),
-                )),
-          ),
-          Center(
-            child: Padding(
-                padding: const EdgeInsets.only(top: 3, left: 0),
-                child: Text(
-                  'Fecha de Expiración',
-                  style: TextStyle(color: const Color(0xFF5C4438)),
-                )),
-          )
-        ])),
-  ]);
+  );
 }
 
 Widget cajaNombre() {
@@ -292,10 +373,10 @@ Widget cajaNombre() {
     Center(
       child: Padding(
         padding: EdgeInsets.only(
-          top: 40,
+          top: 20,
         ),
         child: Container(
-            width: 350,
+            width: 340,
             height: 50,
             decoration: BoxDecoration(
                 boxShadow: [
@@ -310,11 +391,11 @@ Widget cajaNombre() {
     //icono
     Center(
       child: Padding(
-          padding: EdgeInsets.only(top: 40, left: 0), child: textoNombre()),
+          padding: EdgeInsets.only(top: 20, left: 0), child: textoNombre()),
     ),
     //titulo
     Padding(
-        padding: EdgeInsets.only(top: 30, right: 80),
+        padding: EdgeInsets.only(top: 10, right: 80),
         child: Stack(children: [
           Center(
             child: Container(
@@ -372,7 +453,7 @@ Widget textoFecha() {
   String fecha;
   return Center(
     child: Container(
-      width: 300,
+      width: 100,
       color: Color(0x00000000),
       child: new TextFormField(
           keyboardType: TextInputType.number,
@@ -395,6 +476,38 @@ Widget textoFecha() {
                 color: const Color(0xFF5C4438),
               ),
               hintText: 'MM/YY',
+              border: InputBorder.none)),
+    ),
+  );
+}
+
+Widget textoCCV() {
+  String fecha;
+  return Center(
+    child: Container(
+      width: 100,
+      color: Color(0x00000000),
+      child: new TextFormField(
+          keyboardType: TextInputType.number,
+          inputFormatters: [
+            WhitelistingTextInputFormatter.digitsOnly,
+            new LengthLimitingTextInputFormatter(3),
+          ],
+          // ignore: missing_return
+          validator: (entrada) {
+            if (entrada.isEmpty) {
+              return 'Por favor escriba el CCV';
+            }
+          },
+          onSaved: (entrada) {
+            fecha = entrada;
+          },
+          decoration: InputDecoration(
+              icon: Icon(
+                Icons.lock_outline,
+                color: const Color(0xFF5C4438),
+              ),
+              hintText: 'XXX',
               border: InputBorder.none)),
     ),
   );
@@ -461,7 +574,7 @@ Widget caja() {
     child: Padding(
       padding: EdgeInsets.only(top: 15),
       child: Container(
-          height: 280,
+          height: 250,
           width: 370,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
@@ -479,7 +592,7 @@ Widget caja() {
 Widget botonPago() {
   return SizedBox(
       height: 50,
-      width: 80,
+      width: double.infinity,
       child: RaisedButton(
         color: Color(0xFFFFFC6A5),
         child: Text(

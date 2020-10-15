@@ -422,8 +422,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
       children: [
         Column(children: [
           Image.asset('assets/logo.png'),
-          menu1(),
-          menu2(),
+          menu1(context),
+          menu2(context),
           menu3(context),
           configuraciones(),
           cerrarSesion()
@@ -432,7 +432,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     );
   }
 
-  Widget menu1() {
+  Widget menu1(BuildContext context) {
     return Container(
       child: FlatButton(
         child: Row(
@@ -451,12 +451,14 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             )
           ],
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed('/pago');
+        },
       ),
     );
   }
 
-  Widget menu2() {
+  Widget menu2(BuildContext context) {
     return Container(
       child: FlatButton(
         child: Row(

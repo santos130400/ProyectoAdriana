@@ -21,7 +21,7 @@ import 'package:prueba_apliacion/Test/Tejidos.dart';
 import 'package:prueba_apliacion/Test/Labios.dart';
 import 'package:prueba_apliacion/Resultados/CabelloResultados.dart';
 import 'package:prueba_apliacion/Resultados/MaquillajeResultados.dart';
-
+import 'package:prueba_apliacion/Pago.dart';
 
 Test resul = new Test();
 void main() {
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Inicio(),
+        home: Pago(),
         routes: <String, WidgetBuilder>{
           '/inicio': (BuildContext context) => new Inicio(),
           '/menu': (BuildContext context) => new MenuPrincipal(),

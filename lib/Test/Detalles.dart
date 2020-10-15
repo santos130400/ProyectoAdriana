@@ -124,9 +124,6 @@ class _Detalles extends State<Detalles> {
                       radioItem1 = val;
                     });
                   },
-                ),
-                Container(
-                  height: 80,
                 )
               ]),
             ],

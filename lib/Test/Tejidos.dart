@@ -101,9 +101,6 @@ class _Tejidos extends State<Tejidos> {
                         });
                       },
                     ),
-                    Container(
-                      height: 80,
-                    )
                   ],
                 )),
           ],
@@ -135,19 +132,20 @@ class _Tejidos extends State<Tejidos> {
           decoration:
               new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
           child: FlatButton(
-              onPressed: () {
-                if (radioItem1 != 0) {
-                  setState(() {
-                    opacity9 = 0;
-                  });
-                  Navigator.of(context).pushNamed('/caracter');
-                  resul.tejido = radioItem1;
-                } else {
-                  setState(() {
-                    opacity9 = 255;
-                  });
-                }
-              },
+             onPressed: () {
+                      if(radioItem1!=0){
+                        setState(() {
+                            opacity9 = 0;
+                          });
+                        Navigator.of(context).pushNamed('/caracter');
+                        resul.tejido=radioItem1;
+                      }else{
+                        setState(() {
+                            opacity9 = 255;
+                          });
+                      }
+                      
+                    },
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[

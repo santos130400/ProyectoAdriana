@@ -549,7 +549,9 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               )
             ],
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushNamed('/inicio');
+          },
         ),
       ),
     ));

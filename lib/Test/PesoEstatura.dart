@@ -16,194 +16,212 @@ class _PesoEstatura extends State<PesoEstatura> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: <Widget>[
-          barraNavegacion(context),
-          Padding(
-            padding: EdgeInsets.only(left: 25.0),
-            child: Column(
+      body: Stack(
+        children: [
+          Container(
+            child: ListView(
               children: <Widget>[
-                Container(
-                  margin: EdgeInsets.only(
-                      top: 10, left: 100, right: 100, bottom: 10),
-                  child: Text(
-                    "SELECCIONA TU PESO Y ESTATURA",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromARGB(255, 92, 68, 56),
-                    ),
-                  ),
-                ),
-                new Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 30),
-                          child: Image(
-                            image: AssetImage('assets/modelo.jpg'),
-                            width: 150,
-                            height: 300,
-                            alignment: Alignment.center,
+                barraNavegacion(context),
+                Padding(
+                  padding: EdgeInsets.only(left: 25.0),
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(
+                            top: 10, left: 100, right: 100, bottom: 10),
+                        child: Text(
+                          "SELECCIONA TU PESO Y ESTATURA",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 92, 68, 56),
                           ),
                         ),
-                        Row(
-                          children: [
-                            Container(
-                              height: 300,
-                              child: FlutterSlider(
-                                axis: Axis.vertical,
-                                values: [valAlt],
-                                rtl: true,
-                                onDragging: (index, lowerValue, upperValue) {
-                                  valAlt = lowerValue;
-                                  setState(() {});
-                                },
-                                max: 250,
-                                min: 0,
-                                handler: FlutterSliderHandler(
-                                  decoration: BoxDecoration(),
-                                  child: Material(
-                                    type: MaterialType.canvas,
-                                    color: Colors.transparent,
-                                    elevation: 0,
-                                    child: Container(
-                                      padding: EdgeInsets.all(5),
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
+                      ),
+                      new Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 30),
+                                child: Image(
+                                  image: AssetImage('assets/modelo.jpg'),
+                                  width: 150,
+                                  height: 300,
+                                  alignment: Alignment.center,
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    height: 300,
+                                    child: FlutterSlider(
+                                      axis: Axis.vertical,
+                                      values: [valAlt],
+                                      rtl: true,
+                                      onDragging:
+                                          (index, lowerValue, upperValue) {
+                                        valAlt = lowerValue;
+                                        setState(() {});
+                                      },
+                                      max: 250,
+                                      min: 0,
+                                      handler: FlutterSliderHandler(
+                                        decoration: BoxDecoration(),
+                                        child: Material(
+                                          type: MaterialType.canvas,
+                                          color: Colors.transparent,
+                                          elevation: 0,
+                                          child: Container(
+                                            padding: EdgeInsets.all(5),
+                                            decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                border: Border.all(
+                                                    color: Colors.brown,
+                                                    width: 5),
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(57))),
+                                          ),
+                                        ),
+                                      ),
+                                      trackBar: FlutterSliderTrackBar(
+                                        inactiveTrackBarHeight: 10,
+                                        activeTrackBarHeight: 15,
+                                        inactiveTrackBar: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          color: Colors.black12,
                                           border: Border.all(
-                                              color: Colors.brown, width: 5),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(57))),
+                                              width: 3, color: Colors.brown),
+                                        ),
+                                        activeTrackBar: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            color: Colors.brown.withOpacity(1)),
+                                      ),
                                     ),
                                   ),
-                                ),
-                                trackBar: FlutterSliderTrackBar(
-                                  inactiveTrackBarHeight: 10,
-                                  activeTrackBarHeight: 15,
-                                  inactiveTrackBar: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Colors.black12,
-                                    border: Border.all(
-                                        width: 3, color: Colors.brown),
-                                  ),
-                                  activeTrackBar: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: Colors.brown.withOpacity(1)),
+                                  RotatedBox(
+                                      quarterTurns: 1,
+                                      child: Text(
+                                        'ALTURA: ' +
+                                            valAlt.toInt().toString() +
+                                            ' cm',
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color(0xFF5C4438)),
+                                      )),
+                                  Padding(padding: EdgeInsets.only(right: 30))
+                                ],
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10, left: 20),
+                            child: Text(
+                              'PESO: ' + valBot.toInt().toString() + ' Kg',
+                              style: TextStyle(
+                                  fontSize: 20, color: Color(0xFF5C4438)),
+                            ),
+                          ),
+                          FlutterSlider(
+                            axis: Axis.horizontal,
+                            values: [valBot],
+                            rtl: false,
+                            max: 200,
+                            min: 0,
+                            onDragging: (index, lowerValue, upperValue) {
+                              valBot = lowerValue;
+                              setState(() {});
+                            },
+                            handler: FlutterSliderHandler(
+                              decoration: BoxDecoration(),
+                              child: Material(
+                                type: MaterialType.canvas,
+                                color: Colors.transparent,
+                                elevation: 0,
+                                child: Container(
+                                  padding: EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(
+                                          color: Colors.brown, width: 5),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(57))),
                                 ),
                               ),
                             ),
-                            RotatedBox(
-                                quarterTurns: 1,
-                                child: Text(
-                                  'ALTURA: ' +
-                                      valAlt.toInt().toString() +
-                                      ' cm',
-                                  style: TextStyle(
-                                      fontSize: 20, color: Color(0xFF5C4438)),
-                                )),
-                            Padding(padding: EdgeInsets.only(right: 30))
-                          ],
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10, left: 20),
-                      child: Text(
-                        'PESO: ' + valBot.toInt().toString() + ' Kg',
-                        style:
-                            TextStyle(fontSize: 20, color: Color(0xFF5C4438)),
-                      ),
-                    ),
-                    FlutterSlider(
-                      axis: Axis.horizontal,
-                      values: [valBot],
-                      rtl: false,
-                      max: 200,
-                      min: 0,
-                      onDragging: (index, lowerValue, upperValue) {
-                        valBot = lowerValue;
-                        setState(() {});
-                      },
-                      handler: FlutterSliderHandler(
-                        decoration: BoxDecoration(),
-                        child: Material(
-                          type: MaterialType.canvas,
-                          color: Colors.transparent,
-                          elevation: 0,
-                          child: Container(
-                            padding: EdgeInsets.all(5),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
+                            trackBar: FlutterSliderTrackBar(
+                              inactiveTrackBarHeight: 10,
+                              activeTrackBarHeight: 15,
+                              inactiveTrackBar: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.black12,
                                 border:
-                                    Border.all(color: Colors.brown, width: 5),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(57))),
+                                    Border.all(width: 3, color: Colors.brown),
+                              ),
+                              activeTrackBar: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.brown.withOpacity(1)),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                      trackBar: FlutterSliderTrackBar(
-                        inactiveTrackBarHeight: 10,
-                        activeTrackBarHeight: 15,
-                        inactiveTrackBar: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.black12,
-                          border: Border.all(width: 3, color: Colors.brown),
-                        ),
-                        activeTrackBar: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.brown.withOpacity(1)),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),
           ),
-          Column(
-            children: [
-              Text(
-                'Seleccione ambas Opciones',
-                style: TextStyle(color: Color.fromARGB(opacity4, 255, 0, 0)),
-              ),
-              Container(
-                  height: 63.0,
-                  width: MediaQuery.of(context).size.width,
-                  padding: const EdgeInsets.only(top: 15, bottom: 15),
-                  decoration: new BoxDecoration(
-                      color: new Color.fromRGBO(255, 198, 165, 1)),
-                  child: FlatButton(
-                      onPressed: () {
-                        if (valAlt != 0 && valBot != 0) {
-                          setState(() {
-                            opacity4 = 0;
-                          });
-                          Navigator.of(context).pushNamed('/cuerpo');
-                          resul.estatura = valAlt.toInt();
-                          resul.peso = valBot.toInt();
-                        } else {
-                          setState(() {
-                            opacity4 = 255;
-                          });
-                        }
-                      },
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              'CONTINUAR',
-                              textAlign: TextAlign.center,
-                              textScaleFactor: 2.0,
-                              style: TextStyle(
-                                  color: new Color.fromRGBO(92, 68, 56, 1)),
-                            ),
-                          ]))),
-            ],
+          Container(
+            height: double.infinity,
+            alignment: Alignment.bottomCenter,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'Seleccione ambas opciones',
+                  style: TextStyle(color: Color.fromARGB(opacity4, 255, 0, 0)),
+                ),
+                Container(
+                    height: 63.0,
+                    width: MediaQuery.of(context).size.width,
+                    padding: const EdgeInsets.only(top: 15, bottom: 15),
+                    decoration: new BoxDecoration(
+                        color: new Color.fromRGBO(255, 198, 165, 1)),
+                    child: FlatButton(
+                        onPressed: () {
+                          if (valAlt != 0 && valBot != 0) {
+                            setState(() {
+                              opacity4 = 0;
+                            });
+                            Navigator.of(context).pushNamed('/cuerpo');
+                            resul.estatura = valAlt.toInt();
+                            resul.peso = valBot.toInt();
+                          } else {
+                            setState(() {
+                              opacity4 = 255;
+                            });
+                          }
+                        },
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                'CONTINUAR',
+                                textAlign: TextAlign.center,
+                                textScaleFactor: 2.0,
+                                style: TextStyle(
+                                    color: new Color.fromRGBO(92, 68, 56, 1)),
+                              ),
+                            ]))),
+              ],
+            ),
           )
         ],
       ),

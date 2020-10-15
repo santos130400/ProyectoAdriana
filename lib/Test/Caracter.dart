@@ -117,38 +117,45 @@ class _Caracter extends State<Caracter> {
                   'Seleccione una Opción',
                   style: TextStyle(color: Color.fromARGB(opacity10, 255, 0, 0)),
                 ),
-                continuar(context),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Container(
+                      height: 63.0,
+                      width: MediaQuery.of(context).size.width,
+                      padding: const EdgeInsets.only(top: 15, bottom: 15),
+                      decoration: new BoxDecoration(
+                          color: new Color.fromRGBO(255, 198, 165, 1)),
+                      child: FlatButton(
+                          onPressed: () {
+                            if (radioItem1 != 0) {
+                              setState(() {
+                                opacity10 = 0;
+                              });
+                              Navigator.of(context).pushNamed('/preferencias');
+                              resul.carac = radioItem1;
+                            } else {
+                              setState(() {
+                                opacity10 = 255;
+                              });
+                            }
+                          },
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  'CONTINUAR',
+                                  textAlign: TextAlign.center,
+                                  textScaleFactor: 2.0,
+                                  style: TextStyle(
+                                      color: new Color.fromRGBO(92, 68, 56, 1)),
+                                ),
+                              ]))),
+                )
               ],
             ))
       ],
     ));
   }
-}
-
-Widget continuar(BuildContext context) {
-  return Padding(
-    padding: const EdgeInsets.only(top: 10),
-    child: Container(
-        height: 63.0,
-        width: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.only(top: 15, bottom: 15),
-        decoration:
-            new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
-        child: FlatButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed('/preferencias');
-            },
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'CONTINUAR',
-                    textAlign: TextAlign.center,
-                    textScaleFactor: 2.0,
-                    style: TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
-                  ),
-                ]))),
-  );
 }
 
 Widget texto() {

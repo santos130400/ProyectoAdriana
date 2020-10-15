@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "608643322036",
-    "firebase_url": "https://proyectoadriana-da8cd.firebaseio.com",
-    "project_id": "proyectoadriana-da8cd",
-    "storage_bucket": "proyectoadriana-da8cd.appspot.com"
+    "project_number": "732492579132",
+    "firebase_url": "https://proyectoadriana-ddd65.firebaseio.com",
+    "project_id": "proyectoadriana-ddd65",
+    "storage_bucket": "proyectoadriana-ddd65.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:608643322036:android:9962e2138cbe8832e287e1",
+        "mobilesdk_app_id": "1:732492579132:android:7578d6763fc7fd65acde39",
         "android_client_info": {
           "package_name": "com.example.prueba_apliacion"
         }
       },
       "oauth_client": [
         {
-          "client_id": "608643322036-uhtnsb6i8mlrhfvve0ge328l30l2rgm6.apps.googleusercontent.com",
+          "client_id": "732492579132-ak2f63it4v4tfh52fcppv5js5pg54u08.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCBjHTGKw1NFWm9xIvmjSJbCQQEbe4gS7E"
+          "current_key": "AIzaSyD2yON6pk5hxsZXLZdfdUDDGtg7DTIcKnE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "608643322036-uhtnsb6i8mlrhfvve0ge328l30l2rgm6.apps.googleusercontent.com",
+              "client_id": "732492579132-ak2f63it4v4tfh52fcppv5js5pg54u08.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

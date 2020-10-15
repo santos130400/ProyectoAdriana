@@ -101,6 +101,9 @@ class _Estilos extends State<Estilos> {
                         radioItem1 = val;
                       });
                     },
+                  ),
+                  Container(
+                    height: 80,
                   )
                 ])),
           ],

@@ -652,6 +652,9 @@ class _Paleta extends State<Paleta> {
                   ],
                 ),
               ),
+              Container(
+                height: 90,
+              )
             ])
           ]),
           Container(

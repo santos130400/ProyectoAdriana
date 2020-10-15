@@ -148,7 +148,9 @@ Widget barraNavegacion(BuildContext context) {
               ])),
       IconButton(
           icon: const Icon(Icons.keyboard_arrow_left),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushNamed('/menu');
+          },
           iconSize: 50,
           color: Color.fromRGBO(92, 68, 56, 1),
           padding: const EdgeInsets.only(left: 10.0, top: 20)),

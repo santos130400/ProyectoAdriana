@@ -105,6 +105,9 @@ class _Caracter extends State<Caracter> {
                 });
               },
             ),
+            Container(
+              height: 80,
+            )
           ],
         ),
         Container(

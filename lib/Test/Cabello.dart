@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-
 class Cabello extends StatefulWidget {
   Cabello({Key key}) : super(key: key);
   @override
@@ -18,7 +17,7 @@ double border7 = 0;
 double border8 = 0;
 double border9 = 0;
 int selected = 0;
-int opacity=0;
+int opacity = 0;
 
 class _Cabello extends State<Cabello> {
   // This widget is the root of your application.
@@ -26,10 +25,10 @@ class _Cabello extends State<Cabello> {
   Widget build(BuildContext context) {
     return new Scaffold(
         body: Stack(
-          children: [
-            Container(
-              child: ListView(
       children: [
+        Container(
+          child: ListView(
+            children: [
               Column(
                 children: [
                   barraNavegacion(context),
@@ -37,7 +36,7 @@ class _Cabello extends State<Cabello> {
                   Container(
                       padding: EdgeInsets.only(
                         right: 20,
-                        left:20,
+                        left: 20,
                         bottom: 15,
                       ),
                       child: CarouselSlider(
@@ -306,59 +305,59 @@ class _Cabello extends State<Cabello> {
                           );
                         }).toList(),
                       )),
-                  
-                ],
-              ),
-      ],
-    ),
-            ),
-
-            Container(
-              height: double.infinity,
-              alignment: Alignment.bottomCenter,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text('Seleccione una opción', 
-      style: TextStyle(
-              color: Color.fromARGB(opacity, 255, 0, 0)
-      ),),
                   Container(
-                      height: 63.0,
-                      width: MediaQuery.of(context).size.width,
-                      padding: const EdgeInsets.only(top: 15, bottom: 15),
-                      decoration:
-            new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
-                      child: FlatButton(
-            onPressed: () {
-              if(selected!=0){
-                  setState(() {
-                    opacity=0;
-                  });
-                Navigator.of(context).pushNamed('/ojos');
-                }else{
-                  setState(() {
-                    opacity=255;
-              });
-              }
-              
-            },
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'CONTINUAR',
-                    textAlign: TextAlign.center,
-                    textScaleFactor: 2.0,
-                    style:
-                        TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
-                  ),
-                ]))),
+                    height: 75,
+                  )
                 ],
               ),
-          )
-          ],
-        ));
+            ],
+          ),
+        ),
+        Container(
+          height: double.infinity,
+          alignment: Alignment.bottomCenter,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(
+                'Seleccione una opción',
+                style: TextStyle(color: Color.fromARGB(opacity, 255, 0, 0)),
+              ),
+              Container(
+                  height: 63.0,
+                  width: MediaQuery.of(context).size.width,
+                  padding: const EdgeInsets.only(top: 15, bottom: 15),
+                  decoration: new BoxDecoration(
+                      color: new Color.fromRGBO(255, 198, 165, 1)),
+                  child: FlatButton(
+                      onPressed: () {
+                        if (selected != 0) {
+                          setState(() {
+                            opacity = 0;
+                          });
+                          Navigator.of(context).pushNamed('/ojos');
+                        } else {
+                          setState(() {
+                            opacity = 255;
+                          });
+                        }
+                      },
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'CONTINUAR',
+                              textAlign: TextAlign.center,
+                              textScaleFactor: 2.0,
+                              style: TextStyle(
+                                  color: new Color.fromRGBO(92, 68, 56, 1)),
+                            ),
+                          ]))),
+            ],
+          ),
+        )
+      ],
+    ));
   }
 }
 
@@ -388,8 +387,6 @@ Widget texto() {
         )
       ]));
 }
-
-
 
 Widget barraNavegacion(BuildContext context) {
   return Stack(

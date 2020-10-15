@@ -172,6 +172,9 @@ class _PesoEstatura extends State<PesoEstatura> {
                           ),
                         ],
                       ),
+                      Container(
+                        height: 75,
+                      )
                     ],
                   ),
                 ),

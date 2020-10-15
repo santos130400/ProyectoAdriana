@@ -22,601 +22,643 @@ class _Paleta extends State<Paleta> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(children: [
-        Column(children: [
-          barraNavegacion(context),
-          texto(),
-          //opciones
-          //primera fila
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+      body: Stack(
+        children: [
+          ListView(children: [
+            Column(children: [
+              barraNavegacion(context),
+              texto(),
+              //opciones
+              //primera fila
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Text(
+                      '1',
+                      style: TextStyle(
+                          fontSize: 20, color: const Color(0xFF5C4438)),
+                    ),
+                  ),
+                  Stack(
+                    children: [
+                      //fila colores
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 6),
+                            child: Container(
+                                width: 68, height: 30, color: Colors.red[200]),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 6),
+                            child: Container(
+                                width: 68, height: 30, color: Colors.blue[200]),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 6),
+                            child: Container(
+                                width: 68,
+                                height: 30,
+                                color: Colors.greenAccent[200]),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 6),
+                            child: Container(
+                                width: 68, height: 30, color: Colors.pink[100]),
+                          )
+                        ],
+                      ),
+                      //contiene colores
+                      Container(
+                          child: GestureDetector(
+                        child: Opacity(
+                            opacity: 0.3,
+                            child: Container(
+                              width: 320,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(
+                                    color: Colors.black,
+                                    width: border1,
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.grey[700],
+                                        blurRadius: 2,
+                                        offset: Offset(-2, 2))
+                                  ]),
+                            )),
+                        onTap: () {
+                          setState(() {
+                            selected = 1;
+                            border1 = 4;
+                            border2 = 0;
+                            border3 = 0;
+                            border4 = 0;
+                            border5 = 0;
+                            border6 = 0;
+                            border7 = 0;
+                          });
+                        },
+                      ))
+                    ],
+                  )
+                ],
+              ),
+
+              //segunda fila
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text(
-                  '1',
-                  style:
-                      TextStyle(fontSize: 20, color: const Color(0xFF5C4438)),
+                padding: const EdgeInsets.only(top: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        '2',
+                        style: TextStyle(
+                            fontSize: 20, color: const Color(0xFF5C4438)),
+                      ),
+                    ),
+                    Stack(
+                      children: [
+                        //fila colores
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.grey[500]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68, height: 30, color: Colors.black),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.brown[700]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.red[900]),
+                            )
+                          ],
+                        ),
+                        //contiene colores
+                        Container(
+                            child: GestureDetector(
+                          child: Opacity(
+                              opacity: 0.3,
+                              child: Container(
+                                width: 320,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                        color: Colors.black, width: border2),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: Colors.grey[700],
+                                          blurRadius: 2,
+                                          offset: Offset(-2, 2))
+                                    ]),
+                              )),
+                          onTap: () {
+                            setState(() {
+                              selected = 2;
+                              border1 = 0;
+                              border2 = 4;
+                              border3 = 0;
+                              border4 = 0;
+                              border5 = 0;
+                              border6 = 0;
+                              border7 = 0;
+                            });
+                          },
+                        ))
+                      ],
+                    )
+                  ],
                 ),
               ),
-              Stack(
-                children: [
-                  //fila colores
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 5, horizontal: 6),
-                        child: Container(
-                            width: 68, height: 30, color: Colors.red[200]),
+              //tercer fila
+              Padding(
+                padding: const EdgeInsets.only(top: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        '3',
+                        style: TextStyle(
+                            fontSize: 20, color: const Color(0xFF5C4438)),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 5, horizontal: 6),
-                        child: Container(
-                            width: 68, height: 30, color: Colors.blue[200]),
+                    ),
+                    Stack(
+                      children: [
+                        //fila colores
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.red[900]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.lightBlue[600]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.green[900]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.yellow[600]),
+                            )
+                          ],
+                        ),
+                        //contiene colores
+                        Container(
+                            child: GestureDetector(
+                          child: Opacity(
+                              opacity: 0.3,
+                              child: Container(
+                                width: 320,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                      color: Colors.black,
+                                      width: border3,
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: Colors.grey[700],
+                                          blurRadius: 2,
+                                          offset: Offset(-2, 2))
+                                    ]),
+                              )),
+                          onTap: () {
+                            setState(() {
+                              selected = 3;
+                              border1 = 0;
+                              border2 = 0;
+                              border3 = 4;
+                              border4 = 0;
+                              border5 = 0;
+                              border6 = 0;
+                              border7 = 0;
+                            });
+                          },
+                        ))
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              //cuarta fila
+              Padding(
+                padding: const EdgeInsets.only(top: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        '4',
+                        style: TextStyle(
+                            fontSize: 20, color: const Color(0xFF5C4438)),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 5, horizontal: 6),
-                        child: Container(
-                            width: 68,
-                            height: 30,
-                            color: Colors.greenAccent[200]),
+                    ),
+                    Stack(
+                      children: [
+                        //fila colores
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.orange[400]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.blueGrey),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.lightBlue[900]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.indigo[900]),
+                            )
+                          ],
+                        ),
+                        //contiene colores
+                        Container(
+                            child: GestureDetector(
+                          child: Opacity(
+                              opacity: 0.3,
+                              child: Container(
+                                width: 320,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                        color: Colors.black, width: border4),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: Colors.grey[700],
+                                          blurRadius: 2,
+                                          offset: Offset(-2, 2))
+                                    ]),
+                              )),
+                          onTap: () {
+                            setState(() {
+                              selected = 4;
+                              border1 = 0;
+                              border2 = 0;
+                              border3 = 0;
+                              border4 = 4;
+                              border5 = 0;
+                              border6 = 0;
+                              border7 = 0;
+                            });
+                          },
+                        ))
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              //quinta fila
+              Padding(
+                padding: const EdgeInsets.only(top: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        '5',
+                        style: TextStyle(
+                            fontSize: 20, color: const Color(0xFF5C4438)),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 5, horizontal: 6),
-                        child: Container(
-                            width: 68, height: 30, color: Colors.pink[100]),
-                      )
-                    ],
-                  ),
-                  //contiene colores
-                  Container(
-                      child: GestureDetector(
-                    child: Opacity(
-                        opacity: 0.3,
-                        child: Container(
-                          width: 320,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(
-                                color: Colors.black,
-                                width: border1,
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey[700],
-                                    blurRadius: 2,
-                                    offset: Offset(-2, 2))
-                              ]),
-                        )),
-                    onTap: () {
-                      setState(() {
-                        selected = 1;
-                        border1 = 4;
-                        border2 = 0;
-                        border3 = 0;
-                        border4 = 0;
-                        border5 = 0;
-                        border6 = 0;
-                        border7 = 0;
-                      });
-                    },
-                  ))
-                ],
-              )
-            ],
-          ),
+                    ),
+                    Stack(
+                      children: [
+                        //fila colores
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.blueGrey[400]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.brown[800]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.brown[400]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.brown[100]),
+                            )
+                          ],
+                        ),
+                        //contiene colores
+                        Container(
+                            child: GestureDetector(
+                          child: Opacity(
+                              opacity: 0.3,
+                              child: Container(
+                                width: 320,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                        color: Colors.black, width: border5),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: Colors.grey[700],
+                                          blurRadius: 2,
+                                          offset: Offset(-2, 2))
+                                    ]),
+                              )),
+                          onTap: () {
+                            setState(() {
+                              selected = 5;
+                              border1 = 0;
+                              border2 = 0;
+                              border3 = 0;
+                              border4 = 0;
+                              border5 = 4;
+                              border6 = 0;
+                              border7 = 0;
+                            });
+                          },
+                        ))
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              //sexta fila
+              Padding(
+                padding: const EdgeInsets.only(top: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        '6',
+                        style: TextStyle(
+                            fontSize: 20, color: const Color(0xFF5C4438)),
+                      ),
+                    ),
+                    Stack(
+                      children: [
+                        //fila colores
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.brown[800]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.red[900]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.grey[800]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.purple[900]),
+                            )
+                          ],
+                        ),
 
-          //segunda fila
-          Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Text(
-                    '2',
-                    style:
-                        TextStyle(fontSize: 20, color: const Color(0xFF5C4438)),
-                  ),
-                ),
-                Stack(
-                  children: [
-                    //fila colores
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.grey[500]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.black),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.brown[700]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.red[900]),
-                        )
+                        //contiene colores
+                        Container(
+                            child: GestureDetector(
+                          child: Opacity(
+                              opacity: 0.3,
+                              child: Container(
+                                width: 320,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                        color: Colors.black, width: border6),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: Colors.grey[700],
+                                          blurRadius: 2,
+                                          offset: Offset(-2, 2))
+                                    ]),
+                              )),
+                          onTap: () {
+                            setState(() {
+                              selected = 6;
+                              border1 = 0;
+                              border2 = 0;
+                              border3 = 0;
+                              border4 = 0;
+                              border5 = 0;
+                              border6 = 4;
+                              border7 = 0;
+                            });
+                          },
+                        ))
                       ],
-                    ),
-                    //contiene colores
-                    Container(
-                        child: GestureDetector(
-                      child: Opacity(
-                          opacity: 0.3,
-                          child: Container(
-                            width: 320,
-                            height: 40,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                    color: Colors.black, width: border2),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.grey[700],
-                                      blurRadius: 2,
-                                      offset: Offset(-2, 2))
-                                ]),
-                          )),
-                      onTap: () {
-                        setState(() {
-                          selected = 2;
-                          border1 = 0;
-                          border2 = 4;
-                          border3 = 0;
-                          border4 = 0;
-                          border5 = 0;
-                          border6 = 0;
-                          border7 = 0;
-                        });
-                      },
-                    ))
+                    )
                   ],
-                )
-              ],
-            ),
-          ),
-          //tercer fila
-          Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Text(
-                    '3',
-                    style:
-                        TextStyle(fontSize: 20, color: const Color(0xFF5C4438)),
-                  ),
                 ),
-                Stack(
+              ),
+              //septima fila
+              Padding(
+                padding: const EdgeInsets.only(top: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    //fila colores
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.red[900]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68,
-                              height: 30,
-                              color: Colors.lightBlue[600]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.green[900]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.yellow[600]),
-                        )
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        '7',
+                        style: TextStyle(
+                            fontSize: 20, color: const Color(0xFF5C4438)),
+                      ),
                     ),
-                    //contiene colores
-                    Container(
-                        child: GestureDetector(
-                      child: Opacity(
-                          opacity: 0.3,
-                          child: Container(
-                            width: 320,
-                            height: 40,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                  color: Colors.black,
-                                  width: border3,
-                                ),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.grey[700],
-                                      blurRadius: 2,
-                                      offset: Offset(-2, 2))
-                                ]),
-                          )),
-                      onTap: () {
-                        setState(() {
-                          selected = 3;
-                          border1 = 0;
-                          border2 = 0;
-                          border3 = 4;
-                          border4 = 0;
-                          border5 = 0;
-                          border6 = 0;
-                          border7 = 0;
-                        });
-                      },
-                    ))
+                    Stack(
+                      children: [
+                        //fila colores
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.red[700]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.redAccent[700]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68,
+                                  height: 30,
+                                  color: Colors.red[900]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 6),
+                              child: Container(
+                                  width: 68, height: 30, color: Colors.black),
+                            )
+                          ],
+                        ),
+                        //contiene colores
+                        Container(
+                            child: GestureDetector(
+                          child: Opacity(
+                              opacity: 0.3,
+                              child: Container(
+                                width: 320,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                        color: Colors.black, width: border7),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: Colors.grey[700],
+                                          blurRadius: 2,
+                                          offset: Offset(-2, 2))
+                                    ]),
+                              )),
+                          onTap: () {
+                            setState(() {
+                              selected = 7;
+                              border1 = 0;
+                              border2 = 0;
+                              border3 = 0;
+                              border4 = 0;
+                              border5 = 0;
+                              border6 = 0;
+                              border7 = 4;
+                            });
+                          },
+                        ))
+                      ],
+                    )
                   ],
-                )
-              ],
-            ),
-          ),
-          //cuarta fila
-          Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Text(
-                    '4',
-                    style:
-                        TextStyle(fontSize: 20, color: const Color(0xFF5C4438)),
-                  ),
                 ),
-                Stack(
-                  children: [
-                    //fila colores
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.orange[400]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.blueGrey),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68,
-                              height: 30,
-                              color: Colors.lightBlue[900]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.indigo[900]),
-                        )
-                      ],
-                    ),
-                    //contiene colores
-                    Container(
-                        child: GestureDetector(
-                      child: Opacity(
-                          opacity: 0.3,
-                          child: Container(
-                            width: 320,
-                            height: 40,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                    color: Colors.black, width: border4),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.grey[700],
-                                      blurRadius: 2,
-                                      offset: Offset(-2, 2))
-                                ]),
-                          )),
-                      onTap: () {
-                        setState(() {
-                          selected = 4;
-                          border1 = 0;
-                          border2 = 0;
-                          border3 = 0;
-                          border4 = 4;
-                          border5 = 0;
-                          border6 = 0;
-                          border7 = 0;
-                        });
-                      },
-                    ))
-                  ],
-                )
-              ],
-            ),
-          ),
-          //quinta fila
-          Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Text(
-                    '5',
-                    style:
-                        TextStyle(fontSize: 20, color: const Color(0xFF5C4438)),
-                  ),
-                ),
-                Stack(
-                  children: [
-                    //fila colores
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68,
-                              height: 30,
-                              color: Colors.blueGrey[400]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.brown[800]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.brown[400]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.brown[100]),
-                        )
-                      ],
-                    ),
-                    //contiene colores
-                    Container(
-                        child: GestureDetector(
-                      child: Opacity(
-                          opacity: 0.3,
-                          child: Container(
-                            width: 320,
-                            height: 40,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                    color: Colors.black, width: border5),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.grey[700],
-                                      blurRadius: 2,
-                                      offset: Offset(-2, 2))
-                                ]),
-                          )),
-                      onTap: () {
-                        setState(() {
-                          selected = 5;
-                          border1 = 0;
-                          border2 = 0;
-                          border3 = 0;
-                          border4 = 0;
-                          border5 = 4;
-                          border6 = 0;
-                          border7 = 0;
-                        });
-                      },
-                    ))
-                  ],
-                )
-              ],
-            ),
-          ),
-          //sexta fila
-          Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Text(
-                    '6',
-                    style:
-                        TextStyle(fontSize: 20, color: const Color(0xFF5C4438)),
-                  ),
-                ),
-                Stack(
-                  children: [
-                    //fila colores
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.brown[800]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.red[900]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.grey[800]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.purple[900]),
-                        )
-                      ],
-                    ),
-
-                    //contiene colores
-                    Container(
-                        child: GestureDetector(
-                      child: Opacity(
-                          opacity: 0.3,
-                          child: Container(
-                            width: 320,
-                            height: 40,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                    color: Colors.black, width: border6),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.grey[700],
-                                      blurRadius: 2,
-                                      offset: Offset(-2, 2))
-                                ]),
-                          )),
-                      onTap: () {
-                        setState(() {
-                          selected = 6;
-                          border1 = 0;
-                          border2 = 0;
-                          border3 = 0;
-                          border4 = 0;
-                          border5 = 0;
-                          border6 = 4;
-                          border7 = 0;
-                        });
-                      },
-                    ))
-                  ],
-                )
-              ],
-            ),
-          ),
-          //septima fila
-          Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Text(
-                    '7',
-                    style:
-                        TextStyle(fontSize: 20, color: const Color(0xFF5C4438)),
-                  ),
-                ),
-                Stack(
-                  children: [
-                    //fila colores
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.red[700]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68,
-                              height: 30,
-                              color: Colors.redAccent[700]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.red[900]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 6),
-                          child: Container(
-                              width: 68, height: 30, color: Colors.black),
-                        )
-                      ],
-                    ),
-                    //contiene colores
-                    Container(
-                        child: GestureDetector(
-                      child: Opacity(
-                          opacity: 0.3,
-                          child: Container(
-                            width: 320,
-                            height: 40,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                    color: Colors.black, width: border7),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.grey[700],
-                                      blurRadius: 2,
-                                      offset: Offset(-2, 2))
-                                ]),
-                          )),
-                      onTap: () {
-                        setState(() {
-                          selected = 7;
-                          border1 = 0;
-                          border2 = 0;
-                          border3 = 0;
-                          border4 = 0;
-                          border5 = 0;
-                          border6 = 0;
-                          border7 = 4;
-                        });
-                      },
-                    ))
-                  ],
-                )
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
+              ),
+            ])
+          ]),
+          Container(
+            height: double.infinity,
+            alignment: Alignment.bottomCenter,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
                   'Seleccione una Opción',
@@ -656,8 +698,8 @@ class _Paleta extends State<Paleta> {
               ],
             ),
           )
-        ])
-      ]),
+        ],
+      ),
     );
   }
 }

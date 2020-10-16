@@ -1,9 +1,13 @@
 import 'dart:io';
 import 'package:async/async.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class MenuPrincipal extends StatefulWidget {
+  final User user;
+
+  const MenuPrincipal({Key key, this.user}) : super(key: key);
   @override
   _MenuPrincipalState createState() => _MenuPrincipalState();
 }
@@ -11,6 +15,7 @@ class MenuPrincipal extends StatefulWidget {
 class _MenuPrincipalState extends State<MenuPrincipal> {
   var scaffoldKey = GlobalKey<ScaffoldState>();
   File imageFile;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +77,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 10),
                       child: Text(
-                        'DIANA DÍAZ',
+                        widget.user.displayName,
                         style: TextStyle(
                             color: Color(0xFF5C4438),
                             fontWeight: FontWeight.bold,
@@ -549,11 +554,17 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               )
             ],
           ),
-          onPressed: () {
-            Navigator.of(context).pushNamed('/inicio');
+          onPressed: () async {
+            _cerrarSesion().whenComplete(() {
+              Navigator.of(context).pushNamed('/inicio');
+            });
           },
         ),
       ),
     ));
+  }
+
+  Future _cerrarSesion() async {
+    await _auth.signOut();
   }
 }

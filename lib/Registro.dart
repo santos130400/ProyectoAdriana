@@ -1,100 +1,100 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'dart:async';
-import 'package:prueba_apliacion/MODELO/Usuarios.dart';
 
 class Registro extends StatefulWidget {
   @override
   _RegistroState createState() => _RegistroState();
 }
 
-final usuariosReference =
-    FirebaseDatabase.instance.reference().child('usuario');
-
 class _RegistroState extends State<Registro> {
-  List<Usuarios> items;
-  StreamSubscription<Event> _adicionarUsuarios;
-  StreamSubscription<Event> _actualizarUsuarios;
-
-  @override
-  void initState() {
-    // ignore: todo
-    // TODO: implement initState
-    super.initState();
-    items = new List();
-    _adicionarUsuarios = usuariosReference.onChildAdded.listen(_adicionarU);
-    _actualizarUsuarios = usuariosReference.onChildAdded.listen(_actualizarU);
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    _adicionarUsuarios.cancel();
-    _actualizarUsuarios.cancel();
-  }
-
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  TextEditingController recibeNombre = TextEditingController();
+  TextEditingController recibeTelefono = TextEditingController();
+  TextEditingController recibeCorreo = TextEditingController();
+  TextEditingController recibeContrasena = TextEditingController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  double tamano = 410;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/fondo1.png'), fit: BoxFit.fill)),
-      child: ListView(children: [
-        Stack(children: [
-          textoUnete(),
-          Column(
-            children: [
-              panelContieneDatos(),
-              //boton confrimar
-              Padding(
-                  padding: const EdgeInsets.only(top: 20),
-                  child: Container(
-                    width: 350,
-                    height: 50,
-                    decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey[200],
-                              blurRadius: 0,
-                              offset: Offset(0, 3))
-                        ],
-                        color: Colors.grey[100],
-                        borderRadius: BorderRadius.circular(30)),
-                    child: RaisedButton(
-                        color: const Color(0xffffc6a5),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Text('CREAR CUENTA',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: const Color(0xFF5C4438),
-                                fontSize: 25)),
-                        onPressed: () {
-                          Navigator.of(context).pushNamed('/registro');
-                        }),
-                  )),
-              textosFinales()
-            ],
-          ),
-          //ciculo sobre puesto
-          circuloFoto(),
-          Align(
-            alignment: Alignment.center,
-            child: Column(children: [
-              cuadroUsuario(),
-              cuadroCorreo(),
-              cuadroTelefono(),
-              cuadroClave(),
-              cuadroConfromacion()
+        key: _scaffoldKey,
+        body: Form(
+          key: _formkey,
+          child: Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/fondo1.png'), fit: BoxFit.fill)),
+            child: ListView(children: [
+              Stack(children: [
+                textoUnete(),
+                Column(
+                  children: [
+                    panelContieneDatos(),
+                    //boton confrimar
+                    Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: Container(
+                          width: 350,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.grey[200],
+                                    blurRadius: 0,
+                                    offset: Offset(0, 3))
+                              ],
+                              color: Colors.grey[100],
+                              borderRadius: BorderRadius.circular(30)),
+                          child: RaisedButton(
+                              color: const Color(0xffffc6a5),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Text('CREAR CUENTA',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: const Color(0xFF5C4438),
+                                      fontSize: 25)),
+                              onPressed: () async {
+                                if (_formkey.currentState.validate()) {
+                                  _registrarCuenta();
+                                }
+                              }),
+                        )),
+                    textosFinales()
+                  ],
+                ),
+                //ciculo sobre puesto
+                circuloFoto(),
+              ]),
             ]),
-          )
-        ]),
-      ]),
-    ));
+          ),
+        ));
+  }
+
+  void _registrarCuenta() async {
+    try {
+      final User usuario = (await _auth.createUserWithEmailAndPassword(
+              email: recibeCorreo.text, password: recibeContrasena.text))
+          .user;
+
+      if (usuario != null) {
+        if (!usuario.emailVerified) {
+          await usuario.sendEmailVerification();
+        }
+        await usuario.updateProfile(displayName: recibeNombre.text);
+        Navigator.of(context).pushNamed('/inicio');
+      }
+    } catch (e) {
+      _scaffoldKey.currentState.showSnackBar(SnackBar(
+        content: Text(
+          e.toString(),
+          textAlign: TextAlign.center,
+        ),
+      ));
+      print(e.message);
+    }
   }
 
   Widget textosFinales() {
@@ -133,103 +133,118 @@ class _RegistroState extends State<Registro> {
   }
 
   Widget cuadroUsuario() {
-    return Padding(
-        padding: EdgeInsets.only(top: 215, right: 120),
-        child: Stack(children: [
-          Container(
-              height: 18,
-              width: 150,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: const Color(0xffffc6a5),
-              )),
-          Padding(
-              padding: const EdgeInsets.only(top: 1, left: 20),
-              child: Text(
-                'Nombre completo',
-                style: TextStyle(color: const Color(0xFF5C4438), fontSize: 13),
-              ))
-        ]));
+    return Center(
+      child: Padding(
+          padding: EdgeInsets.only(top: 217, right: 120),
+          child: Stack(children: [
+            Container(
+                height: 18,
+                width: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: const Color(0xffffc6a5),
+                )),
+            Padding(
+                padding: const EdgeInsets.only(top: 1, left: 20),
+                child: Text(
+                  'Nombre completo',
+                  style:
+                      TextStyle(color: const Color(0xFF5C4438), fontSize: 13),
+                ))
+          ])),
+    );
   }
 
   Widget cuadroCorreo() {
-    return Padding(
-        padding: EdgeInsets.only(top: 45, right: 120),
-        child: Stack(children: [
-          Container(
-              height: 18,
-              width: 150,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: const Color(0xffffc6a5),
-              )),
-          Padding(
-              padding: const EdgeInsets.only(top: 1, left: 20),
-              child: Text(
-                'Correo electronico',
-                style: TextStyle(color: const Color(0xFF5C4438), fontSize: 13),
-              ))
-        ]));
+    return Center(
+      child: Padding(
+          padding: EdgeInsets.only(top: 7, right: 120),
+          child: Stack(children: [
+            Container(
+                height: 18,
+                width: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: const Color(0xffffc6a5),
+                )),
+            Padding(
+                padding: const EdgeInsets.only(top: 1, left: 20),
+                child: Text(
+                  'Correo electronico',
+                  style:
+                      TextStyle(color: const Color(0xFF5C4438), fontSize: 13),
+                ))
+          ])),
+    );
   }
 
   Widget cuadroTelefono() {
-    return Padding(
-        padding: EdgeInsets.only(top: 45, right: 120),
-        child: Stack(children: [
-          Container(
-              height: 18,
-              width: 150,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: const Color(0xffffc6a5),
-              )),
-          Padding(
-              padding: const EdgeInsets.only(top: 1, left: 50),
-              child: Text(
-                'Teléfono',
-                style: TextStyle(color: const Color(0xFF5C4438), fontSize: 13),
-              ))
-        ]));
+    return Center(
+      child: Padding(
+          padding: EdgeInsets.only(top: 7, right: 120),
+          child: Stack(children: [
+            Container(
+                height: 18,
+                width: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: const Color(0xffffc6a5),
+                )),
+            Padding(
+                padding: const EdgeInsets.only(top: 1, left: 50),
+                child: Text(
+                  'Teléfono',
+                  style:
+                      TextStyle(color: const Color(0xFF5C4438), fontSize: 13),
+                ))
+          ])),
+    );
   }
 
   Widget cuadroClave() {
-    return Padding(
-        padding: EdgeInsets.only(top: 45, right: 120),
-        child: Stack(children: [
-          Container(
-              height: 18,
-              width: 150,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: const Color(0xffffc6a5),
-              )),
-          Padding(
-              padding: const EdgeInsets.only(top: 1, left: 40),
-              child: Text(
-                'Contraseña',
-                style: TextStyle(color: const Color(0xFF5C4438), fontSize: 13),
-              ))
-        ]));
+    return Center(
+      child: Padding(
+          padding: EdgeInsets.only(top: 7, right: 120),
+          child: Stack(children: [
+            Container(
+                height: 18,
+                width: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: const Color(0xffffc6a5),
+                )),
+            Padding(
+                padding: const EdgeInsets.only(top: 1, left: 40),
+                child: Text(
+                  'Contraseña',
+                  style:
+                      TextStyle(color: const Color(0xFF5C4438), fontSize: 13),
+                ))
+          ])),
+    );
   }
 
   Widget cuadroConfromacion() {
-    return Padding(
-        padding: EdgeInsets.only(top: 45, right: 120),
-        child: Stack(children: [
-          Container(
-              height: 18,
-              width: 150,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: const Color(0xffffc6a5),
-              )),
-          Padding(
-              padding: const EdgeInsets.only(top: 1, left: 10),
-              child: Text(
-                'Confirmar contraseña',
-                style: TextStyle(color: const Color(0xFF5C4438), fontSize: 13),
-              ))
-        ]));
+    return Center(
+      child: Padding(
+          padding: EdgeInsets.only(top: 7, right: 120),
+          child: Stack(children: [
+            Container(
+                height: 18,
+                width: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: const Color(0xffffc6a5),
+                )),
+            Padding(
+                padding: const EdgeInsets.only(top: 1, left: 10),
+                child: Text(
+                  'Confirmar contraseña',
+                  style:
+                      TextStyle(color: const Color(0xFF5C4438), fontSize: 13),
+                ))
+          ])),
+    );
   }
 
   Widget textoUnete() {
@@ -251,7 +266,7 @@ class _RegistroState extends State<Registro> {
           padding: EdgeInsets.only(top: 140),
           child: Container(
             width: 375,
-            height: 410,
+            height: tamano,
             decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
@@ -310,26 +325,37 @@ class _RegistroState extends State<Registro> {
   }
 
   Widget cajaNombre() {
-    return Stack(children: [
-      Center(
-        child: Padding(
-          padding: EdgeInsets.only(top: 225),
-          child: Container(
-              width: 350,
-              height: 45,
-              decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey, blurRadius: 2, offset: Offset(0, 1))
-                  ],
-                  border: Border.all(width: 2, color: const Color(0xffffc6a5)),
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(5))),
+    return Stack(
+      children: [
+        Container(
+          child: Stack(children: [
+            Center(
+              child: Padding(
+                padding: EdgeInsets.only(top: 225),
+                child: Container(
+                    width: 350,
+                    height: 45,
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 2,
+                              offset: Offset(0, 1))
+                        ],
+                        border: Border.all(
+                            width: 2, color: const Color(0xffffc6a5)),
+                        color: Colors.grey[100],
+                        borderRadius: BorderRadius.circular(5))),
+              ),
+            ),
+            Padding(
+                padding: EdgeInsets.only(top: 225, left: 40),
+                child: textoNombre()),
+          ]),
         ),
-      ),
-      Padding(
-          padding: EdgeInsets.only(top: 225, left: 40), child: textoNombre()),
-    ]);
+        cuadroUsuario()
+      ],
+    );
   }
 
   Widget textoNombre() {
@@ -340,6 +366,16 @@ class _RegistroState extends State<Registro> {
           width: 300,
           color: Color(0x00000000),
           child: TextFormField(
+              controller: recibeNombre,
+              validator: (value) {
+                setState(() {
+                  tamano = 500;
+                });
+                if (value.isEmpty) {
+                  return 'Escriba su nombre';
+                }
+                return null;
+              },
               decoration: InputDecoration(
                   icon: Icon(Icons.person_outline,
                       color: const Color(0xFF5C4438)),
@@ -350,26 +386,37 @@ class _RegistroState extends State<Registro> {
   }
 
   Widget cajaCorreo() {
-    return Stack(children: [
-      Center(
-        child: Padding(
-          padding: EdgeInsets.only(top: 15),
-          child: Container(
-              width: 350,
-              height: 45,
-              decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey, blurRadius: 2, offset: Offset(0, 1))
-                  ],
-                  border: Border.all(width: 2, color: const Color(0xffffc6a5)),
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(5))),
+    return Stack(
+      children: [
+        Container(
+          child: Stack(children: [
+            Center(
+              child: Padding(
+                padding: EdgeInsets.only(top: 15),
+                child: Container(
+                    width: 350,
+                    height: 45,
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 2,
+                              offset: Offset(0, 1))
+                        ],
+                        border: Border.all(
+                            width: 2, color: const Color(0xffffc6a5)),
+                        color: Colors.grey[100],
+                        borderRadius: BorderRadius.circular(5))),
+              ),
+            ),
+            Padding(
+                padding: EdgeInsets.only(top: 15, left: 40),
+                child: textoCorreo()),
+          ]),
         ),
-      ),
-      Padding(
-          padding: EdgeInsets.only(top: 15, left: 40), child: textoCorreo()),
-    ]);
+        cuadroCorreo()
+      ],
+    );
   }
 
   Widget textoCorreo() {
@@ -380,6 +427,16 @@ class _RegistroState extends State<Registro> {
           width: 300,
           color: Color(0x00000000),
           child: TextFormField(
+              controller: recibeCorreo,
+              validator: (value) {
+                setState(() {
+                  tamano = 500;
+                });
+                if (value.isEmpty) {
+                  return 'Escriba su correo';
+                }
+                return null;
+              },
               decoration: InputDecoration(
                   icon:
                       Icon(Icons.mail_outline, color: const Color(0xFF5C4438)),
@@ -390,26 +447,37 @@ class _RegistroState extends State<Registro> {
   }
 
   Widget cajaTelefono() {
-    return Stack(children: [
-      Center(
-        child: Padding(
-          padding: EdgeInsets.only(top: 15),
-          child: Container(
-              width: 350,
-              height: 45,
-              decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey, blurRadius: 2, offset: Offset(0, 1))
-                  ],
-                  border: Border.all(width: 2, color: const Color(0xffffc6a5)),
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(5))),
+    return Stack(
+      children: [
+        Container(
+          child: Stack(children: [
+            Center(
+              child: Padding(
+                padding: EdgeInsets.only(top: 15),
+                child: Container(
+                    width: 350,
+                    height: 45,
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 2,
+                              offset: Offset(0, 1))
+                        ],
+                        border: Border.all(
+                            width: 2, color: const Color(0xffffc6a5)),
+                        color: Colors.grey[100],
+                        borderRadius: BorderRadius.circular(5))),
+              ),
+            ),
+            Padding(
+                padding: EdgeInsets.only(top: 15, left: 40),
+                child: textoTelefono()),
+          ]),
         ),
-      ),
-      Padding(
-          padding: EdgeInsets.only(top: 15, left: 40), child: textoTelefono()),
-    ]);
+        cuadroTelefono()
+      ],
+    );
   }
 
   Widget textoTelefono() {
@@ -420,6 +488,16 @@ class _RegistroState extends State<Registro> {
                 width: 300,
                 color: Color(0x00000000),
                 child: TextFormField(
+                    controller: recibeTelefono,
+                    validator: (value) {
+                      setState(() {
+                        tamano = 500;
+                      });
+                      if (value.isEmpty) {
+                        return 'Escriba su correo';
+                      }
+                      return null;
+                    },
                     decoration: InputDecoration(
                         icon: Icon(Icons.phone_android,
                             color: const Color(0xFF5C4438)),
@@ -427,27 +505,37 @@ class _RegistroState extends State<Registro> {
   }
 
   Widget cajaContrasena() {
-    return Stack(children: [
-      Center(
-        child: Padding(
-          padding: EdgeInsets.only(top: 15),
-          child: Container(
-              width: 350,
-              height: 45,
-              decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey, blurRadius: 2, offset: Offset(0, 1))
-                  ],
-                  border: Border.all(width: 2, color: const Color(0xffffc6a5)),
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(5))),
+    return Stack(
+      children: [
+        Container(
+          child: Stack(children: [
+            Center(
+              child: Padding(
+                padding: EdgeInsets.only(top: 15),
+                child: Container(
+                    width: 350,
+                    height: 45,
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 2,
+                              offset: Offset(0, 1))
+                        ],
+                        border: Border.all(
+                            width: 2, color: const Color(0xffffc6a5)),
+                        color: Colors.grey[100],
+                        borderRadius: BorderRadius.circular(5))),
+              ),
+            ),
+            Padding(
+                padding: EdgeInsets.only(top: 15, left: 40),
+                child: textoContrasena()),
+          ]),
         ),
-      ),
-      Padding(
-          padding: EdgeInsets.only(top: 15, left: 40),
-          child: textoContrasena()),
-    ]);
+        cuadroClave()
+      ],
+    );
   }
 
   Widget textoContrasena() {
@@ -458,6 +546,16 @@ class _RegistroState extends State<Registro> {
                 width: 300,
                 color: Color(0x00000000),
                 child: TextFormField(
+                    controller: recibeContrasena,
+                    validator: (value) {
+                      setState(() {
+                        tamano = 500;
+                      });
+                      if (value.length < 6) {
+                        return 'La contraseña debe tener mas de 6 caracteres';
+                      }
+                      return null;
+                    },
                     decoration: InputDecoration(
                         icon: Icon(Icons.lock_outline,
                             color: const Color(0xFF5C4438)),
@@ -466,27 +564,37 @@ class _RegistroState extends State<Registro> {
   }
 
   Widget cajaConfirmacion() {
-    return Stack(children: [
-      Center(
-        child: Padding(
-          padding: EdgeInsets.only(top: 15),
-          child: Container(
-              width: 350,
-              height: 45,
-              decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey, blurRadius: 2, offset: Offset(0, 1))
-                  ],
-                  border: Border.all(width: 2, color: const Color(0xffffc6a5)),
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(5))),
+    return Stack(
+      children: [
+        Container(
+          child: Stack(children: [
+            Center(
+              child: Padding(
+                padding: EdgeInsets.only(top: 15),
+                child: Container(
+                    width: 350,
+                    height: 45,
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 2,
+                              offset: Offset(0, 1))
+                        ],
+                        border: Border.all(
+                            width: 2, color: const Color(0xffffc6a5)),
+                        color: Colors.grey[100],
+                        borderRadius: BorderRadius.circular(5))),
+              ),
+            ),
+            Padding(
+                padding: EdgeInsets.only(top: 15, left: 40),
+                child: textoConfirmacion()),
+          ]),
         ),
-      ),
-      Padding(
-          padding: EdgeInsets.only(top: 15, left: 40),
-          child: textoConfirmacion()),
-    ]);
+        cuadroConfromacion()
+      ],
+    );
   }
 
   Widget textoConfirmacion() {
@@ -497,25 +605,19 @@ class _RegistroState extends State<Registro> {
                 width: 300,
                 color: Color(0x00000000),
                 child: TextFormField(
+                    validator: (value) {
+                      setState(() {
+                        tamano = 500;
+                      });
+                      if (value != recibeContrasena.text) {
+                        return 'Las contraseñas no coinciden';
+                      }
+                      return null;
+                    },
                     decoration: InputDecoration(
                         icon: Icon(Icons.lock_outline,
                             color: const Color(0xFF5C4438)),
                         border: InputBorder.none),
                     obscureText: true))));
-  }
-
-  void _adicionarU(Event event) {
-    setState(() {
-      items.add(new Usuarios.fromSnapShot(event.snapshot));
-    });
-  }
-
-  void _actualizarU(Event event) {
-    var valorViejoUsiario =
-        items.singleWhere((usuario) => usuario.id == event.snapshot.key);
-    setState(() {
-      items[items.indexOf(valorViejoUsiario)] =
-          new Usuarios.fromSnapShot(event.snapshot);
-    });
   }
 }

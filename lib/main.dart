@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:prueba_apliacion/Inicio.dart';
 import 'package:prueba_apliacion/MenuPrincipal.dart';
@@ -22,10 +23,12 @@ import 'package:prueba_apliacion/Test/Labios.dart';
 import 'package:prueba_apliacion/Resultados/CabelloResultados.dart';
 import 'package:prueba_apliacion/Resultados/MaquillajeResultados.dart';
 import 'package:prueba_apliacion/Pago.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 Test resul = new Test();
-void main() {
-  //print(resul.getCara);
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

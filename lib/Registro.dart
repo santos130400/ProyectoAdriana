@@ -31,9 +31,10 @@ class _RegistroState extends State<Registro> {
                 Column(
                   children: [
                     panelContieneDatos(),
+                    textoVerificar(),
                     //boton confrimar
                     Padding(
-                        padding: const EdgeInsets.only(top: 20),
+                        padding: const EdgeInsets.only(top: 5),
                         child: Container(
                           width: 350,
                           height: 50,
@@ -99,7 +100,7 @@ class _RegistroState extends State<Registro> {
 
   Widget textosFinales() {
     return Padding(
-        padding: EdgeInsets.only(top: 5),
+        padding: EdgeInsets.only(top: 5, bottom: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -130,6 +131,22 @@ class _RegistroState extends State<Registro> {
                 ))
           ],
         ));
+  }
+
+  Widget textoVerificar() {
+    return Padding(
+        padding: EdgeInsets.only(top: 10),
+        child: Padding(
+            padding: const EdgeInsets.only(
+              top: 1,
+            ),
+            child: Text(
+              'Tras crear tu cuenta no olvides verificarla en tu correo',
+              style: TextStyle(
+                  color: const Color(0xFF5C4438),
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold),
+            )));
   }
 
   Widget cuadroUsuario() {
@@ -494,7 +511,7 @@ class _RegistroState extends State<Registro> {
                         tamano = 500;
                       });
                       if (value.isEmpty) {
-                        return 'Escriba su correo';
+                        return 'Escriba su teléfono';
                       }
                       return null;
                     },

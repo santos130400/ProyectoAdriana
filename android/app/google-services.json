@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "732492579132",
-    "firebase_url": "https://proyectoadriana-ddd65.firebaseio.com",
-    "project_id": "proyectoadriana-ddd65",
-    "storage_bucket": "proyectoadriana-ddd65.appspot.com"
+    "project_number": "907540718248",
+    "firebase_url": "https://aplicacionadrianarojas-b311a.firebaseio.com",
+    "project_id": "aplicacionadrianarojas-b311a",
+    "storage_bucket": "aplicacionadrianarojas-b311a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:732492579132:android:fe530d1864f57f21acde39",
+        "mobilesdk_app_id": "1:907540718248:android:6a94c274f5ba359e35589d",
         "android_client_info": {
           "package_name": "com.example.prueba_apliacion"
         }
       },
       "oauth_client": [
         {
-          "client_id": "732492579132-mvmufsel5oeggcbuckog78l8q0mojpiu.apps.googleusercontent.com",
+          "client_id": "907540718248-k8cdqocnv9f859lvriauoenkdj6754qs.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.prueba_apliacion",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "732492579132-ak2f63it4v4tfh52fcppv5js5pg54u08.apps.googleusercontent.com",
+          "client_id": "907540718248-n7bu8p0p9sa30063uev5lf8n45adiodb.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD2yON6pk5hxsZXLZdfdUDDGtg7DTIcKnE"
+          "current_key": "AIzaSyAwpMBwiuu9j9YuQgCi4rcB4qbrl-zr_vo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "732492579132-ak2f63it4v4tfh52fcppv5js5pg54u08.apps.googleusercontent.com",
+              "client_id": "907540718248-n7bu8p0p9sa30063uev5lf8n45adiodb.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

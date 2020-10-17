@@ -353,10 +353,10 @@ class _InicioState extends State<Inicio> {
       nombreid.setNombre = usuario.displayName;
     } catch (e) {
       if (e.toString() ==
-          'I/flutter (29925): A network error (such as timeout, interrupted connection or unreachable host) has occurred.') {
+          '[firebase_auth/network-request-failed] A network error (such as timeout, interrupted connection or unreachable host) has occurred.') {
         _scaffoldKey.currentState.showSnackBar(SnackBar(
           content: Text(
-            e.toString(),
+            'No te puedes conectar a la aplicación sin conexion a internet',
             textAlign: TextAlign.center,
           ),
         ));

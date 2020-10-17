@@ -88,13 +88,24 @@ class _RegistroState extends State<Registro> {
         Navigator.of(context).pushNamed('/inicio');
       }
     } catch (e) {
-      _scaffoldKey.currentState.showSnackBar(SnackBar(
-        content: Text(
-          e.toString(),
-          textAlign: TextAlign.center,
-        ),
-      ));
-      print(e.message);
+      if (e.toString() ==
+          '[firebase_auth/network-request-failed] A network error (such as timeout, interrupted connection or unreachable host) has occurred.') {
+        _scaffoldKey.currentState.showSnackBar(SnackBar(
+          content: Text(
+            'No te puedes conectar a la aplicación sin conexion a internet',
+            textAlign: TextAlign.center,
+          ),
+        ));
+        print(e.message);
+      } else {
+        _scaffoldKey.currentState.showSnackBar(SnackBar(
+          content: Text(
+            e.toString(),
+            textAlign: TextAlign.center,
+          ),
+        ));
+        print(e.message);
+      }
     }
   }
 

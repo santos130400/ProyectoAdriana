@@ -15,10 +15,23 @@ class MenuPrincipal extends StatefulWidget {
 
 class _MenuPrincipalState extends State<MenuPrincipal> {
   var scaffoldKey = GlobalKey<ScaffoldState>();
+  double tempFont=0;
+  String temp=nombreid.getNombre;
   File imageFile;
   final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
+  
   Widget build(BuildContext context) {
+    
+    if (temp.length>12) {
+      setState(() {
+        tempFont=15;
+       //temp.replaceRange(11, temp.length, '');
+      //temp+='....';
+      });
+    }else if (temp.length<=12){
+      tempFont=20;
+    }
     return Scaffold(
       key: scaffoldKey,
       drawer: Drawer(
@@ -78,11 +91,14 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 10),
                       child: Text(
-                        nombreid.getNombre,
+                        temp,
+                        
                         style: TextStyle(
                             color: Color(0xFF5C4438),
                             fontWeight: FontWeight.bold,
-                            fontSize: 30),
+                            fontSize: tempFont
+                            
+                            ),
                       ),
                     ),
                   ),

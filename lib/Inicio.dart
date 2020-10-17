@@ -319,11 +319,11 @@ class _InicioState extends State<Inicio> {
       child: TextFormField(
         controller: _controladorContrasena,
         validator: (input) {
-          if (input.length < 6) {
+          if (input.isEmpty) {
             setState(() {
               tamano = 320;
             });
-            return 'La contraseña es minimo de 6 caracteres';
+            return 'Escriba una contraseña';
           } else {
             setState(() {
               tamano = 300;
@@ -352,13 +352,24 @@ class _InicioState extends State<Inicio> {
       Navigator.of(context).pushNamed('/menu');
       nombreid.setNombre = usuario.displayName;
     } catch (e) {
-      _scaffoldKey.currentState.showSnackBar(SnackBar(
-        content: Text(
-          'El correo o la contraseña no coinciden',
-          textAlign: TextAlign.center,
-        ),
-      ));
-      print(e.message);
+      if (e.toString() ==
+          'I/flutter (29925): A network error (such as timeout, interrupted connection or unreachable host) has occurred.') {
+        _scaffoldKey.currentState.showSnackBar(SnackBar(
+          content: Text(
+            e.toString(),
+            textAlign: TextAlign.center,
+          ),
+        ));
+        print(e.message);
+      } else {
+        _scaffoldKey.currentState.showSnackBar(SnackBar(
+          content: Text(
+            e.toString(),
+            textAlign: TextAlign.center,
+          ),
+        ));
+        print(e.message);
+      }
     }
   }
 }

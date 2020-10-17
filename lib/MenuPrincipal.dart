@@ -3,6 +3,7 @@ import 'package:async/async.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:prueba_apliacion/main.dart';
 
 class MenuPrincipal extends StatefulWidget {
   final User user;
@@ -77,7 +78,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 10),
                       child: Text(
-                        widget.user.displayName,
+                        nombreid.getNombre,
                         style: TextStyle(
                             color: Color(0xFF5C4438),
                             fontWeight: FontWeight.bold,
@@ -150,7 +151,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                     image: DecorationImage(
                       image: imageFile != null
                           ? FileImage(imageFile)
-                          : AssetImage('assets/cara.jpg'),
+                          : AssetImage('assets/persona.png'),
                       fit: BoxFit.cover,
                     )))));
   }

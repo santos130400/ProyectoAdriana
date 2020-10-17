@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:prueba_apliacion/MenuPrincipal.dart';
 import 'package:prueba_apliacion/Test/Hola.dart';
+import 'package:prueba_apliacion/main.dart';
 
 class Inicio extends StatefulWidget {
   @override
@@ -255,12 +256,17 @@ class _InicioState extends State<Inicio> {
   Widget olvidasteContrasena() {
     return Padding(
         padding: const EdgeInsets.only(top: 10),
-        child: Text(
-          'Olvidé mi contraseña',
-          style: TextStyle(
-              color: const Color(0xFF5C4438),
-              fontWeight: FontWeight.bold,
-              fontSize: 20),
+        child: GestureDetector(
+          child: Text(
+            'Olvidé mi contraseña',
+            style: TextStyle(
+                color: const Color(0xFF5C4438),
+                fontWeight: FontWeight.bold,
+                fontSize: 20),
+          ),
+          onTap: () {
+            Navigator.of(context).pushNamed('/cambioContra');
+          },
         ));
   }
 
@@ -343,9 +349,8 @@ class _InicioState extends State<Inicio> {
       if (!usuario.emailVerified) {
         await usuario.sendEmailVerification();
       }
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-        return MenuPrincipal(user: usuario);
-      }));
+      Navigator.of(context).pushNamed('/menu');
+      nombreid.setNombre = usuario.displayName;
     } catch (e) {
       _scaffoldKey.currentState.showSnackBar(SnackBar(
         content: Text(

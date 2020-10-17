@@ -551,8 +551,8 @@ class _RegistroState extends State<Registro> {
                       setState(() {
                         tamano = 500;
                       });
-                      if (value.length < 6) {
-                        return 'La contraseña debe tener mas de 6 caracteres';
+                      if (value.isEmpty) {
+                        return 'Escriba una contraseña';
                       }
                       return null;
                     },

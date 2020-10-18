@@ -18,7 +18,10 @@ class Test {
   int carac;
   int pago;
   int ojeras;
+Test(){
+  this.pago=0;
 
+}
  int get getPiel => piel;
 
  set setPiel(int piel) => this.piel = piel;

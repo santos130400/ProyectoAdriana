@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:prueba_apliacion/main.dart';
 
 class Cabello extends StatefulWidget {
   Cabello({Key key}) : super(key: key);
@@ -335,6 +336,7 @@ class _Cabello extends State<Cabello> {
                           setState(() {
                             opacity = 0;
                           });
+                          resul.pelo=selected;
                           Navigator.of(context).pushNamed('/ojos');
                         } else {
                           setState(() {

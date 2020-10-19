@@ -69,6 +69,7 @@ class MyApp extends StatelessWidget {
               new AccesoriosResultados(),
           '/pago': (BuildContext context) => new Pago(),
           '/cambioContra': (BuildContext context) => new Cambio(),
+          //'/cambioContra': (BuildContext context) => new Cambio(),
         });
   }
 }

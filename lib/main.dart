@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:prueba_apliacion/AgendarCita.dart';
 import 'package:prueba_apliacion/CambiarContrase%C3%B1a.dart';
 import 'package:prueba_apliacion/Inicio.dart';
 import 'package:prueba_apliacion/MenuPrincipal.dart';
@@ -69,7 +70,7 @@ class MyApp extends StatelessWidget {
               new AccesoriosResultados(),
           '/pago': (BuildContext context) => new Pago(),
           '/cambioContra': (BuildContext context) => new Cambio(),
-          //'/cambioContra': (BuildContext context) => new Cambio(),
+          '/cita': (BuildContext context) => new Cita(),
         });
   }
 }

@@ -5,7 +5,8 @@ class Cita extends StatefulWidget {
   @override
   _CitaState createState() => _CitaState();
 }
-Color days=Colors.black;
+
+Color days = Colors.black;
 Color bx1 = Colors.white;
 Color bx2 = Colors.white;
 Color bx3 = Colors.white;
@@ -119,11 +120,10 @@ class _CitaState extends State<Cita> {
                   options: CarouselOptions(
                       enlargeCenterPage: true,
                       viewportFraction: 0.25,
-                      aspectRatio: 16/9,
+                      aspectRatio: 16 / 9,
                       onPageChanged: (i, reason) {
                         setState(() {
                           x = i + 1;
-                          
                         });
                       },
                       enlargeStrategy: CenterPageEnlargeStrategy.scale),
@@ -611,14 +611,13 @@ class _CitaState extends State<Cita> {
                     width: 200,
                     child: RadioListTile(
                       value: 1,
-                      activeColor: Color(0xFFFFEED9),
+                      activeColor: Color.fromRGBO(92, 68, 56, 1),
                       title: Text(
                         'ARMARIO',
                         style: TextStyle(
-                          color: Color.fromRGBO(92, 68, 56, 1),
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold
-                        ),
+                            color: Color.fromRGBO(92, 68, 56, 1),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
                       ),
                       groupValue: radio,
                       onChanged: (val) {
@@ -632,14 +631,13 @@ class _CitaState extends State<Cita> {
                     width: 200,
                     child: RadioListTile(
                       value: 2,
-                      activeColor: Color(0xFFFFEED9),
+                      activeColor: Color.fromRGBO(92, 68, 56, 1),
                       title: Text(
                         'SHOPPING',
                         style: TextStyle(
-                          color: Color.fromRGBO(92, 68, 56, 1),
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold
-                        ),
+                            color: Color.fromRGBO(92, 68, 56, 1),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
                       ),
                       groupValue: radio,
                       onChanged: (val) {
@@ -668,10 +666,11 @@ class _CitaState extends State<Cita> {
                   color: new Color.fromRGBO(255, 198, 165, 1),
                   borderRadius: BorderRadius.all(Radius.circular(6)),
                   boxShadow: [
-                      BoxShadow(
-                          color: Colors.black26,
-                          blurRadius: 4,
-                          offset: Offset(0, 4))]),
+                    BoxShadow(
+                        color: Colors.black26,
+                        blurRadius: 4,
+                        offset: Offset(0, 4))
+                  ]),
               child: Text(
                 'CONFIRMAR CITA',
                 style: TextStyle(

@@ -15,22 +15,20 @@ class MenuPrincipal extends StatefulWidget {
 
 class _MenuPrincipalState extends State<MenuPrincipal> {
   var scaffoldKey = GlobalKey<ScaffoldState>();
-  double tempFont=0;
-  String temp=nombreid.getNombre;
+  double tempFont = 0;
+  String temp = nombreid.getNombre;
   File imageFile;
   final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
-  
   Widget build(BuildContext context) {
-    
-    if (temp.length>12) {
+    if (temp.length > 12) {
       setState(() {
-        tempFont=15;
-       //temp.replaceRange(11, temp.length, '');
-      //temp+='....';
+        tempFont = 15;
+        //temp.replaceRange(11, temp.length, '');
+        //temp+='....';
       });
-    }else if (temp.length<=12){
-      tempFont=20;
+    } else if (temp.length <= 12) {
+      tempFont = 20;
     }
     return Scaffold(
       key: scaffoldKey,
@@ -92,13 +90,10 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                       padding: const EdgeInsets.only(bottom: 10),
                       child: Text(
                         temp,
-                        
                         style: TextStyle(
                             color: Color(0xFF5C4438),
                             fontWeight: FontWeight.bold,
-                            fontSize: tempFont
-                            
-                            ),
+                            fontSize: tempFont),
                       ),
                     ),
                   ),
@@ -219,7 +214,9 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                 width: 135,
                 decoration: BoxDecoration(color: Color(0xFFEBA47A)),
                 child: FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/cita');
+                    },
                     child: Icon(
                       Icons.access_time,
                       size: 40,

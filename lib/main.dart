@@ -6,6 +6,7 @@ import 'package:prueba_apliacion/Cargando.dart';
 import 'package:prueba_apliacion/Citas.dart';
 import 'package:prueba_apliacion/Inicio.dart';
 import 'package:prueba_apliacion/MenuPrincipal.dart';
+import 'package:prueba_apliacion/Recomendados.dart';
 import 'package:prueba_apliacion/Registro.dart';
 import 'package:prueba_apliacion/Resultados/AccesoriosResultados.dart';
 import 'package:prueba_apliacion/Resultados/RopaResultados.dart';
@@ -66,6 +67,7 @@ class MyApp extends StatelessWidget {
           '/cita': (BuildContext context) => new Cita(),
           '/cargando': (BuildContext context) => new Cargando(),
           '/registro': (BuildContext context) => new Registro(),
+          '/recomendaciones': (BuildContext context) => new Recomendados(),
           '/cara': (BuildContext context) => cara,
           '/tejidos': (BuildContext context) => tejidos,
           '/preferencias': (BuildContext context) => preferencias,

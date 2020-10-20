@@ -14,6 +14,16 @@ class Labios extends StatefulWidget {
 
 class _Labios extends State<Labios> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    selected = 0;
+    borderCon1 = 1;
+    borderCon2 = 1;
+    opacity20 = 0;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return new Scaffold(
         body: Stack(
@@ -212,7 +222,7 @@ class _Labios extends State<Labios> {
                             opacity20 = 0;
                           });
                           resul.labios = selected.toInt();
-                          Navigator.of(context).pushNamed('/cabello');
+                          Navigator.popAndPushNamed(context,'/cabello');
                         } else {
                           setState(() {
                             opacity20 = 255;

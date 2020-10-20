@@ -10,6 +10,12 @@ class Preferencias extends StatefulWidget {
 
 class _Preferencias extends State<Preferencias> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    radioItem = '';
+  }
+  @override
   Widget build(BuildContext context) {
     return new Scaffold(
         body: Stack(
@@ -68,7 +74,7 @@ Widget continuar(BuildContext context) {
             new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
         child: FlatButton(
             onPressed: () {
-              Navigator.of(context).pushNamed('/menu');
+              Navigator.popAndPushNamed(context,'/menu');
             },
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,

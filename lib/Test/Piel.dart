@@ -14,6 +14,16 @@ class Piel extends StatefulWidget {
 
 class _Piel extends State<Piel> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    radioItem1 = 0;
+    colorPiel = 0;
+    opacity1 = 0;
+    tmp = '';
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
@@ -411,10 +421,10 @@ class _Piel extends State<Piel> {
                         if (colorPiel != 0 && radioItem1 != 0) {
                           setState(() {
                             opacity1 = 0;
+                            Navigator.popAndPushNamed(context, '/labios');
                           });
                           resul.piel = colorPiel;
                           resul.sol = radioItem1;
-                          Navigator.of(context).pushNamed('/labios');
                         } else {
                           setState(() {
                             opacity1 = 255;

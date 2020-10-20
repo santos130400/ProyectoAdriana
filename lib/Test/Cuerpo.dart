@@ -16,6 +16,17 @@ int opacity5 = 0;
 
 class _Cuerpo extends State<Cuerpo> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    cuerpo1 = 0;
+    cuerpo2 = 0;
+    cuerpo3 = 0;
+    seleccionado = 0;
+    opacity5 = 0;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -147,7 +158,7 @@ class _Cuerpo extends State<Cuerpo> {
                               opacity5 = 0;
                             });
 
-                            Navigator.of(context).pushNamed('/estilos');
+                            Navigator.popAndPushNamed(context, '/estilos');
                             resul.forma = seleccionado;
                           } else {
                             setState(() {

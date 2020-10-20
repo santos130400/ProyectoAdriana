@@ -13,6 +13,14 @@ class Estilos extends StatefulWidget {
 class _Estilos extends State<Estilos> {
   // This widget is the root of your application.
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    radioItem1 = 0;
+    opacity6 = 0;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
@@ -133,7 +141,7 @@ class _Estilos extends State<Estilos> {
                               opacity6 = 0;
                             });
 
-                            Navigator.of(context).pushNamed('/detalles');
+                            Navigator.popAndPushNamed(context, '/detalles');
                             resul.valores = radioItem1;
                           } else {
                             setState(() {

@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:prueba_apliacion/ResultadosTest.dart';
+import 'package:prueba_apliacion/main.dart';
 
 class Hola extends StatefulWidget {
   @override
@@ -36,6 +38,7 @@ class _Hola extends State<Hola> {
           icon: const Icon(Icons.keyboard_arrow_left),
           onPressed: () async {
             _cerrarSesion().whenComplete(() {
+              resul= new Test();
               Navigator.of(context).pushNamed('/inicio');
             });
           },

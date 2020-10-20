@@ -18,6 +18,21 @@ class Paleta extends StatefulWidget {
 }
 
 class _Paleta extends State<Paleta> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    selected = 0;
+    opacity8 = 0;
+    border1 = 0;
+    border2 = 0;
+    border3 = 0;
+    border4 = 0;
+    border5 = 0;
+    border6 = 0;
+    border7 = 0;
+  }
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -679,7 +694,7 @@ class _Paleta extends State<Paleta> {
                             setState(() {
                               opacity8 = 0;
                             });
-                            Navigator.of(context).pushNamed('/tejidos');
+                            Navigator.popAndPushNamed(context, '/tejidos');
                             resul.paleta = selected;
                           } else {
                             setState(() {

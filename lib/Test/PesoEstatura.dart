@@ -14,6 +14,15 @@ class PesoEstatura extends StatefulWidget {
 
 class _PesoEstatura extends State<PesoEstatura> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    valAlt = 0;
+    valBot = 0;
+    opacity4 = 0;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -203,7 +212,7 @@ class _PesoEstatura extends State<PesoEstatura> {
                             setState(() {
                               opacity4 = 0;
                             });
-                            Navigator.of(context).pushNamed('/cuerpo');
+                            Navigator.popAndPushNamed(context, '/cuerpo');
                             resul.estatura = valAlt.toInt();
                             resul.peso = valBot.toInt();
                           } else {

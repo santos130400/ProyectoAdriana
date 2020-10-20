@@ -349,48 +349,49 @@ class _InicioState extends State<Inicio> {
       if (!usuario.emailVerified) {
         await usuario.sendEmailVerification();
       }
-      bool temp =false;
-      if (resul.piel==null) {
-        temp=false;
-      } else if(resul.sol==null){
-        temp=false;
-      }else if(resul.labios==null){
-        temp=false;
-      }else if(resul.pelo==null){
-        temp=false;
-      }else if(resul.ojos==null){
-        temp=false;
-      }else if(resul.cara==null){
-        temp=false;
-      }else if(resul.estatura==null){
-        temp=false;
-      }else if(resul.peso==null){
-        temp=false;
-      }else if(resul.forma==null){
-        temp=false;
-      }else if(resul.valores==null){
-        temp=false;
-      }else if(resul.acces==null){
-        temp=false;
-      }else if(resul.paleta==null){
-        temp=false;
-      }else if(resul.tejido==null){
-        temp=false;
-      }else if(resul.carac==null){
-        temp=false;
-      }else if(resul.pago==null){
-        temp=false;
-      }else if(resul.ojeras==null){
-        temp=false;
-      }else{
-        temp=true;
+      bool temp = false;
+      if (resul.piel == null) {
+        temp = false;
+      } else if (resul.sol == null) {
+        temp = false;
+      } else if (resul.labios == null) {
+        temp = false;
+      } else if (resul.pelo == null) {
+        temp = false;
+      } else if (resul.ojos == null) {
+        temp = false;
+      } else if (resul.cara == null) {
+        temp = false;
+      } else if (resul.estatura == null) {
+        temp = false;
+      } else if (resul.peso == null) {
+        temp = false;
+      } else if (resul.forma == null) {
+        temp = false;
+      } else if (resul.valores == null) {
+        temp = false;
+      } else if (resul.acces == null) {
+        temp = false;
+      } else if (resul.paleta == null) {
+        temp = false;
+      } else if (resul.tejido == null) {
+        temp = false;
+      } else if (resul.carac == null) {
+        temp = false;
+      } else if (resul.pago == null) {
+        temp = false;
+      } else if (resul.ojeras == null) {
+        temp = false;
+      } else {
+        temp = true;
       }
       if (temp) {
         Navigator.of(context).pushNamed('/menu');
-      }else{
+      } else {
         Navigator.of(context).pushNamed('/hola');
       }
       nombreid.setNombre = usuario.displayName;
+      nombreid.setId = usuario.uid;
     } catch (e) {
       if (e.toString() ==
           '[firebase_auth/network-request-failed] A network error (such as timeout, interrupted connection or unreachable host) has occurred.') {

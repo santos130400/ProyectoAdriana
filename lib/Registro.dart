@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:prueba_apliacion/main.dart';
 
 class Registro extends StatefulWidget {
   @override
@@ -15,6 +17,10 @@ class _RegistroState extends State<Registro> {
   TextEditingController recibeContrasena = TextEditingController();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   double tamano = 410;
+  String nombreU = '';
+  String idUnico = '';
+  String telefonoU = '';
+  String correoU = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,6 +80,38 @@ class _RegistroState extends State<Registro> {
         ));
   }
 
+  void subirFirestore() {
+    nombreU = recibeNombre.text;
+    telefonoU = recibeTelefono.text;
+    correoU = recibeCorreo.text;
+    Map<String, dynamic> data = {
+      'nombre': nombreU,
+      'correo': correoU,
+      'telefono': telefonoU,
+      'piel': null,
+      'sol': null,
+      'labios': null,
+      'pelo': null,
+      'ojos': null,
+      'ojeras': null,
+      'cara': null,
+      'estatura': null,
+      'peso': null,
+      'forma': null,
+      'valores': null,
+      'acces': null,
+      'paleta': null,
+      'tejido': null,
+      'carac': null,
+      'pago': null,
+      'foto': null
+    };
+
+    CollectionReference collectionReference =
+        FirebaseFirestore.instance.collection('infoYResultados');
+    collectionReference.doc(idUnico).set(data);
+  }
+
   void _registrarCuenta() async {
     try {
       final User usuario = (await _auth.createUserWithEmailAndPassword(
@@ -85,6 +123,8 @@ class _RegistroState extends State<Registro> {
           await usuario.sendEmailVerification();
         }
         await usuario.updateProfile(displayName: recibeNombre.text);
+        idUnico = usuario.uid;
+        subirFirestore();
         Navigator.of(context).pushNamed('/inicio');
       }
     } catch (e) {

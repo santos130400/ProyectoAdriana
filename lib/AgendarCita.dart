@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class Cita extends StatefulWidget {
+class CitaAgendar extends StatefulWidget {
   @override
-  _CitaState createState() => _CitaState();
+  _CitaAgendarState createState() => _CitaAgendarState();
 }
 
 Color days = Colors.black;
@@ -44,7 +44,7 @@ var list = [
 ];
 String p = list[5];
 
-class _CitaState extends State<Cita> {
+class _CitaAgendarState extends State<CitaAgendar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

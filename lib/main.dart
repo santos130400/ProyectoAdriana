@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:prueba_apliacion/AgendarCita.dart';
 import 'package:prueba_apliacion/CambiarContrase%C3%B1a.dart';
 import 'package:prueba_apliacion/Cargando.dart';
+import 'package:prueba_apliacion/Citas.dart';
 import 'package:prueba_apliacion/Inicio.dart';
 import 'package:prueba_apliacion/MenuPrincipal.dart';
 import 'package:prueba_apliacion/Registro.dart';
@@ -62,6 +63,7 @@ class MyApp extends StatelessWidget {
         routes: <String, WidgetBuilder>{
           '/inicio': (BuildContext context) => new Inicio(),
           '/menu': (BuildContext context) => new MenuPrincipal(),
+          '/cita': (BuildContext context) => new Cita(),
           '/cargando': (BuildContext context) => new Cargando(),
           '/registro': (BuildContext context) => new Registro(),
           '/cara': (BuildContext context) => cara,
@@ -87,7 +89,7 @@ class MyApp extends StatelessWidget {
               new AccesoriosResultados(),
           '/pago': (BuildContext context) => new Pago(),
           '/cambioContra': (BuildContext context) => new Cambio(),
-          '/cita': (BuildContext context) => new Cita(),
+          '/citaAgendar': (BuildContext context) => new CitaAgendar(),
         });
   }
 }

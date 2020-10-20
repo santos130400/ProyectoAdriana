@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyStatelessApp());
+class Cita extends StatefulWidget {
+  @override
+  _CitaState createState() => _CitaState();
 }
 
-class MyStatelessApp extends StatelessWidget {
+class _CitaState extends State<Cita> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

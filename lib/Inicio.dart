@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:prueba_apliacion/MenuPrincipal.dart';
@@ -15,6 +16,8 @@ class _InicioState extends State<Inicio> {
   final TextEditingController _controladorContrasena = TextEditingController();
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final CollectionReference documentoUsuario =
+      FirebaseFirestore.instance.collection('infoYResultados');
   double tamano = 280;
   @override
   Widget build(BuildContext context) {
@@ -340,6 +343,94 @@ class _InicioState extends State<Inicio> {
     );
   }
 
+  Future<void> traerDatos() async {
+    await documentoUsuario
+        .doc(nombreid.getId)
+        .get()
+        .then((DocumentSnapshot documentSnapshot) {
+      if (documentSnapshot.exists) {
+        try {
+          resul.setPiel = documentSnapshot.get(FieldPath(['piel']));
+          print('piel es ' + resul.getPiel.toString());
+          resul.setSol = documentSnapshot.get(FieldPath(['sol']));
+          print('sol es ' + resul.getSol.toString());
+          resul.setLabios = documentSnapshot.get(FieldPath(['labios']));
+          print('labios es ' + resul.getLabios.toString());
+          resul.setPelo = documentSnapshot.get(FieldPath(['pelo']));
+          print('pelo es ' + resul.getPelo.toString());
+          resul.setOjos = documentSnapshot.get(FieldPath(['ojos']));
+          print('ojos es ' + resul.getOjos.toString());
+          resul.setOjeras = documentSnapshot.get(FieldPath(['ojeras']));
+          print('ojeras es ' + resul.getOjeras.toString());
+          resul.setCara = documentSnapshot.get(FieldPath(['cara']));
+          print('cara es ' + resul.getCara.toString());
+          resul.setEstatura = documentSnapshot.get(FieldPath(['estatura']));
+          print('estatura es ' + resul.getEstatura.toString());
+          resul.setPeso = documentSnapshot.get(FieldPath(['peso']));
+          print('peso es ' + resul.getPeso.toString());
+          resul.setForma = documentSnapshot.get(FieldPath(['forma']));
+          print('forma es ' + resul.getForma.toString());
+          resul.setValores = documentSnapshot.get(FieldPath(['valores']));
+          print('valores es ' + resul.getValores.toString());
+          resul.setAcces = documentSnapshot.get(FieldPath(['acces']));
+          print('acces es ' + resul.getAcces.toString());
+          resul.setPaleta = documentSnapshot.get(FieldPath(['paleta']));
+          print('paleta es ' + resul.getPaleta.toString());
+          resul.setTejido = documentSnapshot.get(FieldPath(['tejido']));
+          print('tejido es ' + resul.getTejido.toString());
+          resul.setCarac = documentSnapshot.get(FieldPath(['carac']));
+          print('carac es ' + resul.getCarac.toString());
+          resul.setPago = documentSnapshot.get(FieldPath(['pago']));
+          print('pago es ' + resul.getPago.toString());
+        } on StateError catch (e) {
+          print('Error!');
+        }
+      } else {
+        print('Ese documento no existe en la base de datos');
+      }
+    });
+  }
+
+  bool validarADonde() {
+    bool temp;
+    if (resul.getPiel == null) {
+      temp = false;
+    } else if (resul.getSol == null) {
+      temp = false;
+    } else if (resul.getLabios == null) {
+      temp = false;
+    } else if (resul.getPelo == null) {
+      temp = false;
+    } else if (resul.getOjos == null) {
+      temp = false;
+    } else if (resul.getCara == null) {
+      temp = false;
+    } else if (resul.getEstatura == null) {
+      temp = false;
+    } else if (resul.getPeso == null) {
+      temp = false;
+    } else if (resul.getForma == null) {
+      temp = false;
+    } else if (resul.getValores == null) {
+      temp = false;
+    } else if (resul.getAcces == null) {
+      temp = false;
+    } else if (resul.getPaleta == null) {
+      temp = false;
+    } else if (resul.getTejido == null) {
+      temp = false;
+    } else if (resul.getCarac == null) {
+      temp = false;
+    } else if (resul.getPago == null) {
+      temp = false;
+    } else if (resul.getOjeras == null) {
+      temp = false;
+    } else {
+      temp = true;
+    }
+    return temp;
+  }
+
   void iniciarSesion(BuildContext context) async {
     try {
       final User usuario = (await _auth.signInWithEmailAndPassword(
@@ -349,49 +440,18 @@ class _InicioState extends State<Inicio> {
       if (!usuario.emailVerified) {
         await usuario.sendEmailVerification();
       }
-      bool temp = false;
-      if (resul.piel == null) {
-        temp = false;
-      } else if (resul.sol == null) {
-        temp = false;
-      } else if (resul.labios == null) {
-        temp = false;
-      } else if (resul.pelo == null) {
-        temp = false;
-      } else if (resul.ojos == null) {
-        temp = false;
-      } else if (resul.cara == null) {
-        temp = false;
-      } else if (resul.estatura == null) {
-        temp = false;
-      } else if (resul.peso == null) {
-        temp = false;
-      } else if (resul.forma == null) {
-        temp = false;
-      } else if (resul.valores == null) {
-        temp = false;
-      } else if (resul.acces == null) {
-        temp = false;
-      } else if (resul.paleta == null) {
-        temp = false;
-      } else if (resul.tejido == null) {
-        temp = false;
-      } else if (resul.carac == null) {
-        temp = false;
-      } else if (resul.pago == null) {
-        temp = false;
-      } else if (resul.ojeras == null) {
-        temp = false;
-      } else {
-        temp = true;
-      }
-      if (temp) {
-        Navigator.of(context).pushNamed('/menu');
-      } else {
-        Navigator.of(context).pushNamed('/hola');
-      }
       nombreid.setNombre = usuario.displayName;
       nombreid.setId = usuario.uid;
+      traerDatos().whenComplete(() {
+        bool donde = validarADonde();
+        if (donde == true) {
+          Navigator.of(context).pushNamed('/cargando');
+          print('entre menu');
+        } else {
+          print('ya entre');
+          Navigator.of(context).pushNamed('/hola');
+        }
+      });
     } catch (e) {
       if (e.toString() ==
           '[firebase_auth/network-request-failed] A network error (such as timeout, interrupted connection or unreachable host) has occurred.') {

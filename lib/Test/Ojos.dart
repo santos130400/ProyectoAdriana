@@ -397,7 +397,7 @@ class _Ojos extends State<Ojos> {
                           });
                           resul.ojos = selected;
                           resul.ojeras = radioItem;
-                          Navigator.popAndPushNamed(context, '/cara');
+                          Navigator.pushNamed(context, '/cara');
                         } else {
                           setState(() {
                             opacity2 = 255;

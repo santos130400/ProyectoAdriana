@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:prueba_apliacion/main.dart';
 
-String radioItem = '';
+int radioItem = 0;
 
 class Preferencias extends StatefulWidget {
   Preferencias({Key key}) : super(key: key);
@@ -19,7 +19,7 @@ class _Preferencias extends State<Preferencias> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    radioItem = '';
+    radioItem = 0;
   }
 
   @override
@@ -36,7 +36,7 @@ class _Preferencias extends State<Preferencias> {
                   groupValue: radioItem,
                   title: Text(
                       'Quiero conocer los resultados de mi test y mis recomendaciones inmediatamente'),
-                  value: '0',
+                  value: 0,
                   activeColor: new Color.fromRGBO(92, 68, 56, 1),
                   onChanged: (val) {
                     setState(() {
@@ -48,7 +48,7 @@ class _Preferencias extends State<Preferencias> {
                   groupValue: radioItem,
                   title: Text(
                       'Deseo que Adriana revise mi Test para obtener resultados mucho más personalizados (*premium)'),
-                  value: '1',
+                  value: 1,
                   activeColor: new Color.fromRGBO(92, 68, 56, 1),
                   onChanged: (val) {
                     setState(() {
@@ -90,7 +90,6 @@ class _Preferencias extends State<Preferencias> {
           'tejido': resul.getTejido,
           'carac': resul.getCarac,
           'pago': resul.getPago,
-          'foto': null
         })
         .then((value) => _scaffoldKey.currentState.showSnackBar(SnackBar(
               content: Text(
@@ -117,8 +116,9 @@ class _Preferencias extends State<Preferencias> {
               new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
           child: FlatButton(
               onPressed: () {
+                resul.setPago = radioItem;
                 guardarDatos();
-                Navigator.of(context).pushNamed('/menu');
+                Navigator.of(context).pushNamed('/cargando');
               },
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,

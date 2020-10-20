@@ -1,5 +1,7 @@
+import 'dart:ffi';
 import 'dart:io';
 import 'package:async/async.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -15,13 +17,20 @@ class MenuPrincipal extends StatefulWidget {
 }
 
 class _MenuPrincipalState extends State<MenuPrincipal> {
+  // ignore: non_constant_identifier_names
+  String IdUnico = nombreid.getId;
+  String ruta = nombreid.getFoto;
+  final CollectionReference documentoUsuario =
+      FirebaseFirestore.instance.collection('infoYResultados');
   var scaffoldKey = GlobalKey<ScaffoldState>();
   double tempFont = 0;
   String temp = nombreid.getNombre;
   File imageFile;
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
+    print('entro a menu principal');
     if (temp.length > 12) {
       setState(() {
         tempFont = 15;
@@ -135,12 +144,37 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             )));
   }
 
+  Future<void> guardarDatos(File rutaFoto) async {
+    String laFoto = rutaFoto.toString();
+    List<String> partesFoto = laFoto.split(' ');
+    String laRutaDeFoto = partesFoto[1];
+    String laRutaDeFoto2 = laRutaDeFoto.substring(1, laRutaDeFoto.length - 1);
+    print('Es' + laRutaDeFoto2);
+    return await documentoUsuario
+        .doc(IdUnico)
+        .update({'foto': laRutaDeFoto2})
+        .then((value) => scaffoldKey.currentState.showSnackBar(SnackBar(
+              content: Text(
+                'Actualizacion de la base de datos exitosa',
+                textAlign: TextAlign.center,
+              ),
+            )))
+        .catchError((error) => scaffoldKey.currentState.showSnackBar(SnackBar(
+              content: Text(
+                'Actualizacion de la base de datos Fallida',
+                textAlign: TextAlign.center,
+              ),
+            )));
+  }
+
   Future _abrirGaleria(BuildContext context) async {
     var picture = await ImagePicker.pickImage(
         source: ImageSource.gallery, maxHeight: 100, maxWidth: 100);
     this.setState(() {
       imageFile = picture;
       print(imageFile);
+      guardarDatos(imageFile);
+      Navigator.of(context).pushNamed('/cargando');
     });
   }
 
@@ -148,10 +182,18 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     var picture = await ImagePicker.pickImage(source: ImageSource.camera);
     this.setState(() {
       imageFile = picture;
+      guardarDatos(imageFile);
+      Navigator.of(context).pushNamed('/cargando');
     });
   }
 
   Widget fotoPerfil() {
+    print('pongo foto');
+    if (ruta == null) {
+      imageFile = null;
+    } else {
+      imageFile = File(ruta);
+    }
     return Center(
         child: Padding(
             padding: const EdgeInsets.only(top: 30),
@@ -571,8 +613,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
           ),
           onPressed: () async {
             _cerrarSesion().whenComplete(() {
+              resul = new Test();
               Navigator.of(context).pushNamed('/inicio');
-              resul= new Test();
             });
           },
         ),

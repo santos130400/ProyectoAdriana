@@ -421,7 +421,7 @@ class _Piel extends State<Piel> {
                         if (colorPiel != 0 && radioItem1 != 0) {
                           setState(() {
                             opacity1 = 0;
-                            Navigator.popAndPushNamed(context, '/labios');
+                            Navigator.pushNamed(context, '/labios');
                           });
                           resul.piel = colorPiel;
                           resul.sol = radioItem1;

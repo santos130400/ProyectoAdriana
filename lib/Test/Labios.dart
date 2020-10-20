@@ -222,7 +222,7 @@ class _Labios extends State<Labios> {
                             opacity20 = 0;
                           });
                           resul.labios = selected.toInt();
-                          Navigator.popAndPushNamed(context,'/cabello');
+                          Navigator.pushNamed(context, '/cabello');
                         } else {
                           setState(() {
                             opacity20 = 255;

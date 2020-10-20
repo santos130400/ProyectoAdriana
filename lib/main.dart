@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:prueba_apliacion/AgendarCita.dart';
 import 'package:prueba_apliacion/CambiarContrase%C3%B1a.dart';
+import 'package:prueba_apliacion/Cargando.dart';
 import 'package:prueba_apliacion/Inicio.dart';
 import 'package:prueba_apliacion/MenuPrincipal.dart';
 import 'package:prueba_apliacion/Registro.dart';
@@ -35,19 +36,20 @@ Future<void> main() async {
   await Firebase.initializeApp();
   runApp(MyApp());
 }
-var cara= new Cara();
+
+var cara = new Cara();
 var cabello = new Cabello();
-var caracter =new Caracter();
+var caracter = new Caracter();
 var formaCuerpo = new Cuerpo();
 var detalles = new Detalles();
-var estilos =new Estilos();
+var estilos = new Estilos();
 var hola = new Hola();
 var labios = new Labios();
 var ojos = new Ojos();
 var paleta = new Paleta();
-var pesoEstatura= new PesoEstatura();
-var piel= new Piel();
-var preferencias= new Preferencias();
+var pesoEstatura = new PesoEstatura();
+var piel = new Piel();
+var preferencias = new Preferencias();
 var tejidos = new Tejidos();
 
 class MyApp extends StatelessWidget {
@@ -60,6 +62,7 @@ class MyApp extends StatelessWidget {
         routes: <String, WidgetBuilder>{
           '/inicio': (BuildContext context) => new Inicio(),
           '/menu': (BuildContext context) => new MenuPrincipal(),
+          '/cargando': (BuildContext context) => new Cargando(),
           '/registro': (BuildContext context) => new Registro(),
           '/cara': (BuildContext context) => cara,
           '/tejidos': (BuildContext context) => tejidos,

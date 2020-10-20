@@ -2,6 +2,7 @@ class Auth {
   String nombre = '';
   String id = '';
   String telefono = '';
+  String foto = '';
 
   String get getId => id;
 
@@ -14,4 +15,8 @@ class Auth {
   String get getTelefono => telefono;
 
   set setTelefono(String telefono) => this.telefono = telefono;
+
+  String get getFoto => foto;
+
+  set setFoto(String foto) => this.foto = foto;
 }

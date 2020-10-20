@@ -38,7 +38,7 @@ class _Hola extends State<Hola> {
           icon: const Icon(Icons.keyboard_arrow_left),
           onPressed: () async {
             _cerrarSesion().whenComplete(() {
-              resul= new Test();
+              resul = new Test();
               Navigator.of(context).pushNamed('/inicio');
             });
           },

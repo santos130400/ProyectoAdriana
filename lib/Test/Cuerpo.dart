@@ -158,7 +158,7 @@ class _Cuerpo extends State<Cuerpo> {
                               opacity5 = 0;
                             });
 
-                            Navigator.popAndPushNamed(context, '/estilos');
+                            Navigator.pushNamed(context, '/estilos');
                             resul.forma = seleccionado;
                           } else {
                             setState(() {

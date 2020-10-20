@@ -6,8 +6,6 @@ class Cuerpo extends StatefulWidget {
   Cuerpo({Key key}) : super(key: key);
   @override
   _Cuerpo createState() => _Cuerpo();
-
-  
 }
 
 double cuerpo1 = 0;
@@ -17,7 +15,6 @@ int seleccionado = 0;
 int opacity5 = 0;
 
 class _Cuerpo extends State<Cuerpo> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -150,7 +147,7 @@ class _Cuerpo extends State<Cuerpo> {
                               opacity5 = 0;
                             });
 
-                            Navigator.popAndPushNamed(context,'/estilos');
+                            Navigator.of(context).pushNamed('/estilos');
                             resul.forma = seleccionado;
                           } else {
                             setState(() {

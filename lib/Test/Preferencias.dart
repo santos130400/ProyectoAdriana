@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:prueba_apliacion/main.dart';
 
 String radioItem = '';
 
@@ -69,7 +68,7 @@ Widget continuar(BuildContext context) {
             new BoxDecoration(color: new Color.fromRGBO(255, 198, 165, 1)),
         child: FlatButton(
             onPressed: () {
-              Navigator.popAndPushNamed(context,'/menu');
+              Navigator.of(context).pushNamed('/menu');
             },
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,

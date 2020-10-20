@@ -218,7 +218,7 @@ class _Cara extends State<Cara> {
                               opacity3 = 0;
                             });
                             resul.cara = selected.toInt();
-                            Navigator.popAndPushNamed(context,'/pesoEstatura');
+                            Navigator.of(context).pushNamed('/pesoEstatura');
                           } else {
                             setState(() {
                               opacity3 = 255;

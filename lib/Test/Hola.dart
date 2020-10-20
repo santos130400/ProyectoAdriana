@@ -1,20 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:prueba_apliacion/ResultadosTest.dart';
-import 'package:prueba_apliacion/Test/Cabello.dart';
-import 'package:prueba_apliacion/Test/Cara.dart';
-import 'package:prueba_apliacion/Test/Caracter.dart';
-import 'package:prueba_apliacion/Test/Cuerpo.dart';
-import 'package:prueba_apliacion/Test/Detalles.dart';
-import 'package:prueba_apliacion/Test/Estilos.dart';
-import 'package:prueba_apliacion/Test/Labios.dart';
-import 'package:prueba_apliacion/Test/Ojos.dart';
-import 'package:prueba_apliacion/Test/Paleta.dart';
-import 'package:prueba_apliacion/Test/PesoEstatura.dart';
-import 'package:prueba_apliacion/Test/Piel.dart';
-import 'package:prueba_apliacion/Test/Preferencias.dart';
-import 'package:prueba_apliacion/Test/Tejidos.dart';
-import 'package:prueba_apliacion/main.dart';
 
 class Hola extends StatefulWidget {
   @override
@@ -52,7 +37,6 @@ class _Hola extends State<Hola> {
           onPressed: () async {
             _cerrarSesion().whenComplete(() {
               Navigator.of(context).pushNamed('/inicio');
-              resul= Test();
             });
           },
           iconSize: 48.0,

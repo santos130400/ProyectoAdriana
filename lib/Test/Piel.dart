@@ -414,8 +414,7 @@ class _Piel extends State<Piel> {
                           });
                           resul.piel = colorPiel;
                           resul.sol = radioItem1;
-                          
-                          Navigator.popAndPushNamed(context,'/labios');
+                          Navigator.of(context).pushNamed('/labios');
                         } else {
                           setState(() {
                             opacity1 = 255;

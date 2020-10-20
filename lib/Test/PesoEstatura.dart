@@ -203,7 +203,7 @@ class _PesoEstatura extends State<PesoEstatura> {
                             setState(() {
                               opacity4 = 0;
                             });
-                            Navigator.of(context).pushNamed('/cuerpo');
+                            Navigator.popAndPushNamed(context,'/cuerpo');
                             resul.estatura = valAlt.toInt();
                             resul.peso = valBot.toInt();
                           } else {

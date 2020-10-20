@@ -35,7 +35,20 @@ Future<void> main() async {
   await Firebase.initializeApp();
   runApp(MyApp());
 }
-
+var cara= new Cara();
+var cabello = new Cabello();
+var caracter =new Caracter();
+var formaCuerpo = new Cuerpo();
+var detalles = new Detalles();
+var estilos =new Estilos();
+var hola = new Hola();
+var labios = new Labios();
+var ojos = new Ojos();
+var paleta = new Paleta();
+var pesoEstatura= new PesoEstatura();
+var piel= new Piel();
+var preferencias= new Preferencias();
+var tejidos = new Tejidos();
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -47,20 +60,20 @@ class MyApp extends StatelessWidget {
           '/inicio': (BuildContext context) => new Inicio(),
           '/menu': (BuildContext context) => new MenuPrincipal(),
           '/registro': (BuildContext context) => new Registro(),
-          '/cara': (BuildContext context) => new Cara(),
-          '/tejidos': (BuildContext context) => new Tejidos(),
-          '/preferencias': (BuildContext context) => new Preferencias(),
-          '/cabello': (BuildContext context) => new Cabello(),
-          '/ojos': (BuildContext context) => new Ojos(),
-          '/estilos': (BuildContext context) => new Estilos(),
-          '/hola': (BuildContext context) => new Hola(),
-          '/piel': (BuildContext context) => new Piel(),
-          '/labios': (BuildContext context) => new Labios(),
-          '/cuerpo': (BuildContext context) => new Cuerpo(),
-          '/detalles': (BuildContext context) => new Detalles(),
-          '/caracter': (BuildContext context) => new Caracter(),
-          '/paleta': (BuildContext context) => new Paleta(),
-          '/pesoEstatura': (BuildContext context) => new PesoEstatura(),
+          '/cara': (BuildContext context) => cara,
+          '/tejidos': (BuildContext context) => tejidos,
+          '/preferencias': (BuildContext context) => preferencias,
+          '/cabello': (BuildContext context) => cabello,
+          '/ojos': (BuildContext context) => ojos,
+          '/estilos': (BuildContext context) => estilos,
+          '/hola': (BuildContext context) => hola,
+          '/piel': (BuildContext context) => piel,
+          '/labios': (BuildContext context) => labios,
+          '/cuerpo': (BuildContext context) => formaCuerpo,
+          '/detalles': (BuildContext context) => detalles,
+          '/caracter': (BuildContext context) => caracter,
+          '/paleta': (BuildContext context) => paleta,
+          '/pesoEstatura': (BuildContext context) => pesoEstatura,
           '/resultadosCabello': (BuildContext context) =>
               new CabelloResultados(),
           '/resultadosMaquillaje': (BuildContext context) =>

@@ -133,7 +133,7 @@ class _Estilos extends State<Estilos> {
                               opacity6 = 0;
                             });
 
-                            Navigator.of(context).pushNamed('/detalles');
+                            Navigator.popAndPushNamed(context,'/detalles');
                             resul.valores = radioItem1;
                           } else {
                             setState(() {

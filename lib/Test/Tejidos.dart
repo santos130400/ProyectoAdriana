@@ -140,7 +140,7 @@ class _Tejidos extends State<Tejidos> {
                   setState(() {
                     opacity9 = 0;
                   });
-                  Navigator.of(context).pushNamed('/caracter');
+                  Navigator.popAndPushNamed(context,'/caracter');
                   resul.tejido = radioItem1;
                 } else {
                   setState(() {

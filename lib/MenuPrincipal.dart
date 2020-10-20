@@ -3,6 +3,7 @@ import 'package:async/async.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:prueba_apliacion/ResultadosTest.dart';
 import 'package:prueba_apliacion/main.dart';
 
 class MenuPrincipal extends StatefulWidget {
@@ -571,6 +572,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
           onPressed: () async {
             _cerrarSesion().whenComplete(() {
               Navigator.of(context).pushNamed('/inicio');
+              resul= Test();
             });
           },
         ),

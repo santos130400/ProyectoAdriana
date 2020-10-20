@@ -134,7 +134,7 @@ class _Caracter extends State<Caracter> {
                               setState(() {
                                 opacity10 = 0;
                               });
-                              Navigator.of(context).pushNamed('/preferencias');
+                              Navigator.popAndPushNamed(context,'/preferencias');
                               resul.carac = radioItem1;
                             } else {
                               setState(() {

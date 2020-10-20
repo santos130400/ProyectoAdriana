@@ -337,7 +337,7 @@ class _Cabello extends State<Cabello> {
                             opacity = 0;
                           });
                           resul.pelo=selected;
-                          Navigator.of(context).pushNamed('/ojos');
+                          Navigator.popAndPushNamed(context,'/ojos');
                         } else {
                           setState(() {
                             opacity = 255;

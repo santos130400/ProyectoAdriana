@@ -158,7 +158,7 @@ class _Detalles extends State<Detalles> {
                                 opacity7 = 0;
                               });
 
-                              Navigator.of(context).pushNamed('/paleta');
+                              Navigator.popAndPushNamed(context,'/paleta');
                               resul.acces = radioItem1;
                             } else {
                               setState(() {

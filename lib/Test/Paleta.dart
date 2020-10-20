@@ -679,7 +679,7 @@ class _Paleta extends State<Paleta> {
                             setState(() {
                               opacity8 = 0;
                             });
-                            Navigator.of(context).pushNamed('/tejidos');
+                            Navigator.popAndPushNamed(context,'/tejidos');
                             resul.paleta = selected;
                           } else {
                             setState(() {

@@ -12,6 +12,14 @@ class Tejidos extends StatefulWidget {
 
 class _Tejidos extends State<Tejidos> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    radioItem1 = 0;
+    opacity9 = 0;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return new Scaffold(
         body: Stack(
@@ -140,7 +148,7 @@ class _Tejidos extends State<Tejidos> {
                   setState(() {
                     opacity9 = 0;
                   });
-                  Navigator.of(context).pushNamed('/caracter');
+                  Navigator.popAndPushNamed(context, '/caracter');
                   resul.tejido = radioItem1;
                 } else {
                   setState(() {

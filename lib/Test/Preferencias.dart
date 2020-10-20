@@ -16,6 +16,13 @@ class _Preferencias extends State<Preferencias> {
       FirebaseFirestore.instance.collection('infoYResultados');
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    radioItem = '';
+  }
+
+  @override
   Widget build(BuildContext context) {
     return new Scaffold(
         key: _scaffoldKey,

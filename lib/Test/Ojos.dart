@@ -23,6 +23,24 @@ class Ojos extends StatefulWidget {
 class _Ojos extends State<Ojos> {
   // This widget is the root of your application.
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    border1 = 0;
+    border2 = 0;
+    border3 = 0;
+    border4 = 0;
+    border5 = 0;
+    border6 = 0;
+    border7 = 0;
+    border8 = 0;
+    border9 = 0;
+    selected = 0;
+    radioItem = 0;
+    opacity2 = 0;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return new Scaffold(
         body: Stack(
@@ -379,7 +397,7 @@ class _Ojos extends State<Ojos> {
                           });
                           resul.ojos = selected;
                           resul.ojeras = radioItem;
-                          Navigator.of(context).pushNamed('/cara');
+                          Navigator.popAndPushNamed(context, '/cara');
                         } else {
                           setState(() {
                             opacity2 = 255;

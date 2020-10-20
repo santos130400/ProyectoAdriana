@@ -62,6 +62,18 @@ class Cara extends StatefulWidget {
 
 class _Cara extends State<Cara> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    border1 = 0;
+    border2 = 0;
+    border3 = 0;
+    selected = 0;
+    palabra = '';
+    opacity3 = 0;
+  }
+
+  @override
   File imageFile;
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -218,7 +230,7 @@ class _Cara extends State<Cara> {
                               opacity3 = 0;
                             });
                             resul.cara = selected.toInt();
-                            Navigator.of(context).pushNamed('/pesoEstatura');
+                            Navigator.popAndPushNamed(context, '/pesoEstatura');
                           } else {
                             setState(() {
                               opacity3 = 255;

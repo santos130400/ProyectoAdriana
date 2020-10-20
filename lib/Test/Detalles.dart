@@ -15,6 +15,14 @@ class Detalles extends StatefulWidget {
 
 class _Detalles extends State<Detalles> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    radioItem1 = 0;
+    opacity7 = 0;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -158,7 +166,7 @@ class _Detalles extends State<Detalles> {
                                 opacity7 = 0;
                               });
 
-                              Navigator.of(context).pushNamed('/paleta');
+                              Navigator.popAndPushNamed(context, '/paleta');
                               resul.acces = radioItem1;
                             } else {
                               setState(() {

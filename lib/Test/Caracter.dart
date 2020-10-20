@@ -13,6 +13,14 @@ class Caracter extends StatefulWidget {
 }
 
 class _Caracter extends State<Caracter> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    radioItem1 = 0;
+    opacity10 = 0;
+  }
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -134,7 +142,8 @@ class _Caracter extends State<Caracter> {
                               setState(() {
                                 opacity10 = 0;
                               });
-                              Navigator.of(context).pushNamed('/preferencias');
+                              Navigator.popAndPushNamed(
+                                  context, '/preferencias');
                               resul.carac = radioItem1;
                             } else {
                               setState(() {

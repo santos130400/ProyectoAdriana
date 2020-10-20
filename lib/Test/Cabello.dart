@@ -23,6 +23,23 @@ int opacity = 0;
 class _Cabello extends State<Cabello> {
   // This widget is the root of your application.
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    border1 = 0;
+    border2 = 0;
+    border3 = 0;
+    border4 = 0;
+    border5 = 0;
+    border6 = 0;
+    border7 = 0;
+    border8 = 0;
+    border9 = 0;
+    selected = 0;
+    opacity = 0;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return new Scaffold(
         body: Stack(
@@ -336,8 +353,8 @@ class _Cabello extends State<Cabello> {
                           setState(() {
                             opacity = 0;
                           });
-                          resul.pelo=selected;
-                          Navigator.of(context).pushNamed('/ojos');
+                          resul.pelo = selected;
+                          Navigator.popAndPushNamed(context, '/ojos');
                         } else {
                           setState(() {
                             opacity = 255;

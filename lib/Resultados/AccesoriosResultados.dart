@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prueba_apliacion/ResuladosInter.dart';
 
 class AccesoriosResultados extends StatefulWidget {
   AccesoriosResultados({Key key}) : super(key: key);
@@ -41,7 +42,9 @@ Widget collar(BuildContext context) {
                 "COLLAR Y ARETES",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(9)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 
@@ -56,7 +59,9 @@ Widget sombreros(BuildContext context) {
                 "SOMBREROS",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(10)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 
@@ -71,7 +76,9 @@ Widget pulseras(BuildContext context) {
                 "PULSERAS Y RELOJES",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(11)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 
@@ -86,7 +93,9 @@ Widget lentes(BuildContext context) {
                 "LENTES",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(12)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 
@@ -101,7 +110,9 @@ Widget bolsos(BuildContext context) {
                 "BOLSOS Y CARTERAS",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(13)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 
@@ -116,7 +127,9 @@ Widget cinturones(BuildContext context) {
                 "CINTURONES",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(14)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 

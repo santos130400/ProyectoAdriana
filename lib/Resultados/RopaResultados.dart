@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prueba_apliacion/ResuladosInter.dart';
 
 class RopaResultados extends StatefulWidget {
   @override
@@ -39,7 +40,9 @@ Widget parteSuperior(BuildContext context) {
                 "PARTE SUPERIOR",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(4)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 
@@ -54,7 +57,9 @@ Widget parteInferior(BuildContext context) {
                 "PARTE INFERIOR",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(5)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 
@@ -69,7 +74,9 @@ Widget zapatos(BuildContext context) {
                 "ZAPATOS",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(6)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 
@@ -84,7 +91,9 @@ Widget vestidos(BuildContext context) {
                 "VESTIDOS",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(7)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 
@@ -99,7 +108,9 @@ Widget ropaInterior(BuildContext context) {
                 "ROPA INTERIOR",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(8)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 

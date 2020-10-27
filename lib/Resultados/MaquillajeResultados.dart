@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prueba_apliacion/ResuladosInter.dart';
 
 class MaquillajeResultados extends StatefulWidget {
   MaquillajeResultados({Key key}) : super(key: key);
@@ -38,7 +39,9 @@ Widget ojos(BuildContext context) {
                 "OJOS",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(1)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 
@@ -53,7 +56,9 @@ Widget labios(BuildContext context) {
                 "LABIOS",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(2)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 
@@ -68,7 +73,9 @@ Widget piel(BuildContext context) {
                 "PIEL",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(3)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 

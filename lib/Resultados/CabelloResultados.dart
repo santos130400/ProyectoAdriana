@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prueba_apliacion/ResuladosInter.dart';
 
 class CabelloResultados extends StatefulWidget {
   @override
@@ -37,7 +38,9 @@ Widget cabelloYPeinados(BuildContext context) {
                 "CABELLO Y PEINADOS",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(15)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 
@@ -52,7 +55,9 @@ Widget colorYEfectos(BuildContext context) {
                 "COLOR Y EFECTOS",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(16)));
+              },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
 

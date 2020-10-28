@@ -75,6 +75,40 @@ class Metodos {
     }
     return i;
   }
+  String traductorPeloPalabra(int codigo) {
+    String i = '';
+    switch (codigo) {
+      case 1:
+        i = 'CREMA';
+        break;
+      case 2:
+        i = 'BASE';
+        break;
+      case 3:
+        i = 'CLARO';
+        break;
+      case 4:
+        i = 'RUBIO';
+        break;
+      case 5:
+        i = 'NARANJA';
+        break;
+      case 6:
+        i = 'ROJIZO';
+        break;
+      case 7:
+        i = 'VINOTINTO';
+        break;
+      case 8:
+        i = 'NEGRO';
+        break;
+      case 9:
+        i = 'GRIS';
+        break;
+      default:
+    }
+    return i;
+  }
   Color traductorPeloColor(int codigo) {
     Color i = Colors.white;
     switch (codigo) {
@@ -109,6 +143,7 @@ class Metodos {
     }
     return i;
   }
+  
 
   String traductorCuerpoPalabra(int codigo) {
     String i = '';

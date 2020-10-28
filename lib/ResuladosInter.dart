@@ -318,16 +318,23 @@ class _ResultadosInterState extends State<ResultadosInter> {
                   ],
                 )),
             Container(
-              child: Container(
-                height: 50,
-                width: 50,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 2),
-                    shape: BoxShape.circle,
-                    color: m.traductorPeloColor(resul.pelo),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black, width: 2),
+                        shape: BoxShape.circle,
+                        color: m.traductorPeloColor(resul.pelo)),
+                  ),
+                  Text(m.traductorPeloPalabra(resul.pelo),
+                      style: TextStyle(fontWeight: FontWeight.bold))
+                ],
               ),
             )
-            )],
+          ],
         ),
       );
     }

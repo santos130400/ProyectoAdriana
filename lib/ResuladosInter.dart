@@ -177,6 +177,61 @@ class _ResultadosInterState extends State<ResultadosInter> {
         ),
       );
     } else if (txt >= 9 && txt <= 14) {
+     atrib = Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+            color: Color(0xFFFFEED9),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.black26, blurRadius: 4, offset: Offset(0, 4))
+            ]),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+                alignment: Alignment.center,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text('FORMA DEL',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 92, 68, 46),
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold)),
+                    Text('ROSTRO',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 92, 68, 46),
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold)),
+                  ],
+                )),
+            Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  m.traductorCaraForma(resul.cara) != null
+                      ? Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                              shape: m.traductorCaraForma(resul.cara),
+                              color: Color(0xFFEBA47A),
+                              border: Border.all(
+                                  color: Color.fromARGB(255, 92, 68, 46),
+                                  width: 2)),
+                        )
+                      : CustomPaint(
+                          size: Size(50, 50), painter: DrawTriangleShape()),
+                  Text(m.traductorCaraParabra(resul.cara), style: TextStyle(fontWeight: FontWeight.bold))
+                ],
+              ),
+            )
+          ],
+        ),
+      );
+    } else if (txt == 15) {
       atrib = Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -211,20 +266,27 @@ class _ResultadosInterState extends State<ResultadosInter> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.black),
-                  ),
-                  Text('NEGRO', style: TextStyle(fontWeight: FontWeight.bold))
+                  m.traductorCaraForma(resul.cara) != null
+                      ? Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                              shape: m.traductorCaraForma(resul.cara),
+                              color: Color(0xFFEBA47A),
+                              border: Border.all(
+                                  color: Color.fromARGB(255, 92, 68, 46),
+                                  width: 2)),
+                        )
+                      : CustomPaint(
+                          size: Size(50, 50), painter: DrawTriangleShape()),
+                  Text(m.traductorCaraParabra(resul.cara), style: TextStyle(fontWeight: FontWeight.bold))
                 ],
               ),
             )
           ],
         ),
       );
-    } else if (txt == 15) {
+    } else if (txt == 16) {
       atrib = Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -256,68 +318,16 @@ class _ResultadosInterState extends State<ResultadosInter> {
                   ],
                 )),
             Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.black),
-                  ),
-                  Text('NEGRO', style: TextStyle(fontWeight: FontWeight.bold))
-                ],
+              child: Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black, width: 2),
+                    shape: BoxShape.circle,
+                    color: m.traductorPeloColor(resul.pelo),
               ),
             )
-          ],
-        ),
-      );
-    } else if (txt == 16) {
-      atrib = Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-            color: Color(0xFFFFEED9),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.black26, blurRadius: 4, offset: Offset(0, 4))
-            ]),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Container(
-                alignment: Alignment.center,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text('FORMA DEL',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 92, 68, 46),
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold)),
-                    Text('ROSTRO',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 92, 68, 46),
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold)),
-                  ],
-                )),
-            Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.black),
-                  ),
-                  Text('NEGRO', style: TextStyle(fontWeight: FontWeight.bold))
-                ],
-              ),
-            )
-          ],
+            )],
         ),
       );
     }

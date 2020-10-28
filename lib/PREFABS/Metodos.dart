@@ -75,6 +75,40 @@ class Metodos {
     }
     return i;
   }
+  Color traductorPeloColor(int codigo) {
+    Color i = Colors.white;
+    switch (codigo) {
+      case 1:
+        i = Color.fromARGB(255, 222, 190, 153);
+        break;
+      case 2:
+        i =Color.fromARGB(255, 170, 136, 102);
+        break;
+      case 3:
+        i = Color.fromARGB(255, 213, 176, 113);
+        break;
+      case 4:
+        i = Color.fromARGB(255, 239, 197, 97);
+        break;
+      case 5:
+        i = Color.fromARGB(255, 192, 99, 53);
+        break;
+      case 6:
+        i = Color.fromARGB(255, 154, 51, 0);
+        break;
+      case 7:
+        i = Color.fromARGB(255, 79, 26, 0);
+        break;
+      case 8:
+        i = Color.fromARGB(255, 31, 10, 0);
+        break;
+      case 9:
+        i = Color.fromARGB(255, 196, 193, 186);
+        break;
+      default:
+    }
+    return i;
+  }
 
   String traductorCuerpoPalabra(int codigo) {
     String i = '';
@@ -88,6 +122,43 @@ class Metodos {
         break;
       case 3:
         i = 'REDONDA';
+        break;
+
+      default:
+    }
+    return i;
+  }
+
+  String traductorCaraParabra(int codigo){
+    String i = '';
+    switch (codigo) {
+      case 1:
+      i = 'CUADRADA';
+        
+        break;
+      case 2:
+        i = 'CIRCULAR';
+        break;
+      case 3:
+        i = 'TRIANGULAR';
+        break;
+
+      default:
+    }
+    return i;
+  }
+  BoxShape traductorCaraForma(int codigo) {
+    BoxShape i = BoxShape.rectangle;
+    switch (codigo) {
+      case 2:
+        i = BoxShape.circle;
+
+        break;
+      case 1:
+        i = BoxShape.rectangle;
+        break;
+      case 3:
+        i = null;
         break;
 
       default:

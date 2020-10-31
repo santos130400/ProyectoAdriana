@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prueba_apliacion/main.dart';
-
+double border = 0;
 double border1 = 0;
 double border2 = 0;
 double border3 = 0;
@@ -8,9 +8,7 @@ double border4 = 0;
 double border5 = 0;
 double border6 = 0;
 double border7 = 0;
-double border8 = 0;
-double border9 = 0;
-int selected = 0;
+int selected = -1;
 int radioItem = 0;
 int opacity2 = 0;
 
@@ -26,6 +24,7 @@ class _Ojos extends State<Ojos> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    border =0;
     border1 = 0;
     border2 = 0;
     border3 = 0;
@@ -33,9 +32,7 @@ class _Ojos extends State<Ojos> {
     border5 = 0;
     border6 = 0;
     border7 = 0;
-    border8 = 0;
-    border9 = 0;
-    selected = 0;
+    selected = -1;
     radioItem = 0;
     opacity2 = 0;
   }
@@ -47,330 +44,366 @@ class _Ojos extends State<Ojos> {
       children: [
         Container(
           child: ListView(children: [
-            Column(children: [
-              barraNavegacion(context),
-              texto(),
-              Container(
-                  padding: EdgeInsets.only(top: 100),
-                  width: 275,
-                  height: 175,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: NetworkImage(
-                              "https://images.vexels.com/media/users/3/134558/isolated/lists/7bf2731c5db33eb567ca38ac78e57b3d-ojo-maquillaje-ilustracion.png"),
-                          alignment: Alignment.topCenter))),
-              Column(
+            barraNavegacion(context),
+            texto(),
+            Container(
+                padding: EdgeInsets.only(top: 100),
+                width: 275,
+                height: 175,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: NetworkImage(
+                            "https://images.vexels.com/media/users/3/134558/isolated/lists/7bf2731c5db33eb567ca38ac78e57b3d-ojo-maquillaje-ilustracion.png"),
+                        alignment: Alignment.topCenter))),
+            Container(
+              height: 200,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Column(
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.only(
-                                right: 20, bottom: 20, left: 20),
-                            child: GestureDetector(
-                              child: Container(
-                                width: 60,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment(0.8,
-                                          0.0), // 10% of the width, so there are ten blinds.
-                                      colors: [
-                                        Colors.green[200],
-                                        Color.fromARGB(255, 6, 126, 18)
-                                      ],
-                                    ),
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                        color: Colors.black, width: border1)),
-                              ),
-                              onTap: () {
-                                setState(() {
-                                  selected = 1;
-                                  border1 = 3;
-                                  border2 = 0;
-                                  border3 = 0;
-                                  border4 = 0;
-                                  border5 = 0;
-                                  border6 = 0;
-                                  border7 = 0;
-                                  border8 = 0;
-                                  border9 = 0;
-                                });
-                              },
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Container(
+                          child: GestureDetector(
+                            child: Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment(0.8,
+                                        0.0), // 10% of the width, so there are ten blinds.
+                                    colors: [
+                                      Color(0x8046392B),
+                                      Color(0xff46392B)
+                                    ],
+                                  ),
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                      color: Colors.black, width: border)),
                             ),
+                            onTap: () {
+                              setState(() {
+                                selected = 10;
+                                border=3;
+                                border1 = 0;
+                                border2 = 0;
+                                border3 = 0;
+                                border4 = 0;
+                                border5 = 0;
+                                border6 = 0;
+                                border7 = 0;
+                              });
+                            },
                           ),
-                        ],
-                      ),
-                      Column(
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.only(right: 20, bottom: 20),
-                            child: GestureDetector(
-                              child: Container(
-                                width: 60,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment(0.8,
-                                          0.0), // 10% of the width, so there are ten blinds.
-                                      colors: [
-                                        Colors.blue[300],
-                                        Color.fromARGB(255, 3, 100, 154)
-                                      ],
-                                    ),
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                        color: Colors.black, width: border2)),
-                              ),
-                              onTap: () {
-                                setState(() {
-                                  selected = 2;
-                                  border1 = 0;
-                                  border2 = 3;
-                                  border3 = 0;
-                                  border4 = 0;
-                                  border5 = 0;
-                                  border6 = 0;
-                                  border7 = 0;
-                                  border8 = 0;
-                                  border9 = 0;
-                                });
-                              },
+                        ),
+                        Container(
+                          child: GestureDetector(
+                            child: Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment(0.8,
+                                        0.0), // 10% of the width, so there are ten blinds.
+                                    colors: [
+                                      Color(0x80CD9643),
+                                      Color(0xffCD9643)
+                                    ],
+                                  ),
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                      color: Colors.black, width: border1)),
                             ),
+                            onTap: () {
+                              setState(() {
+                                selected = 1;
+                                border= 0;
+                                border1 = 3;
+                                border2 = 0;
+                                border3 = 0;
+                                border4 = 0;
+                                border5 = 0;
+                                border6 = 0;
+                                border7 = 0;
+                              });
+                            },
                           ),
-                        ],
-                      ),
-                      Column(
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.only(right: 20, bottom: 20),
-                            child: GestureDetector(
-                              child: Container(
-                                width: 60,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment(0.8,
-                                          0.0), // 10% of the width, so there are ten blinds.
-                                      colors: [
-                                        Colors.brown[300],
-                                        Color.fromARGB(255, 70, 57, 43),
-                                      ],
-                                    ),
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                        color: Colors.black, width: border3)),
-                              ),
-                              onTap: () {
-                                setState(() {
-                                  selected = 3;
-                                  border1 = 0;
-                                  border2 = 0;
-                                  border3 = 3;
-                                  border4 = 0;
-                                  border5 = 0;
-                                  border6 = 0;
-                                  border7 = 0;
-                                  border8 = 0;
-                                  border9 = 0;
-                                });
-                              },
+                        ),
+                        Container(
+                          child: GestureDetector(
+                            child: Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment(0.8,
+                                        0.0), // 10% of the width, so there are ten blinds.
+                                    colors: [
+                                      Color(0x80578137),
+                                      Color(0xff578137)
+                                    ],
+                                  ),
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                      color: Colors.black, width: border2)),
                             ),
+                            onTap: () {
+                              setState(() {
+                                selected = 2;
+                                border= 0;
+                                border1 = 0;
+                                border2 = 3;
+                                border3 = 0;
+                                border4 = 0;
+                                border5 = 0;
+                                border6 = 0;
+                                border7 = 0;
+                              });
+                            },
                           ),
-                        ],
-                      ),
-                    ],
+                        ),
+                        Container(
+                          child: GestureDetector(
+                            child: Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment(0.8,
+                                        0.0), // 10% of the width, so there are ten blinds.
+                                    colors: [
+                                      Color(0x80824709),
+                                      Color(0xff824709)
+                                    ],
+                                  ),
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                      color: Colors.black, width: border3)),
+                            ),
+                            onTap: () {
+                              setState(() {
+                                selected = 3;
+                                border= 0;
+                                border1 = 0;
+                                border2 = 0;
+                                border3 = 3;
+                                border4 = 0;
+                                border5 = 0;
+                                border6 = 0;
+                                border7 = 0;
+                              });
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Column(
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.only(right: 20, left: 20),
-                            child: GestureDetector(
-                              child: Container(
-                                width: 60,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment(0.8,
-                                          0.0), // 10% of the width, so there are ten blinds.
-                                      colors: [
-                                        Colors.yellow[700],
-                                        Color.fromARGB(255, 205, 150, 67),
-                                      ],
-                                    ),
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                        color: Colors.black, width: border4)),
-                              ),
-                              onTap: () {
-                                setState(() {
-                                  selected = 4;
-                                  border1 = 0;
-                                  border2 = 0;
-                                  border3 = 0;
-                                  border4 = 3;
-                                  border5 = 0;
-                                  border6 = 0;
-                                  border7 = 0;
-                                  border8 = 0;
-                                  border9 = 0;
-                                });
-                              },
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Container(
+                          child: GestureDetector(
+                            child: Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment(0.8,
+                                        0.0), // 10% of the width, so there are ten blinds.
+                                    colors: [
+                                      Color(0x8098999A),
+                                      Color(0xff98999A)
+                                    ],
+                                  ),
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                      color: Colors.black, width: border4)),
                             ),
+                            onTap: () {
+                              setState(() {
+                                selected = 4;
+                                border= 0;
+                                border1 = 0;
+                                border2 = 0;
+                                border3 = 0;
+                                border4 = 3;
+                                border5 = 0;
+                                border6 = 0;
+                                border7 = 0;
+                              });
+                            },
                           ),
-                        ],
-                      ),
-                      Column(
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.only(right: 20),
-                            child: GestureDetector(
-                              child: Container(
-                                width: 60,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment(0.8,
-                                          0.0), // 10% of the width, so there are ten blinds.
-                                      colors: [
-                                        Colors.grey[300],
-                                        Color.fromARGB(255, 154, 152, 150),
-                                      ],
-                                    ),
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                        color: Colors.black, width: border5)),
-                              ),
-                              onTap: () {
-                                setState(() {
-                                  selected = 5;
-                                  border1 = 0;
-                                  border2 = 0;
-                                  border3 = 0;
-                                  border4 = 0;
-                                  border5 = 3;
-                                  border6 = 0;
-                                  border7 = 0;
-                                  border8 = 0;
-                                  border9 = 0;
-                                });
-                              },
+                        ),
+                        Container(
+                          child: GestureDetector(
+                            child: Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment(0.8,
+                                        0.0), // 10% of the width, so there are ten blinds.
+                                    colors: [
+                                      Color(0x8089DA6D),
+                                      Color(0xff89DA6D)
+                                    ],
+                                  ),
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                      color: Colors.black, width: border5)),
                             ),
+                            onTap: () {
+                              setState(() {
+                                selected = 5;
+                                border= 0;
+                                border1 = 0;
+                                border2 = 0;
+                                border3 = 0;
+                                border4 = 0;
+                                border5 = 3;
+                                border6 = 0;
+                                border7 = 0;
+                              });
+                            },
                           ),
-                        ],
-                      ),
-                      Column(
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.only(right: 20),
-                            child: GestureDetector(
-                              child: Container(
-                                width: 60,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment(0.8,
-                                          0.0), // 10% of the width, so there are ten blinds.
-                                      colors: [
-                                        Colors.blue[200],
-                                        Color.fromARGB(255, 0, 124, 141),
-                                      ],
-                                    ),
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                        color: Colors.black, width: border6)),
-                              ),
-                              onTap: () {
-                                setState(() {
-                                  selected = 6;
-                                  border1 = 0;
-                                  border2 = 0;
-                                  border3 = 0;
-                                  border4 = 0;
-                                  border5 = 0;
-                                  border6 = 3;
-                                  border7 = 0;
-                                  border8 = 0;
-                                  border9 = 0;
-                                });
-                              },
+                        ),
+                        Container(
+                          child: GestureDetector(
+                            child: Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment(0.8,
+                                        0.0), // 10% of the width, so there are ten blinds.
+                                    colors: [
+                                      Color(0x8003649A),
+                                      Color(0xff03649A)
+                                    ],
+                                  ),
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                      color: Colors.black, width: border6)),
                             ),
+                            onTap: () {
+                              setState(() {
+                                selected = 6;
+                                border= 0;
+                                border1 = 0;
+                                border2 = 0;
+                                border3 = 0;
+                                border4 = 0;
+                                border5 = 0;
+                                border6 = 3;
+                                border7 = 0;
+                              });
+                            },
                           ),
-                        ],
-                      ),
-                    ],
+                        ),
+                        Container(
+                          child: GestureDetector(
+                            child: Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment(0.8,
+                                        0.0), // 10% of the width, so there are ten blinds.
+                                    colors: [
+                                      Color(0x80000000),
+                                      Color(0xff000000)
+                                    ],
+                                  ),
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                      color: Colors.black, width: border7)),
+                            ),
+                            onTap: () {
+                              setState(() {
+                                selected = 10;
+                                border=0;
+                                border1 = 0;
+                                border2 = 0;
+                                border3 = 0;
+                                border4 = 0;
+                                border5 = 0;
+                                border6 = 0;
+                                border7 = 3;
+                              });
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
                   )
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Container(
-                  child: Column(
-                    children: <Widget>[
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+            ),
+            Container(
+              padding: const EdgeInsets.only(top: 20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Column(children: <Widget>[
+                          new Text("Mis ojeras son:",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 92, 68, 56),
+                                  fontSize: 20.0,
+                                  fontFamily: ''))
+                        ]),
+                        Column()
+                      ]),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Column(
                           children: <Widget>[
-                            Column(children: <Widget>[
-                              new Text("Mis ojeras son:",
-                                  style: TextStyle(
-                                      color: Color.fromARGB(255, 92, 68, 56),
-                                      fontSize: 20.0,
-                                      fontFamily: ''))
-                            ]),
-                            Column()
-                          ]),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                            new Radio(
+                              groupValue: radioItem,
+                              value: 1,
+                              onChanged: _handleRadioValueChange,
+                            )
+                          ],
+                        ),
+                        Column(children: <Widget>[
+                          new Text("Marcadas",
+                              style: new TextStyle(
+                                  fontSize: 18.0, fontFamily: 'Roboto'))
+                        ]),
+                        Column(
                           children: <Widget>[
-                            Column(
-                              children: <Widget>[
-                                new Radio(
-                                  groupValue: radioItem,
-                                  value: 1,
-                                  onChanged: _handleRadioValueChange,
-                                )
-                              ],
-                            ),
-                            Column(children: <Widget>[
-                              new Text("Marcadas",
-                                  style: new TextStyle(
-                                      fontSize: 18.0, fontFamily: 'Roboto'))
-                            ]),
-                            Column(
-                              children: <Widget>[
-                                new Radio(
-                                  groupValue: radioItem,
-                                  value: 2,
-                                  onChanged: _handleRadioValueChange,
-                                )
-                              ],
-                            ),
-                            Column(children: <Widget>[
-                              new Text("Poco notorias",
-                                  style: new TextStyle(
-                                      fontSize: 18.0, fontFamily: 'Roboto'))
-                            ]),
-                          ])
-                    ],
-                  ),
-                ),
+                            new Radio(
+                              groupValue: radioItem,
+                              value: 2,
+                              onChanged: _handleRadioValueChange,
+                            )
+                          ],
+                        ),
+                        Column(children: <Widget>[
+                          new Text("Poco notorias",
+                              style: new TextStyle(
+                                  fontSize: 18.0, fontFamily: 'Roboto'))
+                        ]),
+                      ])
+                ],
               ),
-              Container(
-                height: 75,
-              )
-            ])
+            ),
+            Container(
+              height: 75,
+            )
           ]),
         ),
         Container(

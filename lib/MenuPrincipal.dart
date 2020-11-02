@@ -16,7 +16,9 @@ class MenuPrincipal extends StatefulWidget {
   @override
   _MenuPrincipalState createState() => _MenuPrincipalState();
 }
-Metodos m= Metodos();
+
+Metodos m = Metodos();
+
 class _MenuPrincipalState extends State<MenuPrincipal> {
   // ignore: non_constant_identifier_names
   String IdUnico = nombreid.getId;
@@ -197,26 +199,43 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     } else {
       imageFile = File(ruta);
     }
-    return Center(
-        child: Padding(
-            padding: const EdgeInsets.only(top: 30),
-            child: Container(
-                height: 130,
-                width: 130,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      image: imageFile != null
-                          ? FileImage(imageFile)
-                          : AssetImage('assets/persona.png'),
-                      fit: BoxFit.cover,
-                    )))));
+    try {
+      return Center(
+          child: Padding(
+              padding: const EdgeInsets.only(top: 30),
+              child: Container(
+                  height: 130,
+                  width: 130,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: imageFile != null
+                            ? FileImage(imageFile)
+                            : AssetImage('assets/persona.png'),
+                        fit: BoxFit.cover,
+                      )))));
+    } catch (e) {
+      print('cambio de cuenta');
+      return Center(
+          child: Padding(
+              padding: const EdgeInsets.only(top: 30),
+              child: Container(
+                  height: 130,
+                  width: 130,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: AssetImage('assets/persona.png'),
+                        fit: BoxFit.cover,
+                      )))));
+    }
   }
 
   Widget cuerpo() {
     return Column(
       children: [
         parteArriba(),
+        botonResultados(),
         fila1Botones(),
         fila2Botones(),
       ],
@@ -275,7 +294,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
 
   Widget fila1Botones() {
     return Padding(
-      padding: const EdgeInsets.only(top: 100),
+      padding: const EdgeInsets.only(top: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -284,8 +303,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             child: Column(
               children: [
                 Container(
-                  height: 140,
-                  width: 140,
+                  height: 120,
+                  width: 120,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('assets/polvos.png')),
@@ -321,8 +340,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             child: Column(
               children: [
                 Container(
-                  height: 140,
-                  width: 140,
+                  height: 120,
+                  width: 120,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('assets/falda.png')),
@@ -368,8 +387,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             child: Column(
               children: [
                 Container(
-                  height: 140,
-                  width: 140,
+                  height: 120,
+                  width: 120,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('assets/joyeria.png')),
@@ -405,8 +424,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             child: Column(
               children: [
                 Container(
-                  height: 140,
-                  width: 140,
+                  height: 120,
+                  width: 120,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('assets/cabello.png')),
@@ -437,6 +456,38 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget botonResultados() {
+    return Padding(
+      padding: EdgeInsets.only(top: 85),
+      child: FlatButton(
+        onPressed: () {},
+        child: Container(
+            width: 300,
+            height: 50,
+            decoration: BoxDecoration(
+                color: Color(0xFFFFEED9),
+                borderRadius: BorderRadius.circular(30),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.grey[400],
+                      blurRadius: 2,
+                      offset: Offset(0, 5))
+                ]),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 15),
+              child: Text(
+                'Resultados Personalizados',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFF5C4438),
+                    fontSize: 18),
+              ),
+            )),
       ),
     );
   }
@@ -602,26 +653,26 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     return Align(
       alignment: FractionalOffset.bottomCenter,
       child: Container(
-    child: FlatButton(
-      child: Row(
-        children: [
-          Icon(Icons.exit_to_app, color: const Color(0xFF5C4438)),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Text('Cerrar sesión',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: const Color(0xFF5C4438), fontSize: 20)),
-          )
-        ],
-      ),
-      onPressed: () async {
-        _cerrarSesion().whenComplete(() {
-          resul = new Test();
-          Navigator.of(context).pushNamed('/inicio');
-        });
-      },
-    ),
+        child: FlatButton(
+          child: Row(
+            children: [
+              Icon(Icons.exit_to_app, color: const Color(0xFF5C4438)),
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Text('Cerrar sesión',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: const Color(0xFF5C4438), fontSize: 20)),
+              )
+            ],
+          ),
+          onPressed: () async {
+            _cerrarSesion().whenComplete(() {
+              resul = new Test();
+              Navigator.of(context).pushNamed('/inicio');
+            });
+          },
+        ),
       ),
     );
   }

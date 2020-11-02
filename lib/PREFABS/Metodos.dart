@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prueba_apliacion/main.dart';
 
 class Metodos {
   String traductorPielPalabra(int codigo) {
@@ -219,5 +220,259 @@ class Metodos {
     }
     return i;
   }
-  
+  String paletaColorString(){
+    int fria = 0;
+    int calida=0;
+
+if(resul.piel>=1 && resul.piel<=4){
+  calida = calida + 55;
+
+}
+
+if(resul.piel>=5 && resul.piel<=9){
+  fria = fria + 55;
+}
+
+if(resul.ojos>=0 && resul.ojos<=3){
+calida = calida + 20;
+}
+
+if(resul.ojos>=4 && resul.ojos<=7){
+fria = fria + 20;
+}
+
+if(resul.ojeras == 1){
+fria = fria + 10;
+}
+
+if(resul.ojeras == 2){
+calida = calida + 10;
+}
+
+if(resul.sol == 1){
+fria = fria + 7;
+}
+
+if(resul.sol == 2){
+calida = calida + 7;
+}
+
+if(resul.labios == 1){
+calida = calida + 5;
+}
+
+if(resul.labios == 2){
+fria = fria + 5;
+}
+
+if(resul.pelo == 8 || resul.pelo == 9|| resul.pelo == 4 || resul.pelo == 3 || resul.pelo == 7){
+fria = fria + 3;
+}
+
+if(resul.pelo == 6 || resul.pelo == 5|| resul.pelo == 1 || resul.pelo == 2 ){
+calida= calida + 3;
+}
+if (fria>calida) {
+  return 'Fria';
+}else if(calida>fria){
+  return 'Calida';
+}else{
+  return 'Error';
+}
+
+}
+int paletaColorNumero(){
+    int fria = 0;
+    int calida=0;
+
+if(resul.piel>=1 && resul.piel<=4){
+  calida = calida + 55;
+
+}
+
+if(resul.piel>=5 && resul.piel<=9){
+  fria = fria + 55;
+}
+
+if(resul.ojos>=0 && resul.ojos<=3){
+calida = calida + 20;
+}
+
+if(resul.ojos>=4 && resul.ojos<=7){
+fria = fria + 20;
+}
+
+if(resul.ojeras == 1){
+fria = fria + 10;
+}
+
+if(resul.ojeras == 2){
+calida = calida + 10;
+}
+
+if(resul.sol == 1){
+fria = fria + 7;
+}
+
+if(resul.sol == 2){
+calida = calida + 7;
+}
+
+if(resul.labios == 1){
+calida = calida + 5;
+}
+
+if(resul.labios == 2){
+fria = fria + 5;
+}
+
+if(resul.pelo == 8 || resul.pelo == 9|| resul.pelo == 4 || resul.pelo == 3 || resul.pelo == 7){
+fria = fria + 3;
+}
+
+if(resul.pelo == 6 || resul.pelo == 5|| resul.pelo == 1 || resul.pelo == 2 ){
+calida= calida + 3;
+}
+if (fria>calida) {
+  return fria;
+}else if(calida>fria){
+  return calida;
+}else{
+  return 0;
+}
+
+}
+
+String estilo(){
+
+int romantico=0;
+int elegante=0;
+int casual=0;
+int seductor=0;
+int dramatico=0;
+
+//VALORES
+if(resul.valores==1){
+elegante = elegante + 14;
+}
+
+if(resul.valores==2 || resul.valores==5){
+elegante = elegante + 14;
+}
+
+if(resul.valores==4){
+casual = casual + 14;
+}
+
+if(resul.valores==7){
+seductor = seductor + 14;
+}
+
+if(resul.valores==6 || resul.valores==3){
+dramatico = dramatico + 14;
+}
+
+//DETALLES Y ACCESORIOS
+if(resul.acces==1){
+romantico = romantico + 40;
+}
+
+if(resul.acces==2 || resul.acces==5){
+elegante = elegante + 40;
+}
+
+if(resul.acces==4){
+casual = casual + 40;
+}
+
+if(resul.acces==6){
+seductor = seductor + 40;
+}
+
+if(resul.acces==3 || resul.acces==7){
+dramatico = dramatico + 40;
+}
+
+//PALETA PREFERIDA
+if(resul.paleta==1){
+romantico = romantico + 10;
+}
+
+if(resul.paleta==2 || resul.paleta==5){
+elegante = elegante + 10;
+}
+
+if(resul.paleta==4){
+casual = casual + 10;
+}
+
+if(resul.paleta==6){
+seductor = seductor + 10;
+}
+
+if(resul.paleta==3 || resul.paleta==7){
+dramatico = dramatico + 10;
+}
+
+//TEJIDOS
+
+if(resul.tejido==1){
+romantico = romantico + 15;
+}
+
+if(resul.tejido==2 || resul.tejido==5){
+elegante = elegante + 15;
+}
+
+if(resul.tejido==4){
+casual = casual + 15;
+}
+
+if(resul.tejido==7){
+seductor = seductor + 15;
+}
+
+if(resul.tejido==3 || resul.tejido==6){
+dramatico = dramatico + 15;
+}
+
+//CARACTERISTICAS
+
+if(resul.carac==1){
+romantico = romantico + 21;
+}
+
+if(resul.carac== 2 || resul.carac==5){
+elegante = elegante + 21;
+}
+
+if(resul.carac==4){
+casual = casual + 21;
+}
+
+if(resul.carac==7){
+seductor = seductor + 21;
+}
+
+if(resul.carac== 3 || resul.carac==6){
+dramatico = dramatico + 21;
+}
+if(romantico>dramatico && romantico>seductor && romantico>casual && romantico>elegante){
+  return 'Romantico: '+ romantico.toString();
+}else if(dramatico>romantico && dramatico>seductor && dramatico>casual && dramatico>elegante){
+  return 'Dramatico: '+ dramatico.toString();
+}else if(seductor>romantico && seductor>dramatico && seductor>casual && seductor>elegante){
+  return 'Seductor: '+ seductor.toString();
+}else if(casual>romantico && casual>dramatico && casual>seductor && casual>elegante){
+  return 'Casual: '+ casual.toString();
+}else if(elegante>romantico && elegante>dramatico && elegante>seductor && elegante>casual){
+  return 'Elegante: '+ elegante.toString();
+}else{
+  return 'Error';
+}
+
+
+
+}
+
 }

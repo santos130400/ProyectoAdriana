@@ -85,7 +85,7 @@ class _Ojos extends State<Ojos> {
                             ),
                             onTap: () {
                               setState(() {
-                                selected = 10;
+                                selected = 0;
                                 border=3;
                                 border1 = 0;
                                 border2 = 0;
@@ -330,7 +330,7 @@ class _Ojos extends State<Ojos> {
                             ),
                             onTap: () {
                               setState(() {
-                                selected = 10;
+                                selected = 7;
                                 border=0;
                                 border1 = 0;
                                 border2 = 0;

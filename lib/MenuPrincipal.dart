@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:prueba_apliacion/PREFABS/Metodos.dart';
 import 'package:prueba_apliacion/ResultadosTest.dart';
 import 'package:prueba_apliacion/main.dart';
 
@@ -15,7 +16,7 @@ class MenuPrincipal extends StatefulWidget {
   @override
   _MenuPrincipalState createState() => _MenuPrincipalState();
 }
-
+Metodos m= Metodos();
 class _MenuPrincipalState extends State<MenuPrincipal> {
   // ignore: non_constant_identifier_names
   String IdUnico = nombreid.getId;
@@ -30,7 +31,9 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
 
   @override
   Widget build(BuildContext context) {
-    print('entro a menu principal');
+    print(m.paletaColorString());
+    print(m.paletaColorNumero());
+    print(m.estilo());
     if (temp.length > 12) {
       setState(() {
         tempFont = 15;

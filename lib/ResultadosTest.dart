@@ -9,6 +9,7 @@ class Test {
   int estatura;
   int peso;
   int forma;
+  /////////////////////estilo
   int valores;
   int acces;
   int paleta;

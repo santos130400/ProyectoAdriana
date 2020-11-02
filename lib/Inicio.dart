@@ -434,7 +434,7 @@ class _InicioState extends State<Inicio> {
   void iniciarSesion(BuildContext context) async {
     try {
       final User usuario = (await _auth.signInWithEmailAndPassword(
-              email: _controladorCorreo.text,
+              email: _controladorCorreo.text.trim(),
               password: _controladorContrasena.text))
           .user;
       if (!usuario.emailVerified) {

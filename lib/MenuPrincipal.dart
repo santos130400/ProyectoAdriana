@@ -45,37 +45,64 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     } else if (temp.length <= 12) {
       tempFont = 20;
     }
-    return Scaffold(
-      key: scaffoldKey,
-      drawer: Drawer(
-        child: Container(
-          color: Color(0xFFEBA47A),
-          child: ListView(
-            children: [
-              menuHamburguesa(context),
-            ],
+    return WillPopScope(
+      onWillPop: onBackPressed,
+      child: Scaffold(
+        key: scaffoldKey,
+        drawer: Drawer(
+          child: Container(
+            color: Color(0xFFEBA47A),
+            child: ListView(
+              children: [
+                menuHamburguesa(context),
+              ],
+            ),
           ),
         ),
+        body: Stack(
+          children: [
+            ListView(
+              children: [
+                Stack(
+                  children: <Widget>[
+                    cuerpo(),
+                    recuadroPerfil(),
+                    fotoPerfil(),
+                    botonesArriba()
+                  ],
+                ),
+              ],
+            ),
+            Container(
+              height: double.infinity,
+              alignment: Alignment.bottomCenter,
+              child: botonesFinales(),
+            )
+          ],
+        ),
       ),
-      body: Stack(
-        children: [
-          ListView(
-            children: [
-              Stack(
-                children: <Widget>[
-                  cuerpo(),
-                  recuadroPerfil(),
-                  fotoPerfil(),
-                  botonesArriba()
-                ],
-              ),
-            ],
-          ),
-          Container(
-            height: double.infinity,
-            alignment: Alignment.bottomCenter,
-            child: botonesFinales(),
-          )
+    );
+  }
+
+  Future<bool> onBackPressed() {
+    return showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('¿Desea cerrar sesion?'),
+        actions: [
+          FlatButton(
+              onPressed: () {
+                Navigator.pop(context, false);
+              },
+              child: Text('NO')),
+          FlatButton(
+              onPressed: () async {
+                _cerrarSesion().whenComplete(() {
+                  resul = new Test();
+                  Navigator.of(context).pushNamed('/inicio');
+                });
+              },
+              child: Text('SI'))
         ],
       ),
     );

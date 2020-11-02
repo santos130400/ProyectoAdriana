@@ -596,32 +596,31 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   }
 
   Widget cerrarSesion() {
-    return Positioned(
-        child: Align(
+    return Align(
       alignment: FractionalOffset.bottomCenter,
       child: Container(
-        child: FlatButton(
-          child: Row(
-            children: [
-              Icon(Icons.exit_to_app, color: const Color(0xFF5C4438)),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text('Cerrar sesión',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: const Color(0xFF5C4438), fontSize: 20)),
-              )
-            ],
-          ),
-          onPressed: () async {
-            _cerrarSesion().whenComplete(() {
-              resul = new Test();
-              Navigator.of(context).pushNamed('/inicio');
-            });
-          },
-        ),
+    child: FlatButton(
+      child: Row(
+        children: [
+          Icon(Icons.exit_to_app, color: const Color(0xFF5C4438)),
+          Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Text('Cerrar sesión',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: const Color(0xFF5C4438), fontSize: 20)),
+          )
+        ],
       ),
-    ));
+      onPressed: () async {
+        _cerrarSesion().whenComplete(() {
+          resul = new Test();
+          Navigator.of(context).pushNamed('/inicio');
+        });
+      },
+    ),
+      ),
+    );
   }
 
   Future _cerrarSesion() async {

@@ -53,7 +53,7 @@ class _Hola extends State<Hola> {
       child: Padding(
           padding: EdgeInsets.only(top: 20),
           child: Container(
-            height: 500,
+            height: 600,
             width: 350,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(17),
@@ -65,6 +65,7 @@ class _Hola extends State<Hola> {
                       offset: Offset(0, 5))
                 ]),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Center(
                   child: Container(

@@ -46,7 +46,10 @@ class _ResultadosCompletos extends State<ResultadosCompletos> {
       body: ListView(
         children: [
           barraNavegacion(context),
-          boxEstilo(),
+          Padding(
+            padding: EdgeInsets.only(top: 10),
+            child: boxEstilo(),
+          ),
           temperaturaColor(),
           if (colorPaleta == 1) boxPaletaFria(),
           if (colorPaleta == 2) boxPaletaCalida(),
@@ -81,7 +84,7 @@ Widget temperaturaColor() {
   return Stack(
     children: [
       Padding(
-        padding: EdgeInsets.only(top: 30, bottom: 20),
+        padding: EdgeInsets.only(top: 35, bottom: 20),
         child: Stack(
           children: [
             Column(
@@ -645,7 +648,6 @@ Widget boxCara() {
                   width: 90,
                   decoration: BoxDecoration(
                     color: new Color.fromRGBO(255, 198, 165, 1),
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
                   ),
                 ),
                 Padding(

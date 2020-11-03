@@ -6,30 +6,70 @@ class ResultadosCompletos extends StatefulWidget {
   _ResultadosCompletos createState() => new _ResultadosCompletos();
 }
 
-int colorPaleta = 1;
+Color colorCalida1 = Colors.white;
+Color colorCalida2 = Colors.white;
+Color colorFria1 = Colors.white;
+Color colorFria2 = Colors.white;
+String porcentajeFria = "";
+String porcentajeCalida = "";
+String texto = "";
+double leftBorder;
 
 class _ResultadosCompletos extends State<ResultadosCompletos> {
   @override
   Widget build(BuildContext context) {
+    int colorPaleta = 2;
+
+    if (colorPaleta == 1) {
+      colorCalida1 = Colors.white;
+      colorCalida2 = Colors.white;
+      colorFria1 = Colors.blue[800];
+      colorFria2 = Colors.lightBlue;
+      porcentajeCalida = "";
+      porcentajeFria = "55%";
+      texto = "FRIA";
+      leftBorder = 130;
+    }
+
+    if (colorPaleta == 2) {
+      colorCalida1 = Colors.orange[600];
+      colorCalida2 = Colors.red[700];
+      colorFria1 = Colors.white;
+      colorFria2 = Colors.white;
+      porcentajeCalida = "55%";
+      porcentajeFria = "";
+      texto = "CALIDA";
+      leftBorder = 120;
+    }
+
     return new Scaffold(
       body: ListView(
         children: [
           barraNavegacion(context),
           boxEstilo(),
           temperaturaColor(),
-          if (colorPaleta == 1) boxPaletaCalida(),
-          if (colorPaleta == 2) boxPaletaFria(),
+          if (colorPaleta == 1) boxPaletaFria(),
+          if (colorPaleta == 2) boxPaletaCalida(),
           Padding(
-            padding: EdgeInsets.only(top: 20, bottom: 20),
-            child: Text(
-              'PALETA FRIA',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Color.fromARGB(255, 92, 68, 46),
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
+              padding: EdgeInsets.only(top: 20, bottom: 20, left: leftBorder),
+              child: Row(children: [
+                Text(
+                  'PALETA  ',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 92, 68, 46),
+                      fontSize: 20,
+                      fontWeight: FontWeight.normal),
+                ),
+                Text(
+                  texto,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 92, 68, 46),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+              ])),
           boxCara(),
         ],
       ),
@@ -48,26 +88,26 @@ Widget temperaturaColor() {
               children: [
                 Row(
                   children: [
-                    Padding(padding: EdgeInsets.only(right: 50)),
+                    Padding(padding: EdgeInsets.only(right: 35)),
                     Text(
-                      'TEMPERATORA',
+                      'TEMPERATURA',
                       textAlign: TextAlign.left,
                       style: TextStyle(
                           color: Color.fromARGB(255, 92, 68, 46),
-                          fontSize: 25,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
                 Row(
                   children: [
-                    Padding(padding: EdgeInsets.only(right: 80)),
+                    Padding(padding: EdgeInsets.only(right: 60)),
                     Text(
                       'DE COLOR',
                       textAlign: TextAlign.left,
                       style: TextStyle(
                           color: Color.fromARGB(255, 92, 68, 46),
-                          fontSize: 25,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
                   ],
@@ -82,19 +122,26 @@ Widget temperaturaColor() {
                     Padding(
                       padding: EdgeInsets.only(right: 20),
                       child: Container(
-                          width: 55,
-                          height: 55,
+                          width: 65,
+                          height: 65,
                           decoration: BoxDecoration(
-                              color: Colors.orange,
+                              //EL GRADIENTE
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment(0.8,
+                                    0.0), // 10% of the width, so there are ten blinds.
+                                colors: [colorCalida1, colorCalida2],
+                              ),
                               shape: BoxShape.circle,
-                              border: Border.all(color: Colors.black)),
+                              border:
+                                  Border.all(color: Colors.black, width: 2)),
                           child: Padding(
-                            padding: EdgeInsets.only(top: 15),
+                            padding: EdgeInsets.only(top: 20),
                             child: Text(
-                              '55%',
+                              porcentajeCalida,
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  color: Color.fromARGB(255, 92, 68, 46),
+                                  color: Colors.black,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -103,13 +150,29 @@ Widget temperaturaColor() {
                     Padding(
                       padding: EdgeInsets.only(right: 35),
                       child: Container(
-                        width: 55,
-                        height: 55,
-                        decoration: BoxDecoration(
-                            color: Colors.green,
+                          width: 65,
+                          height: 65,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment(0.8,
+                                  0.0), // 10% of the width, so there are ten blinds.
+                              colors: [colorFria1, colorFria2],
+                            ),
                             shape: BoxShape.circle,
-                            border: Border.all(color: Colors.black)),
-                      ),
+                            border: Border.all(color: Colors.black, width: 2),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 20),
+                            child: Text(
+                              porcentajeFria,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          )),
                     ),
                   ],
                 ),
@@ -117,24 +180,26 @@ Widget temperaturaColor() {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 5, right: 50),
+                      padding: EdgeInsets.only(top: 5, right: 55),
                       child: Text(
                         'CÁLIDA',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color.fromARGB(255, 92, 68, 46),
                           fontSize: 10,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 5, right: 50),
+                      padding: EdgeInsets.only(top: 5, right: 55),
                       child: Text(
                         'FRIA',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color.fromARGB(255, 92, 68, 46),
                           fontSize: 10,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     )
@@ -249,6 +314,7 @@ Widget boxPaletaCalida() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(184, 71, 57, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -257,6 +323,7 @@ Widget boxPaletaCalida() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(62, 112, 49, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -265,6 +332,7 @@ Widget boxPaletaCalida() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(163, 153, 68, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -273,6 +341,7 @@ Widget boxPaletaCalida() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(27, 114, 133, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -281,6 +350,7 @@ Widget boxPaletaCalida() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(246, 177, 99, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -289,6 +359,7 @@ Widget boxPaletaCalida() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(79, 62, 55, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -303,6 +374,7 @@ Widget boxPaletaCalida() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(0, 99, 167, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -311,6 +383,7 @@ Widget boxPaletaCalida() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(72, 206, 169, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -319,6 +392,7 @@ Widget boxPaletaCalida() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(64, 201, 113, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -327,6 +401,7 @@ Widget boxPaletaCalida() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(217, 54, 79, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -335,6 +410,7 @@ Widget boxPaletaCalida() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(231, 190, 124, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -343,6 +419,7 @@ Widget boxPaletaCalida() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(237, 119, 115, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -368,6 +445,7 @@ Widget boxPaletaFria() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(32, 87, 167, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -376,6 +454,7 @@ Widget boxPaletaFria() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(96, 89, 167, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -384,6 +463,7 @@ Widget boxPaletaFria() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(26, 168, 86, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -392,6 +472,7 @@ Widget boxPaletaFria() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(211, 54, 63, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -400,6 +481,7 @@ Widget boxPaletaFria() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(240, 120, 190, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -408,6 +490,7 @@ Widget boxPaletaFria() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(255, 255, 255, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -422,6 +505,7 @@ Widget boxPaletaFria() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(124, 127, 178, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -430,6 +514,7 @@ Widget boxPaletaFria() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(179, 93, 136, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -438,6 +523,7 @@ Widget boxPaletaFria() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(242, 119, 137, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -446,6 +532,7 @@ Widget boxPaletaFria() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(253, 196, 215, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -454,6 +541,7 @@ Widget boxPaletaFria() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(91, 194, 217, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
@@ -462,6 +550,7 @@ Widget boxPaletaFria() {
                 height: 50,
                 decoration: BoxDecoration(
                   color: new Color.fromRGBO(190, 188, 176, 1),
+                  border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Resultados extends StatefulWidget {
-  Resultados({Key key}) : super(key: key);
+class ResultadosCompletos extends StatefulWidget {
+  ResultadosCompletos({Key key}) : super(key: key);
   @override
-  _Resultados createState() => new _Resultados();
+  _ResultadosCompletos createState() => new _ResultadosCompletos();
 }
 
 int colorPaleta = 1;
 
-class _Resultados extends State<Resultados> {
+class _ResultadosCompletos extends State<ResultadosCompletos> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

@@ -65,7 +65,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               children: [
                 Stack(
                   children: <Widget>[
-                    cuerpo(),
+                    cuerpo(context),
                     recuadroPerfil(),
                     fotoPerfil(),
                     botonesArriba()
@@ -258,11 +258,11 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     }
   }
 
-  Widget cuerpo() {
+  Widget cuerpo(BuildContext context) {
     return Column(
       children: [
         parteArriba(),
-        botonResultados(),
+        botonResultados(context),
         fila1Botones(),
         fila2Botones(),
       ],
@@ -487,11 +487,13 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     );
   }
 
-  Widget botonResultados() {
+  Widget botonResultados(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 85),
       child: FlatButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed('/misResultados');
+        },
         child: Container(
             width: 300,
             height: 50,

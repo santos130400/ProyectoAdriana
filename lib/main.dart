@@ -29,6 +29,7 @@ import 'package:prueba_apliacion/Resultados/CabelloResultados.dart';
 import 'package:prueba_apliacion/Resultados/MaquillajeResultados.dart';
 import 'package:prueba_apliacion/Pago.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:prueba_apliacion/resultadosCompletos.dart';
 import 'MODELO/Auth.dart';
 
 Test resul = new Test();
@@ -92,6 +93,7 @@ class MyApp extends StatelessWidget {
           '/pago': (BuildContext context) => new Pago(),
           '/cambioContra': (BuildContext context) => new Cambio(),
           '/citaAgendar': (BuildContext context) => new CitaAgendar(),
+          '/misResultados': (BuildContext context) => new ResultadosCompletos(),
         });
   }
 }

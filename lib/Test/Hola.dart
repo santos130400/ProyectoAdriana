@@ -12,12 +12,39 @@ class _Hola extends State<Hola> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: ListView(children: [
-      //progress bar
-      barraNavegacion(context),
-      cajaContieneDatos(context)
-    ]));
+    return WillPopScope(
+      onWillPop: onBackPressed,
+      child: Scaffold(
+          body: ListView(children: [
+        //progress bar
+        barraNavegacion(context),
+        cajaContieneDatos(context)
+      ])),
+    );
+  }
+
+  Future<bool> onBackPressed() {
+    return showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('¿Desea cerrar sesion?'),
+        actions: [
+          FlatButton(
+              onPressed: () {
+                Navigator.pop(context, false);
+              },
+              child: Text('NO')),
+          FlatButton(
+              onPressed: () async {
+                _cerrarSesion().whenComplete(() {
+                  resul = new Test();
+                  Navigator.of(context).pushNamed('/inicio');
+                });
+              },
+              child: Text('SI'))
+        ],
+      ),
+    );
   }
 
   Widget barraNavegacion(BuildContext context) {

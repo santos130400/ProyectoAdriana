@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:prueba_apliacion/main.dart';
 
 class Metodos {
+  
   String traductorPielPalabra(int codigo) {
-    String i = '';
+    String i="";
     switch (codigo) {
       case 1:
         i = 'TOFEE';
@@ -458,17 +459,17 @@ if(resul.carac== 3 || resul.carac==6){
 dramatico = dramatico + 21;
 }
 if(romantico>dramatico && romantico>seductor && romantico>casual && romantico>elegante){
-  return 'Romantico: '+ romantico.toString();
+  return 'ROMANTICO';
 }else if(dramatico>romantico && dramatico>seductor && dramatico>casual && dramatico>elegante){
-  return 'Dramatico: '+ dramatico.toString();
+  return 'DRAMATICO';
 }else if(seductor>romantico && seductor>dramatico && seductor>casual && seductor>elegante){
-  return 'Seductor: '+ seductor.toString();
+  return 'SEDUCTOR';
 }else if(casual>romantico && casual>dramatico && casual>seductor && casual>elegante){
-  return 'Casual: '+ casual.toString();
+  return 'CASUAL';
 }else if(elegante>romantico && elegante>dramatico && elegante>seductor && elegante>casual){
-  return 'Elegante: '+ elegante.toString();
+  return 'ELEGANTE';
 }else{
-  return 'Error';
+  return 'ERROR';
 }
 
 

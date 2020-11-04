@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prueba_apliacion/PREFABS/Metodos.dart';
 
 class ResultadosCompletos extends StatefulWidget {
   ResultadosCompletos({Key key}) : super(key: key);
@@ -14,11 +15,17 @@ String porcentajeFria = "";
 String porcentajeCalida = "";
 String texto = "";
 double leftBorder;
+Metodos m = Metodos();
 
 class _ResultadosCompletos extends State<ResultadosCompletos> {
   @override
+  int colorPaleta = 0;
   Widget build(BuildContext context) {
-    int colorPaleta = 2;
+    if (m.paletaColorString() == "Fria") {
+      colorPaleta = 1;
+    } else {
+      colorPaleta = 2;
+    }
 
     if (colorPaleta == 1) {
       colorCalida1 = Colors.white;
@@ -26,7 +33,7 @@ class _ResultadosCompletos extends State<ResultadosCompletos> {
       colorFria1 = Colors.blue[800];
       colorFria2 = Colors.lightBlue;
       porcentajeCalida = "";
-      porcentajeFria = "55%";
+      porcentajeFria = m.paletaColorNumero().toString() + "%";
       texto = "FRIA";
       leftBorder = 130;
     }
@@ -36,7 +43,7 @@ class _ResultadosCompletos extends State<ResultadosCompletos> {
       colorCalida2 = Colors.red[700];
       colorFria1 = Colors.white;
       colorFria2 = Colors.white;
-      porcentajeCalida = "55%";
+      porcentajeCalida = m.paletaColorNumero().toString() + "%";
       porcentajeFria = "";
       texto = "CALIDA";
       leftBorder = 120;
@@ -290,7 +297,7 @@ Widget boxEstilo() {
                 ),
               ),
               Text(
-                '  ROMANTICA',
+                m.estilo(),
                 style: TextStyle(
                   color: Color(0xFF5C4438),
                   fontSize: 30,

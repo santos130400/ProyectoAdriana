@@ -424,7 +424,7 @@ class _Ojos extends State<Ojos> {
                       color: new Color.fromRGBO(255, 198, 165, 1)),
                   child: FlatButton(
                       onPressed: () {
-                        if (selected != 0 && radioItem != 0) {
+                        if (selected != -1 && radioItem != 0) {
                           setState(() {
                             opacity2 = -1;
                           });

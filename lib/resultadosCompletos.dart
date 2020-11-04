@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prueba_apliacion/PREFABS/Metodos.dart';
+import 'package:prueba_apliacion/main.dart';
 
 class ResultadosCompletos extends StatefulWidget {
   ResultadosCompletos({Key key}) : super(key: key);
@@ -593,33 +594,41 @@ Widget boxCara() {
                       offset: Offset(0, 4))
                 ]),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 15, bottom: 10),
-                  child: Text(
-                    'FORMA DEL ROSTRO',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color(0xFF5C4438),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                Text(
+                  'FORMA DEL ROSTRO',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color(0xFF5C4438),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                CustomPaint(size: Size(90, 90), painter: DrawTriangleShape()),
-                Padding(
-                  padding: EdgeInsets.only(top: 15),
-                  child: Text(
-                    'TRIANGULAR',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color(0xFF5C4438),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
+                Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  m.traductorCaraForma(resul.cara) != null
+                      ? Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                              shape: m.traductorCaraForma(resul.cara),
+                              color: Color(0xFFEBA47A),
+                              border: Border.all(
+                                  color: Color.fromARGB(255, 92, 68, 46),
+                                  width: 2)),
+                        )
+                      : CustomPaint(
+                          size: Size(50, 50), painter: DrawTriangleShape()),
+                  Text(m.traductorCaraParabra(resul.cara), 
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color(0xFF5C4438),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold))
+                ],
+              ),
               ],
             ),
           ),

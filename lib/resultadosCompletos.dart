@@ -7,6 +7,7 @@ class ResultadosCompletos extends StatefulWidget {
   _ResultadosCompletos createState() => new _ResultadosCompletos();
 }
 
+
 Color colorCalida1 = Colors.white;
 Color colorCalida2 = Colors.white;
 Color colorFria1 = Colors.white;

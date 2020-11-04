@@ -474,26 +474,51 @@ class Metodos {
         romantico > seductor &&
         romantico > casual &&
         romantico > elegante) {
+      print('ROMANTICO ' + romantico.toString());
+      print('DRAMATICO ' + dramatico.toString());
+      print('SEDUCTOR ' + seductor.toString());
+      print('CASUAL ' + casual.toString());
+      print('ELEGANTE ' + elegante.toString());
       return 'ROMANTICO';
     } else if (dramatico > romantico &&
         dramatico > seductor &&
         dramatico > casual &&
         dramatico > elegante) {
+      print('ROMANTICO ' + romantico.toString());
+      print('DRAMATICO ' + dramatico.toString());
+      print('SEDUCTOR ' + seductor.toString());
+      print('CASUAL ' + casual.toString());
+      print('ELEGANTE ' + elegante.toString());
       return 'DRAMATICO';
     } else if (seductor > romantico &&
         seductor > dramatico &&
         seductor > casual &&
         seductor > elegante) {
+      print('ROMANTICO ' + romantico.toString());
+      print('DRAMATICO ' + dramatico.toString());
+      print('SEDUCTOR ' + seductor.toString());
+      print('CASUAL ' + casual.toString());
+      print('ELEGANTE ' + elegante.toString());
       return 'SEDUCTOR';
     } else if (casual > romantico &&
         casual > dramatico &&
         casual > seductor &&
         casual > elegante) {
+      print('ROMANTICO ' + romantico.toString());
+      print('DRAMATICO ' + dramatico.toString());
+      print('SEDUCTOR ' + seductor.toString());
+      print('CASUAL ' + casual.toString());
+      print('ELEGANTE ' + elegante.toString());
       return 'CASUAL';
     } else if (elegante > romantico &&
         elegante > dramatico &&
         elegante > seductor &&
         elegante > casual) {
+      print('ROMANTICO ' + romantico.toString());
+      print('DRAMATICO ' + dramatico.toString());
+      print('SEDUCTOR ' + seductor.toString());
+      print('CASUAL ' + casual.toString());
+      print('ELEGANTE ' + elegante.toString());
       return 'ELEGANTE';
     } else {
       return 'ERROR';

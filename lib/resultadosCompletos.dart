@@ -649,17 +649,18 @@ Widget boxCara() {
                   ),
                 ),
                 m.traductorCuerpoForma(resul.forma) != null
-                      ? Container(
-                          height: 90,
-                          width: 90,
-                          decoration: BoxDecoration(
-                              shape: m.traductorCuerpoForma(resul.forma),
-                              color: Color(0xFFEBA47A),),
-                        )
-                      : CustomPaint(
-                          size: Size(90, 90), painter: DrawTriangleShape()),
-                  Text(m.traductorCuerpoPalabra(resul.forma), 
-                  textAlign: TextAlign.center,
+                    ? Container(
+                        height: 90,
+                        width: 90,
+                        decoration: BoxDecoration(
+                          shape: m.traductorCuerpoForma(resul.forma),
+                          color: Color.fromRGBO(255, 198, 165, 1),
+                        ),
+                      )
+                    : CustomPaint(
+                        size: Size(90, 90), painter: DrawTriangleShape()),
+                Text(m.traductorCuerpoPalabra(resul.forma),
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Color(0xFF5C4438),
                         fontSize: 18,

@@ -426,7 +426,7 @@ class _Ojos extends State<Ojos> {
                       onPressed: () {
                         if (selected != -1 && radioItem != 0) {
                           setState(() {
-                            opacity2 = -1;
+                            opacity2 =  0;
                           });
                           resul.ojos = selected;
                           resul.ojeras = radioItem;

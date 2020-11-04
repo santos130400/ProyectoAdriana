@@ -579,7 +579,7 @@ Widget boxCara() {
     alignment: Alignment.center,
     children: [
       Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
             height: 200,
@@ -605,34 +605,25 @@ Widget boxCara() {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    m.traductorCaraForma(resul.cara) != null
-                        ? Container(
-                            height: 90,
-                            width: 90,
-                            decoration: BoxDecoration(
-                                shape: m.traductorCaraForma(resul.cara),
-                                color: Color.fromRGBO(255, 198, 165, 1)),
-                          )
-                        : CustomPaint(
-                            size: Size(90, 90), painter: DrawTriangleShape()),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: Text(m.traductorCaraParabra(resul.cara),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Color(0xFF5C4438),
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold)),
-                    )
-                  ],
-                ),
+                m.traductorCaraForma(resul.cara) != null
+                    ? Container(
+                        height: 90,
+                        width: 90,
+                        decoration: BoxDecoration(
+                            shape: m.traductorCaraForma(resul.cara),
+                            color: Color.fromRGBO(255, 198, 165, 1)),
+                      )
+                    : CustomPaint(
+                        size: Size(90, 90), painter: DrawTriangleShape()),
+                Text(m.traductorCaraParabra(resul.cara),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Color(0xFF5C4438),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold)),
               ],
             ),
           ),
-          Padding(padding: EdgeInsets.only(left: 30, bottom: 30)),
           Container(
             height: 200,
             width: 150,
@@ -646,39 +637,33 @@ Widget boxCara() {
                       offset: Offset(0, 4))
                 ]),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 15, bottom: 10),
-                  child: Text(
-                    'FORMA DEL CUERPO',
-                    textAlign: TextAlign.center,
+                Text(
+                  'FORMA DEL CUERPO',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color(0xFF5C4438),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                m.traductorCuerpoForma(resul.forma) != null
+                      ? Container(
+                          height: 90,
+                          width: 90,
+                          decoration: BoxDecoration(
+                              shape: m.traductorCuerpoForma(resul.forma),
+                              color: Color(0xFFEBA47A),),
+                        )
+                      : CustomPaint(
+                          size: Size(90, 90), painter: DrawTriangleShape()),
+                  Text(m.traductorCuerpoPalabra(resul.forma), 
+                  textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Color(0xFF5C4438),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 90,
-                  width: 90,
-                  decoration: BoxDecoration(
-                    color: new Color.fromRGBO(255, 198, 165, 1),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15),
-                  child: Text(
-                    'CUADRADO',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color(0xFF5C4438),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
+                        color: Color(0xFF5C4438),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold))
               ],
             ),
           ),

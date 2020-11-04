@@ -606,29 +606,29 @@ Widget boxCara() {
                   ),
                 ),
                 Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  m.traductorCaraForma(resul.cara) != null
-                      ? Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                              shape: m.traductorCaraForma(resul.cara),
-                              color: Color(0xFFEBA47A),
-                              border: Border.all(
-                                  color: Color.fromARGB(255, 92, 68, 46),
-                                  width: 2)),
-                        )
-                      : CustomPaint(
-                          size: Size(50, 50), painter: DrawTriangleShape()),
-                  Text(m.traductorCaraParabra(resul.cara), 
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFF5C4438),
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold))
-                ],
-              ),
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    m.traductorCaraForma(resul.cara) != null
+                        ? Container(
+                            height: 90,
+                            width: 90,
+                            decoration: BoxDecoration(
+                                shape: m.traductorCaraForma(resul.cara),
+                                color: Color.fromRGBO(255, 198, 165, 1)),
+                          )
+                        : CustomPaint(
+                            size: Size(90, 90), painter: DrawTriangleShape()),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: Text(m.traductorCaraParabra(resul.cara),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Color(0xFF5C4438),
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold)),
+                    )
+                  ],
+                ),
               ],
             ),
           ),

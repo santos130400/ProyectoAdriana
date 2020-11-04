@@ -224,7 +224,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     if (ruta == null) {
       imageFile = null;
     } else {
-      imageFile = null;
+      imageFile = File(ruta);
     }
     try {
       return Center(

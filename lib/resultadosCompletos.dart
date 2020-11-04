@@ -7,7 +7,6 @@ class ResultadosCompletos extends StatefulWidget {
   _ResultadosCompletos createState() => new _ResultadosCompletos();
 }
 
-
 Color colorCalida1 = Colors.white;
 Color colorCalida2 = Colors.white;
 Color colorFria1 = Colors.white;
@@ -18,9 +17,9 @@ String texto = "";
 double leftBorder;
 Metodos m = Metodos();
 int colorPaleta = 0;
+
 class _ResultadosCompletos extends State<ResultadosCompletos> {
   @override
-  
   Widget build(BuildContext context) {
     if (m.paletaColorString() == "Fria") {
       colorPaleta = 1;
@@ -82,6 +81,7 @@ class _ResultadosCompletos extends State<ResultadosCompletos> {
                 ),
               ])),
           boxCara(),
+          Padding(padding: EdgeInsets.only(top: 20))
         ],
       ),
     );
@@ -288,7 +288,7 @@ Widget boxEstilo() {
                     color: Colors.black26, blurRadius: 4, offset: Offset(0, 4))
               ]),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
                 ' ESTILO',

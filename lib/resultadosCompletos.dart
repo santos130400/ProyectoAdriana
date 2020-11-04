@@ -17,10 +17,10 @@ String porcentajeCalida = "";
 String texto = "";
 double leftBorder;
 Metodos m = Metodos();
-
+int colorPaleta = 0;
 class _ResultadosCompletos extends State<ResultadosCompletos> {
   @override
-  int colorPaleta = 0;
+  
   Widget build(BuildContext context) {
     if (m.paletaColorString() == "Fria") {
       colorPaleta = 1;

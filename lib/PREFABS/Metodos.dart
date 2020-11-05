@@ -179,7 +179,7 @@ class Metodos {
     String i = '';
     switch (codigo) {
       case 1:
-        i = 'CUADRADA';
+        i = 'RECTANGULAR';
 
         break;
       case 2:
@@ -189,7 +189,7 @@ class Metodos {
         i = 'TRIANGULAR';
         break;
       case 4:
-        i = 'RELOJ';
+        i = 'RELOJ DE ARENA';
         break;
       case 5:
         i = 'TRIANGULO INVERTIDO';
@@ -224,11 +224,11 @@ class Metodos {
       case 3:
         i = Container(
           height: tamano,
-          width: tamano / 2,
+          width: tamano *0.75,
           decoration: new BoxDecoration(
             color: Color.fromRGBO(255, 198, 165, 1),
             borderRadius:
-                new BorderRadius.all(Radius.elliptical(tamano / 2, tamano)),
+                new BorderRadius.all(Radius.elliptical(tamano *0.75, tamano)),
           ),
         );
         break;
@@ -271,9 +271,9 @@ class Metodos {
       case 1:
         i = Container(
           height: tamano,
-          width: tamano,
+          width: tamano*0.75,
           decoration: BoxDecoration(
-              color: Color(0xFFEBA47A),
+              color: Color.fromRGBO(255, 198, 165, 1),
               border: Border.all(
                   color: Color.fromRGBO(255, 198, 165, 1), width: 2)),
         );
@@ -282,11 +282,11 @@ class Metodos {
       case 2:
         i = Container(
           height: tamano,
-          width: tamano / 2,
+          width: tamano *0.75,
           decoration: new BoxDecoration(
             color: Color.fromRGBO(255, 198, 165, 1),
             borderRadius:
-                new BorderRadius.all(Radius.elliptical(tamano / 2, tamano)),
+                new BorderRadius.all(Radius.elliptical(tamano *0.75 , tamano)),
           ),
         );
         break;
@@ -457,7 +457,7 @@ class Metodos {
 
 //VALORES
     if (resul.valores == 1) {
-      elegante = elegante + 14;
+      romantico = romantico + 14;
     }
 
     if (resul.valores == 2 || resul.valores == 5) {

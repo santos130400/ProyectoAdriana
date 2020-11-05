@@ -92,7 +92,7 @@ class _Cara extends State<Cara> {
               CarouselSlider(
                 options: CarouselOptions(
                     autoPlay: true,
-                    autoPlayInterval: Duration(seconds: 5),
+                    autoPlayInterval: Duration(seconds: 10),
                     enlargeCenterPage: true,
                     enlargeStrategy: CenterPageEnlargeStrategy.height),
                 items: [
@@ -115,7 +115,7 @@ class _Cara extends State<Cara> {
                               border6 = 0;
                             });
                           },
-                          child: Image.asset('assets/Alargado.jpg'))),
+                          child: Image.asset('assets/Alargada.jpg'))),
                   Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -156,7 +156,7 @@ class _Cara extends State<Cara> {
                               border6 = 0;
                             });
                           },
-                          child: Image.asset('assets/Ovalado.jpg'))),
+                          child: Image.asset('assets/Ovalada.jpg'))),
                   Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -234,53 +234,43 @@ class _Cara extends State<Cara> {
                   );
                 }).toList(),
               ),
-              Stack(children: [
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 30),
-                    child: Container(
-                        width: 250,
-                        child: Text(
-                          palabra,
-                          textAlign: TextAlign.center,
-                          style:
-                              TextStyle(fontSize: 20, color: Color(0xFF5C4438)),
-                        )),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 30),
-                    child: Container(
-                      height: 50.0,
-                      width: 50.0,
-                      decoration: new BoxDecoration(
-                          color: new Color.fromRGBO(255, 238, 217, 1),
-                          borderRadius:
-                              new BorderRadius.all(Radius.circular(54.0)),
-                          boxShadow: <BoxShadow>[
-                            BoxShadow(
-                                color: Colors.black54,
-                                blurRadius: 4.0,
-                                offset: Offset(0.0, 0.75))
-                          ]),
-                      margin: new EdgeInsets.only(
-                          left: 80.0, bottom: 10.0, top: 45.0, right: 10),
-                      alignment: Alignment.centerRight,
-                      child: FlatButton(
-                          onPressed: () {
-                            _abrirCamara(context);
-                            // Navigator.push(context,
-                            //  MaterialPageRoute(builder: (context)=> CameraApp())
-                            // );
-                          },
-                          child: Image.asset('assets/camara_01.png')),
-                    ),
-                  ),
-                )
-              ]),
+              Container(
+                height: 120,
+                alignment: Alignment.center,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                  Container(
+                      width: 250,
+                      child: Text(
+                        palabra,
+                        textAlign: TextAlign.center,
+                        style:
+                            TextStyle(fontSize: 40, color: Color(0xFF5C4438), fontWeight: FontWeight.bold),
+                      )),
+                  Container(
+                    height: 50.0,
+                    width: 50.0,
+                    decoration: new BoxDecoration(
+                        color: new Color.fromRGBO(255, 238, 217, 1),
+                        shape: BoxShape.circle,
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                              color: Colors.black54,
+                              blurRadius: 4.0,
+                              offset: Offset(0.0, 0.75))
+                        ]),
+                    child: FlatButton(
+                        onPressed: () {
+                          _abrirCamara(context);
+                          // Navigator.push(context,
+                          //  MaterialPageRoute(builder: (context)=> CameraApp())
+                          // );
+                        },
+                        child: Image.asset('assets/camara_01.png')),
+                  )
+                ]),
+              ),
             ]),
           ),
           Container(

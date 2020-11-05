@@ -386,7 +386,7 @@ Widget texto() {
       child: Column(children: <Widget>[
         Center(
           child: Text(
-            'SELECCIONA EL COLOR ',
+            'CUAL ES EL COLOR ',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: new Color.fromRGBO(92, 68, 56, 1),
@@ -396,7 +396,7 @@ Widget texto() {
         ),
         Center(
           child: Text(
-            'DE TU CABELLO',
+            'NATURAL DE TU CABELLO',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: new Color.fromRGBO(92, 68, 56, 1),

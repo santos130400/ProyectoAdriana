@@ -68,7 +68,7 @@ class _Detalles extends State<Detalles> {
                   groupValue: radioItem1,
                   value: 2,
                   title: Text(
-                      'Pocas piezas calidas: piezas de oro y plata discretas, perlas, cadenas delicadas'),
+                      'Pocas piezas clásicas: piezas de oro y plata discretas, perlas, cadenas delicadas'),
                   activeColor: new Color.fromRGBO(92, 68, 56, 1),
                   onChanged: (val) {
                     setState(() {

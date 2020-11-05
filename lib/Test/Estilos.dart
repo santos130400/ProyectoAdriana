@@ -177,7 +177,7 @@ Widget texto() {
       children: <Widget>[
         Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
           Column(children: <Widget>[
-            new Text("¿EN CUÁL DE ESTOS VALORES",
+            new Text("¿EN QUÉ VALOR RECONOCES",
                 style: new TextStyle(
                   color: new Color.fromRGBO(92, 68, 56, 1),
                   fontSize: 20.0,
@@ -186,7 +186,7 @@ Widget texto() {
         ]),
         Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
           Column(children: <Widget>[
-            new Text("RECONOCES TU ESTILO?",
+            new Text("TU ESTILO?",
                 style: new TextStyle(
                   color: new Color.fromRGBO(92, 68, 56, 1),
                   fontSize: 20.0,

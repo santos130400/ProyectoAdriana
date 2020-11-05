@@ -605,17 +605,8 @@ Widget boxCara() {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                m.traductorCaraForma(resul.cara) != null
-                    ? Container(
-                        height: 90,
-                        width: 90,
-                        decoration: BoxDecoration(
-                            shape: m.traductorCaraForma(resul.cara),
-                            color: Color.fromRGBO(255, 198, 165, 1)),
-                      )
-                    : CustomPaint(
-                        size: Size(90, 90), painter: DrawTriangleShape()),
-                Text(m.traductorCaraParabra(resul.cara),
+                m.traductorCaraForma(resul.cara,90),
+                Text(m.traductorCaraPalabra(resul.cara),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Color(0xFF5C4438),
@@ -648,19 +639,9 @@ Widget boxCara() {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                m.traductorCuerpoForma(resul.forma) != null
-                    ? Container(
-                        height: 90,
-                        width: 90,
-                        decoration: BoxDecoration(
-                          shape: m.traductorCuerpoForma(resul.forma),
-                          color: Color.fromRGBO(255, 198, 165, 1),
-                        ),
-                      )
-                    : CustomPaint(
-                        size: Size(90, 90), painter: DrawTriangleShape()),
-                Text(m.traductorCuerpoPalabra(resul.forma),
-                    textAlign: TextAlign.center,
+                m.traductorCuerpoForma(resul.forma, 90),
+                  Text(m.traductorCuerpoPalabra(resul.forma), 
+                  textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Color(0xFF5C4438),
                         fontSize: 18,

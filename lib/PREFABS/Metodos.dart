@@ -147,56 +147,52 @@ class Metodos {
     return i;
   }
 
+  String traductorCaraPalabra(int codigo) {
+    String i = '';
+    switch (codigo) {
+      case 1:
+        i = 'ALARGADA';
+
+        break;
+      case 2:
+        i = 'TRIANGULO INVERTIDO';
+        break;
+      case 3:
+        i = 'OVALO';
+        break;
+      case 4:
+        i = 'CIRCULO';
+        break;
+      case 5:
+        i = 'CUADRADO';
+        break;
+      case 6:
+        i = 'TRIANGULO';
+        break;
+
+      default:
+    }
+    return i;
+  }
+
   String traductorCuerpoPalabra(int codigo) {
     String i = '';
     switch (codigo) {
       case 1:
-        i = 'TRIANGULAR';
-
-        break;
-      case 2:
-        i = 'CUADRADA';
-        break;
-      case 3:
-        i = 'REDONDA';
-        break;
-
-      default:
-    }
-    return i;
-  }
-
-  String traductorCaraParabra(int codigo) {
-    String i = '';
-    switch (codigo) {
-      case 1:
         i = 'CUADRADA';
 
         break;
       case 2:
-        i = 'CIRCULAR';
+        i = 'OVALO';
         break;
       case 3:
         i = 'TRIANGULAR';
         break;
-
-      default:
-    }
-    return i;
-  }
-
-  BoxShape traductorCaraForma(int codigo) {
-    BoxShape i = BoxShape.rectangle;
-    switch (codigo) {
-      case 2:
-        i = BoxShape.circle;
-
+      case 4:
+        i = 'RELOJ';
         break;
-      case 1:
-        i = BoxShape.rectangle;
-        break;
-      case 3:
-        i = null;
+      case 5:
+        i = 'TRIANGULO INVERTIDO';
         break;
 
       default:
@@ -204,20 +200,115 @@ class Metodos {
     return i;
   }
 
-  BoxShape traductorCuerpoForma(int codigo) {
-    BoxShape i = BoxShape.rectangle;
+  Container traductorCaraForma(int codigo, double tamano) {
+    Container i = Container();
     switch (codigo) {
-      case 3:
-        i = BoxShape.circle;
+      case 1:
+        i = Container(
+          height: tamano,
+          width: tamano / 2,
+          decoration: BoxDecoration(
+              color: Color.fromRGBO(255, 198, 165, 1),
+              border: Border.all(
+                  color: Color.fromRGBO(255, 198, 165, 1), width: 2)),
+        );
 
         break;
       case 2:
-        i = BoxShape.rectangle;
+        i = Container(
+            child: CustomPaint(
+                size: Size(tamano, tamano),
+                painter:
+                    DrawTriangInverShape(Color.fromRGBO(255, 198, 165, 1))));
         break;
-      case 1:
-        i = null;
+      case 3:
+        i = Container(
+          height: tamano,
+          width: tamano / 2,
+          decoration: new BoxDecoration(
+            color: Color.fromRGBO(255, 198, 165, 1),
+            borderRadius:
+                new BorderRadius.all(Radius.elliptical(tamano / 2, tamano)),
+          ),
+        );
+        break;
+      case 4:
+        i = Container(
+          height: tamano,
+          width: tamano,
+          decoration: BoxDecoration(
+              color: Color.fromRGBO(255, 198, 165, 1),
+              shape: BoxShape.circle,
+              border: Border.all(
+                  color: Color.fromRGBO(255, 198, 165, 1), width: 2)),
+        );
+        break;
+      case 5:
+        i = Container(
+          height: tamano,
+          width: tamano,
+          decoration: BoxDecoration(
+              color: Color.fromRGBO(255, 198, 165, 1),
+              border: Border.all(
+                  color: Color.fromRGBO(255, 198, 165, 1), width: 2)),
+        );
+        break;
+      case 6:
+        i = Container(
+            child: CustomPaint(
+                size: Size(tamano, tamano),
+                painter: DrawTriangleShape(Color.fromRGBO(255, 198, 165, 1))));
         break;
 
+      default:
+    }
+    return i;
+  }
+
+  Container traductorCuerpoForma(int codigo, double tamano) {
+    Container i = Container();
+    switch (codigo) {
+      case 1:
+        i = Container(
+          height: tamano,
+          width: tamano,
+          decoration: BoxDecoration(
+              color: Color(0xFFEBA47A),
+              border: Border.all(
+                  color: Color.fromRGBO(255, 198, 165, 1), width: 2)),
+        );
+
+        break;
+      case 2:
+        i = Container(
+          height: tamano,
+          width: tamano / 2,
+          decoration: new BoxDecoration(
+            color: Color.fromRGBO(255, 198, 165, 1),
+            borderRadius:
+                new BorderRadius.all(Radius.elliptical(tamano / 2, tamano)),
+          ),
+        );
+        break;
+      case 3:
+        i = Container(
+            child: CustomPaint(
+                size: Size(tamano, tamano),
+                painter: DrawTriangleShape(Color.fromRGBO(255, 198, 165, 1))));
+        break;
+      case 4:
+        i = Container(
+            child: CustomPaint(
+                size: Size(tamano, tamano),
+                painter: DrawRelojShape(Color.fromRGBO(255, 198, 165, 1))));
+        break;
+      case 5:
+        i = Container(
+            child: CustomPaint(
+                size: Size(tamano, tamano),
+                painter:
+                    DrawTriangInverShape(Color.fromRGBO(255, 198, 165, 1))));
+        break;
       default:
     }
     return i;
@@ -523,5 +614,92 @@ class Metodos {
     } else {
       return 'ERROR';
     }
+  }
+}
+
+class DrawTriangleShape extends CustomPainter {
+  Paint painter;
+
+  DrawTriangleShape(Color c) {
+    painter = Paint()
+      ..color = c
+      ..strokeWidth = 3
+      ..style = PaintingStyle.fill;
+  }
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    var path = Path();
+
+    path.moveTo(size.width / 2, 0);
+    path.lineTo(0, size.height);
+    path.lineTo(size.height, size.width);
+    path.close();
+
+    canvas.drawPath(path, painter);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class DrawTriangInverShape extends CustomPainter {
+  Paint painter;
+
+  DrawTriangInverShape(Color c) {
+    painter = Paint()
+      ..color = c
+      ..strokeWidth = 3
+      ..style = PaintingStyle.fill;
+  }
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    var path = Path();
+    path.lineTo(size.width, 0);
+    path.lineTo(size.width / 2, size.height);
+    path.moveTo(0, 0);
+    path.close();
+
+    canvas.drawPath(path, painter);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class DrawRelojShape extends CustomPainter {
+  Paint painter;
+
+  DrawRelojShape(Color c) {
+    painter = Paint()
+      ..color = c
+      ..strokeWidth = 3
+      ..style = PaintingStyle.fill;
+  }
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    var path = Path();
+
+    path.lineTo(size.width, 0);
+    path.lineTo(size.width / 2, size.height / 2);
+    path.lineTo(0, 0);
+    path.moveTo(size.width / 2, size.height / 2);
+    path.lineTo(0, size.height);
+    path.lineTo(size.width, size.height);
+    path.lineTo(size.width / 2, size.height / 2);
+    path.close();
+
+    canvas.drawPath(path, painter);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
   }
 }

@@ -156,19 +156,7 @@ class _ResultadosInterState extends State<ResultadosInter> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  m.traductorCuerpoForma(resul.forma) != null
-                      ? Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                              shape: m.traductorCuerpoForma(resul.forma),
-                              color: Color(0xFFEBA47A),
-                              border: Border.all(
-                                  color: Color.fromARGB(255, 92, 68, 46),
-                                  width: 2)),
-                        )
-                      : CustomPaint(
-                          size: Size(50, 50), painter: DrawTriangleShape()),
+                  m.traductorCuerpoForma(resul.forma,50), 
                   Text(m.traductorCuerpoPalabra(resul.forma), style: TextStyle(fontWeight: FontWeight.bold))
                 ],
               ),
@@ -211,20 +199,8 @@ class _ResultadosInterState extends State<ResultadosInter> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  m.traductorCaraForma(resul.cara) != null
-                      ? Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                              shape: m.traductorCaraForma(resul.cara),
-                              color: Color(0xFFEBA47A),
-                              border: Border.all(
-                                  color: Color.fromARGB(255, 92, 68, 46),
-                                  width: 2)),
-                        )
-                      : CustomPaint(
-                          size: Size(50, 50), painter: DrawTriangleShape()),
-                  Text(m.traductorCaraParabra(resul.cara), style: TextStyle(fontWeight: FontWeight.bold))
+                  m.traductorCaraForma(resul.cara,50),
+                  Text(m.traductorCaraPalabra(resul.cara), style: TextStyle(fontWeight: FontWeight.bold))
                 ],
               ),
             )
@@ -266,20 +242,8 @@ class _ResultadosInterState extends State<ResultadosInter> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  m.traductorCaraForma(resul.cara) != null
-                      ? Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                              shape: m.traductorCaraForma(resul.cara),
-                              color: Color(0xFFEBA47A),
-                              border: Border.all(
-                                  color: Color.fromARGB(255, 92, 68, 46),
-                                  width: 2)),
-                        )
-                      : CustomPaint(
-                          size: Size(50, 50), painter: DrawTriangleShape()),
-                  Text(m.traductorCaraParabra(resul.cara), style: TextStyle(fontWeight: FontWeight.bold))
+                  m.traductorCaraForma(resul.cara,50),
+                  Text(m.traductorCaraPalabra(resul.cara), style: TextStyle(fontWeight: FontWeight.bold))
                 ],
               ),
             )
@@ -406,30 +370,4 @@ Widget barraNavegacion(BuildContext context) {
   );
 }
 
-class DrawTriangleShape extends CustomPainter {
-  Paint painter;
 
-  DrawTriangleShape() {
-    painter = Paint()
-      ..color = Color(0xFFEBA47A)
-      ..strokeWidth = 3
-      ..style = PaintingStyle.fill;
-  }
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    var path = Path();
-
-    path.moveTo(size.width / 2, 0);
-    path.lineTo(0, size.height);
-    path.lineTo(size.height, size.width);
-    path.close();
-
-    canvas.drawPath(path, painter);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return false;
-  }
-}

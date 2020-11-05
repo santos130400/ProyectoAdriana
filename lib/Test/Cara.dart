@@ -10,6 +10,9 @@ import '../main.dart';
 double border1 = 0;
 double border2 = 0;
 double border3 = 0;
+double border4 = 0;
+double border5 = 0;
+double border6 = 0;
 double selected = 0;
 String palabra = '';
 int opacity3 = 0;
@@ -68,6 +71,9 @@ class _Cara extends State<Cara> {
     border1 = 0;
     border2 = 0;
     border3 = 0;
+    border4 = 0;
+    border5 = 0;
+    border6 = 0;
     selected = 0;
     palabra = '';
     opacity3 = 0;
@@ -99,14 +105,17 @@ class _Cara extends State<Cara> {
                       child: GestureDetector(
                           onTap: () {
                             setState(() {
-                              palabra = 'CUADRADA';
+                              palabra = 'ALARGADA';
                               selected = 1;
                               border1 = 5;
                               border2 = 0;
                               border3 = 0;
+                              border4 = 0;
+                              border5 = 0;
+                              border6 = 0;
                             });
                           },
-                          child: Image.asset('assets/face_01.png'))),
+                          child: Image.asset('assets/Alargado.jpg'))),
                   Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -116,14 +125,18 @@ class _Cara extends State<Cara> {
                       child: GestureDetector(
                           onTap: () {
                             setState(() {
-                              palabra = 'CIRCULAR';
+                              palabra = 'TRIANGULO INVERTIDO';
                               selected = 2;
                               border1 = 0;
                               border2 = 5;
                               border3 = 0;
+                              border4 = 0;
+                              border5 = 0;
+                              border6 = 0;
                             });
                           },
-                          child: Image.asset('assets/face_01.png'))),
+                          child:
+                              Image.asset('assets/Triangulo Invertido.jpg'))),
                   Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -133,14 +146,77 @@ class _Cara extends State<Cara> {
                       child: GestureDetector(
                           onTap: () {
                             setState(() {
-                              palabra = 'TRIANGULO';
+                              palabra = 'OVALO';
                               selected = 3;
                               border1 = 0;
                               border2 = 0;
                               border3 = 5;
+                              border4 = 0;
+                              border5 = 0;
+                              border6 = 0;
                             });
                           },
-                          child: Image.asset('assets/face_01.png'))),
+                          child: Image.asset('assets/Ovalado.jpg'))),
+                  Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                              width: border4,
+                              color: Color.fromRGBO(92, 68, 56, 1))),
+                      child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              palabra = 'CIRCULO';
+                              selected = 4;
+                              border1 = 0;
+                              border2 = 0;
+                              border3 = 0;
+                              border4 = 5;
+                              border5 = 0;
+                              border6 = 0;
+                            });
+                          },
+                          child: Image.asset('assets/Redondo.jpg'))),
+                  Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                              width: border5,
+                              color: Color.fromRGBO(92, 68, 56, 1))),
+                      child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              palabra = 'CUADRADO';
+                              selected = 5;
+                              border1 = 0;
+                              border2 = 0;
+                              border3 = 0;
+                              border4 = 0;
+                              border5 = 5;
+                              border6 = 0;
+                            });
+                          },
+                          child: Image.asset('assets/Cuadrado.jpg'))),
+                  Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                              width: border6,
+                              color: Color.fromRGBO(92, 68, 56, 1))),
+                      child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              palabra = 'TRIANGULO';
+                              selected = 6;
+                              border1 = 0;
+                              border2 = 0;
+                              border3 = 0;
+                              border4 = 0;
+                              border5 = 0;
+                              border6 = 5;
+                            });
+                          },
+                          child: Image.asset('assets/Triangulo.jpg'))),
                 ].map((i) {
                   return Builder(
                     builder: (BuildContext context) {

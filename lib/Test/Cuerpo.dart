@@ -11,6 +11,8 @@ class Cuerpo extends StatefulWidget {
 double cuerpo1 = 0;
 double cuerpo2 = 0;
 double cuerpo3 = 0;
+double cuerpo4 = 0;
+double cuerpo5 = 0;
 int seleccionado = 0;
 int opacity5 = 0;
 
@@ -22,6 +24,7 @@ class _Cuerpo extends State<Cuerpo> {
     cuerpo1 = 0;
     cuerpo2 = 0;
     cuerpo3 = 0;
+    cuerpo4 = 0;
     seleccionado = 0;
     opacity5 = 0;
   }
@@ -77,6 +80,8 @@ class _Cuerpo extends State<Cuerpo> {
                           cuerpo1 = 5;
                           cuerpo2 = 0;
                           cuerpo3 = 0;
+                          cuerpo4 = 0;
+                          cuerpo5 = 0;
                         });
                       },
                       child: Container(
@@ -87,7 +92,7 @@ class _Cuerpo extends State<Cuerpo> {
                           border:
                               Border.all(width: cuerpo1, color: Colors.brown),
                         ),
-                        child: Image.asset('assets/cuerpo1.png'),
+                        child: Image.asset('assets/Rectangulo.png'),
                       ),
                     ),
                     GestureDetector(
@@ -97,6 +102,8 @@ class _Cuerpo extends State<Cuerpo> {
                           cuerpo1 = 0;
                           cuerpo2 = 5;
                           cuerpo3 = 0;
+                          cuerpo4 = 0;
+                          cuerpo5 = 0;
                         });
                       },
                       child: Container(
@@ -107,7 +114,7 @@ class _Cuerpo extends State<Cuerpo> {
                           border:
                               Border.all(width: cuerpo2, color: Colors.brown),
                         ),
-                        child: Image.asset('assets/cuerpo2.png'),
+                        child: Image.asset('assets/Ovalo.png'),
                       ),
                     ),
                     GestureDetector(
@@ -117,6 +124,8 @@ class _Cuerpo extends State<Cuerpo> {
                           cuerpo1 = 0;
                           cuerpo2 = 0;
                           cuerpo3 = 5;
+                          cuerpo4 = 0;
+                          cuerpo5 = 0;
                         });
                       },
                       child: Container(
@@ -127,7 +136,51 @@ class _Cuerpo extends State<Cuerpo> {
                           border:
                               Border.all(width: cuerpo3, color: Colors.brown),
                         ),
-                        child: Image.asset('assets/cuerpo3.png'),
+                        child: Image.asset('assets/Triangulo.png'),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          seleccionado = 4;
+                          cuerpo1 = 0;
+                          cuerpo2 = 0;
+                          cuerpo3 = 0;
+                          cuerpo4 = 5;
+                          cuerpo5 = 0;
+                        });
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12.0),
+                          border:
+                              Border.all(width: cuerpo4, color: Colors.brown),
+                        ),
+                        child: Image.asset('assets/Reloj de Arena.png'),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          seleccionado = 5;
+                          cuerpo1 = 0;
+                          cuerpo2 = 0;
+                          cuerpo3 = 0;
+                          cuerpo4 = 0;
+                          cuerpo5 = 5;
+                        });
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12.0),
+                          border:
+                              Border.all(width: cuerpo5, color: Colors.brown),
+                        ),
+                        child: Image.asset('assets/Triangulo Invertido.png'),
                       ),
                     ),
                   ],

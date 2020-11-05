@@ -462,6 +462,16 @@ class _InicioState extends State<Inicio> {
           ),
         ));
         print(e.message);
+      }
+      if (e.toString() ==
+          '[firebase_auth/too-many-requests] We have blocked all requests from this device due to unusual activity. Try again later.') {
+        _scaffoldKey.currentState.showSnackBar(SnackBar(
+          content: Text(
+            'Primero debes confirmar tu cuenta en el correo electronico',
+            textAlign: TextAlign.center,
+          ),
+        ));
+        print(e.message);
       } else {
         _scaffoldKey.currentState.showSnackBar(SnackBar(
           content: Text(

@@ -649,6 +649,9 @@ class _CitaAgendarState extends State<CitaAgendar> {
                   )
                 ],
               ),
+            ),
+            Container(
+              height: 75,
             )
           ],
         ),

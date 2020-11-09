@@ -74,6 +74,9 @@ class _CitaState extends State<Cita> {
 
                   //iconoX(),
                 ),
+                Container(
+                  height: 75,
+                )
               ],
             ),
             Container(

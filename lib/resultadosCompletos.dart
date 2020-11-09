@@ -62,7 +62,7 @@ class _ResultadosCompletos extends State<ResultadosCompletos> {
           if (colorPaleta == 1) boxPaletaFria(),
           if (colorPaleta == 2) boxPaletaCalida(),
           Padding(
-              padding: EdgeInsets.only(top: 20, bottom: 20, left: leftBorder),
+              padding: EdgeInsets.only(top: 10, bottom: 30, left: leftBorder),
               child: Row(children: [
                 Text(
                   'PALETA  ',
@@ -319,7 +319,7 @@ Widget boxPaletaCalida() {
       Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 50,
@@ -329,7 +329,7 @@ Widget boxPaletaCalida() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -338,7 +338,7 @@ Widget boxPaletaCalida() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -347,7 +347,7 @@ Widget boxPaletaCalida() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -356,7 +356,7 @@ Widget boxPaletaCalida() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -365,7 +365,7 @@ Widget boxPaletaCalida() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -374,12 +374,12 @@ Widget boxPaletaCalida() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
             ],
           ),
           Padding(padding: EdgeInsets.only(bottom: 10)),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 50,
@@ -389,7 +389,7 @@ Widget boxPaletaCalida() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -398,7 +398,7 @@ Widget boxPaletaCalida() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -407,7 +407,7 @@ Widget boxPaletaCalida() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -416,7 +416,7 @@ Widget boxPaletaCalida() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -425,7 +425,7 @@ Widget boxPaletaCalida() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -434,7 +434,7 @@ Widget boxPaletaCalida() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
             ],
           ),
         ],
@@ -450,7 +450,7 @@ Widget boxPaletaFria() {
       Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 50,
@@ -460,7 +460,7 @@ Widget boxPaletaFria() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -469,7 +469,7 @@ Widget boxPaletaFria() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -478,7 +478,7 @@ Widget boxPaletaFria() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -487,7 +487,7 @@ Widget boxPaletaFria() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -496,7 +496,7 @@ Widget boxPaletaFria() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -505,12 +505,12 @@ Widget boxPaletaFria() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
             ],
           ),
           Padding(padding: EdgeInsets.only(bottom: 10)),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 50,
@@ -520,7 +520,7 @@ Widget boxPaletaFria() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -529,7 +529,7 @@ Widget boxPaletaFria() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -538,7 +538,7 @@ Widget boxPaletaFria() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -547,7 +547,7 @@ Widget boxPaletaFria() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -556,7 +556,7 @@ Widget boxPaletaFria() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -565,7 +565,7 @@ Widget boxPaletaFria() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 10)),
+              Padding(padding: EdgeInsets.only(right: 0)),
             ],
           ),
         ],

@@ -73,7 +73,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                     cuerpo(context),
                     recuadroPerfil(),
                     fotoPerfil(),
-                    botonesArriba()
+                    botonesArriba(),
                   ],
                 ),
               ],
@@ -270,6 +270,9 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
         botonResultados(context),
         fila1Botones(),
         fila2Botones(),
+        Container(
+          height: 75,
+        )
       ],
     );
   }

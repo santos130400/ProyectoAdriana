@@ -60,7 +60,7 @@ class _CitaState extends State<Cita> {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.only(top: 0),
+                        padding: EdgeInsets.only(top: 0, bottom: 30),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -110,7 +110,7 @@ class _CitaState extends State<Cita> {
             'AGENDAR',
             style: TextStyle(
               color: Color(0xFF5C4438),
-              fontSize: 25,
+              fontSize: 30,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -175,7 +175,7 @@ class _CitaState extends State<Cita> {
         Container(
             height: 50, width: double.maxFinite, color: Color(0xFFEBA47A)),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
                 height: 50,
@@ -186,8 +186,8 @@ class _CitaState extends State<Cita> {
                       Navigator.of(context).pushNamed('/menu');
                     },
                     child: Icon(
-                      Icons.home,
-                      size: 40,
+                      Icons.home_outlined,
+                      size: 45,
                     ))),
             Container(
               height: 50,
@@ -209,7 +209,7 @@ class _CitaState extends State<Cita> {
                 child: FlatButton(
                     onPressed: () {},
                     child: Icon(
-                      Icons.access_time,
+                      Icons.watch_later,
                       size: 40,
                     )))
           ],

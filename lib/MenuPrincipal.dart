@@ -18,6 +18,8 @@ class MenuPrincipal extends StatefulWidget {
 }
 
 Metodos m = Metodos();
+String elNombre = '';
+String elNombre2 = '';
 
 class _MenuPrincipalState extends State<MenuPrincipal> {
   // ignore: non_constant_identifier_names
@@ -29,10 +31,13 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   double tempFont = 0;
   String temp = nombreid.getNombre;
   File imageFile;
+
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
+    elNombre = temp.split(" ")[0];
+    elNombre2 = temp.split(" ")[1];
     print(m.paletaColorString());
     print(m.paletaColorNumero());
     print(m.estilo());
@@ -131,11 +136,11 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 10),
                       child: Text(
-                        temp,
+                        elNombre.toUpperCase() + ' ' + elNombre2.toUpperCase(),
                         style: TextStyle(
                             color: Color(0xFF5C4438),
                             fontWeight: FontWeight.bold,
-                            fontSize: tempFont),
+                            fontSize: 30),
                       ),
                     ),
                   ),
@@ -276,7 +281,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
         Container(
             height: 50, width: double.maxFinite, color: Color(0xFFEBA47A)),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
                 height: 50,
@@ -286,7 +291,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                     onPressed: () {},
                     child: Icon(
                       Icons.home,
-                      size: 40,
+                      size: 45,
                     ))),
             Container(
               height: 50,
@@ -321,17 +326,17 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
 
   Widget fila1Botones() {
     return Padding(
-      padding: const EdgeInsets.only(top: 15),
+      padding: const EdgeInsets.only(top: 25),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding: const EdgeInsets.only(right: 0),
             child: Column(
               children: [
                 Container(
-                  height: 120,
-                  width: 120,
+                  height: 150,
+                  width: 150,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('assets/polvos.png')),
@@ -363,12 +368,12 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 0),
             child: Column(
               children: [
                 Container(
-                  height: 120,
-                  width: 120,
+                  height: 150,
+                  width: 150,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('assets/falda.png')),
@@ -407,15 +412,15 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     return Padding(
       padding: const EdgeInsets.only(top: 10),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding: const EdgeInsets.only(right: 0),
             child: Column(
               children: [
                 Container(
-                  height: 120,
-                  width: 120,
+                  height: 150,
+                  width: 150,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('assets/joyeria.png')),
@@ -447,12 +452,12 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 0),
             child: Column(
               children: [
                 Container(
-                  height: 120,
-                  width: 120,
+                  height: 150,
+                  width: 150,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('assets/cabello.png')),
@@ -489,17 +494,17 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
 
   Widget botonResultados(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 85),
+      padding: EdgeInsets.only(top: 95),
       child: FlatButton(
         onPressed: () {
           Navigator.of(context).pushNamed('/misResultados');
         },
         child: Container(
-            width: 300,
+            width: 320,
             height: 50,
             decoration: BoxDecoration(
                 color: Color(0xFFFFEED9),
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(8),
                 boxShadow: [
                   BoxShadow(
                       color: Colors.grey[400],
@@ -514,7 +519,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: const Color(0xFF5C4438),
-                    fontSize: 18),
+                    fontSize: 20),
               ),
             )),
       ),
@@ -613,18 +618,11 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: Text('Recomendasiones y',
+                  child: Text('Recomendados',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: const Color(0xFF5C4438), fontSize: 20)),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10),
-                  child: Text('descuentos',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: const Color(0xFF5C4438), fontSize: 20)),
-                )
               ],
             )
           ],

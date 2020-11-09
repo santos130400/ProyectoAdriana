@@ -382,11 +382,11 @@ class _Cabello extends State<Cabello> {
 
 Widget texto() {
   return Container(
-      padding: const EdgeInsets.only(top: 10, bottom: 15),
+      padding: const EdgeInsets.only(top: 30, bottom: 25),
       child: Column(children: <Widget>[
         Center(
           child: Text(
-            'CUAL ES EL COLOR ',
+            '¿CUAL ES EL COLOR ',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: new Color.fromRGBO(92, 68, 56, 1),
@@ -396,7 +396,7 @@ Widget texto() {
         ),
         Center(
           child: Text(
-            'NATURAL DE TU CABELLO',
+            'NATURAL DE TU CABELLO?',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: new Color.fromRGBO(92, 68, 56, 1),

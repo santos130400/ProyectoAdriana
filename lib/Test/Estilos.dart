@@ -171,7 +171,7 @@ class _Estilos extends State<Estilos> {
 
 Widget texto() {
   return Padding(
-    padding: const EdgeInsets.only(top: 20),
+    padding: const EdgeInsets.only(top: 30, bottom: 10),
     child: Container(
         child: Column(
       children: <Widget>[

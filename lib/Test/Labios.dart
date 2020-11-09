@@ -255,12 +255,15 @@ Widget textoPregunta = new Container(
     child: Column(children: <Widget>[
       Column(
         children: [
-          Text(
-            'SELECCIONA LA PALETA QUE',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: new Color.fromRGBO(92, 68, 56, 1),
-              fontSize: 20,
+          Padding(
+            padding: const EdgeInsets.only(top: 30),
+            child: Text(
+              'SELECCIONA LA PALETA QUE',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: new Color.fromRGBO(92, 68, 56, 1),
+                fontSize: 20,
+              ),
             ),
           ),
           Text(

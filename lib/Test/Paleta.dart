@@ -724,7 +724,7 @@ class _Paleta extends State<Paleta> {
 
 Widget texto() {
   return Padding(
-    padding: const EdgeInsets.only(top: 20, bottom: 15),
+    padding: const EdgeInsets.only(top: 30, bottom: 30),
     child: Container(
         child: Column(
       children: <Widget>[

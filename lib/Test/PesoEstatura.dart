@@ -37,7 +37,7 @@ class _PesoEstatura extends State<PesoEstatura> {
                     children: <Widget>[
                       Container(
                         margin: EdgeInsets.only(
-                            top: 10, left: 100, right: 100, bottom: 10),
+                            top: 30, left: 100, right: 100, bottom: 10),
                         child: Text(
                           "SELECCIONA TU PESO Y ESTATURA",
                           textAlign: TextAlign.center,
@@ -61,7 +61,7 @@ class _PesoEstatura extends State<PesoEstatura> {
                                 child: Image(
                                   image: AssetImage('assets/modelo.jpg'),
                                   width: 150,
-                                  height: 300,
+                                  height: 350,
                                   alignment: Alignment.center,
                                 ),
                               ),

@@ -340,7 +340,7 @@ class _Piel extends State<Piel> {
 
               //textoColor
               Padding(
-                padding: EdgeInsets.only(top: 5),
+                padding: EdgeInsets.only(top: 15, bottom: 15),
                 child: Text(
                   tmp,
                   style: TextStyle(
@@ -453,7 +453,7 @@ class _Piel extends State<Piel> {
 Widget textoPregunta() {
   return Center(
     child: Padding(
-        padding: EdgeInsets.only(top: 10),
+        padding: EdgeInsets.only(top: 30, bottom: 5),
         child: Column(
           children: [
             Text(

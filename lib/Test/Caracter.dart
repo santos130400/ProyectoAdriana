@@ -171,7 +171,7 @@ class _Caracter extends State<Caracter> {
 
 Widget texto() {
   return Padding(
-    padding: const EdgeInsets.only(top: 20, bottom: 10),
+    padding: const EdgeInsets.only(top: 30, bottom: 20),
     child: Container(
         child: Column(
       children: <Widget>[

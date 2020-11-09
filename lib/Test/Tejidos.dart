@@ -172,7 +172,7 @@ class _Tejidos extends State<Tejidos> {
 }
 
 Widget faces_01 = new Container(
-    padding: const EdgeInsets.only(left: 70, right: 70, top: 20, bottom: 10),
+    padding: const EdgeInsets.only(left: 70, right: 70, top: 30, bottom: 10),
     child: Column(children: <Widget>[
       Center(
         child: Text(

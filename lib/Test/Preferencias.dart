@@ -127,8 +127,9 @@ class _Preferencias extends State<Preferencias> {
                       'FINALIZAR EL TEST',
                       textAlign: TextAlign.center,
                       textScaleFactor: 2.0,
-                      style:
-                          TextStyle(color: new Color.fromRGBO(92, 68, 56, 1)),
+                      style: TextStyle(
+                          color: new Color.fromRGBO(92, 68, 56, 1),
+                          fontWeight: FontWeight.bold),
                     ),
                   ]))),
     );
@@ -168,6 +169,7 @@ class _Preferencias extends State<Preferencias> {
                 child: Container(
                   child: Text(
                     'Has concluido',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -344,17 +346,24 @@ class _Preferencias extends State<Preferencias> {
 
   Widget texto() {
     return Container(
+        width: double.infinity,
         padding:
             const EdgeInsets.only(left: 70, right: 70, top: 30, bottom: 30),
         child: Column(children: <Widget>[
           Center(
             child: Text(
-              'CUENTANOS QUE OPCIÓN PREFIERES',
+              'CUÉNTANOS',
               textAlign: TextAlign.center,
-              textScaleFactor: 2.0,
               style: TextStyle(
-                color: new Color.fromRGBO(92, 68, 56, 1),
-              ),
+                  color: new Color.fromRGBO(92, 68, 56, 1), fontSize: 30),
+            ),
+          ),
+          Center(
+            child: Text(
+              '¿QUÉ OPCIÓN PREFIERES?',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: new Color.fromRGBO(92, 68, 56, 1), fontSize: 22),
             ),
           ),
         ]));

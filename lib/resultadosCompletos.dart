@@ -283,7 +283,7 @@ Widget boxEstilo() {
           alignment: Alignment.center,
           decoration: BoxDecoration(
               color: new Color.fromRGBO(255, 198, 165, 1),
-              borderRadius: BorderRadius.all(Radius.circular(30)),
+              borderRadius: BorderRadius.all(Radius.circular(20)),
               boxShadow: [
                 BoxShadow(
                     color: Colors.black26, blurRadius: 4, offset: Offset(0, 4))
@@ -601,11 +601,11 @@ Widget boxCara() {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color(0xFF5C4438),
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                m.traductorCaraForma(resul.cara,90),
+                m.traductorCaraForma(resul.cara, 90),
                 Text(m.traductorCaraPalabra(resul.cara),
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -635,13 +635,13 @@ Widget boxCara() {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color(0xFF5C4438),
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 m.traductorCuerpoForma(resul.forma, 90),
-                  Text(m.traductorCuerpoPalabra(resul.forma), 
-                  textAlign: TextAlign.center,
+                Text(m.traductorCuerpoPalabra(resul.forma),
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Color(0xFF5C4438),
                         fontSize: 18,

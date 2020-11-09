@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prueba_apliacion/main.dart';
+
 double border = 0;
 double border1 = 0;
 double border2 = 0;
@@ -24,7 +25,7 @@ class _Ojos extends State<Ojos> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    border =0;
+    border = 0;
     border1 = 0;
     border2 = 0;
     border3 = 0;
@@ -49,11 +50,10 @@ class _Ojos extends State<Ojos> {
             Container(
                 padding: EdgeInsets.only(top: 100),
                 width: 275,
-                height: 175,
+                height: 200,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: NetworkImage(
-                            "https://images.vexels.com/media/users/3/134558/isolated/lists/7bf2731c5db33eb567ca38ac78e57b3d-ojo-maquillaje-ilustracion.png"),
+                        image: AssetImage('assets/ojo2.png'),
                         alignment: Alignment.topCenter))),
             Container(
               height: 200,
@@ -86,7 +86,7 @@ class _Ojos extends State<Ojos> {
                             onTap: () {
                               setState(() {
                                 selected = 0;
-                                border=3;
+                                border = 3;
                                 border1 = 0;
                                 border2 = 0;
                                 border3 = 0;
@@ -120,7 +120,7 @@ class _Ojos extends State<Ojos> {
                             onTap: () {
                               setState(() {
                                 selected = 1;
-                                border= 0;
+                                border = 0;
                                 border1 = 3;
                                 border2 = 0;
                                 border3 = 0;
@@ -154,7 +154,7 @@ class _Ojos extends State<Ojos> {
                             onTap: () {
                               setState(() {
                                 selected = 2;
-                                border= 0;
+                                border = 0;
                                 border1 = 0;
                                 border2 = 3;
                                 border3 = 0;
@@ -188,7 +188,7 @@ class _Ojos extends State<Ojos> {
                             onTap: () {
                               setState(() {
                                 selected = 3;
-                                border= 0;
+                                border = 0;
                                 border1 = 0;
                                 border2 = 0;
                                 border3 = 3;
@@ -229,7 +229,7 @@ class _Ojos extends State<Ojos> {
                             onTap: () {
                               setState(() {
                                 selected = 4;
-                                border= 0;
+                                border = 0;
                                 border1 = 0;
                                 border2 = 0;
                                 border3 = 0;
@@ -263,7 +263,7 @@ class _Ojos extends State<Ojos> {
                             onTap: () {
                               setState(() {
                                 selected = 5;
-                                border= 0;
+                                border = 0;
                                 border1 = 0;
                                 border2 = 0;
                                 border3 = 0;
@@ -297,7 +297,7 @@ class _Ojos extends State<Ojos> {
                             onTap: () {
                               setState(() {
                                 selected = 6;
-                                border= 0;
+                                border = 0;
                                 border1 = 0;
                                 border2 = 0;
                                 border3 = 0;
@@ -331,7 +331,7 @@ class _Ojos extends State<Ojos> {
                             onTap: () {
                               setState(() {
                                 selected = 7;
-                                border=0;
+                                border = 0;
                                 border1 = 0;
                                 border2 = 0;
                                 border3 = 0;
@@ -350,7 +350,7 @@ class _Ojos extends State<Ojos> {
               ),
             ),
             Container(
-              padding: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
@@ -426,7 +426,7 @@ class _Ojos extends State<Ojos> {
                       onPressed: () {
                         if (selected != -1 && radioItem != 0) {
                           setState(() {
-                            opacity2 =  0;
+                            opacity2 = 0;
                           });
                           resul.ojos = selected;
                           resul.ojeras = radioItem;
@@ -463,7 +463,7 @@ class _Ojos extends State<Ojos> {
 
   Widget texto() {
     return Padding(
-      padding: const EdgeInsets.only(top: 10),
+      padding: const EdgeInsets.only(top: 30),
       child: Text(
           "SELECCIONA EL COLOR                                               DE TUS OJOS",
           style: new TextStyle(

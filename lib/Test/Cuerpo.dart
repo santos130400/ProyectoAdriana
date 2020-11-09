@@ -44,7 +44,7 @@ class _Cuerpo extends State<Cuerpo> {
                 Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 15),
+                      padding: const EdgeInsets.only(top: 25),
                       child: Text(
                         "SELECCIONA LA FORMA",
                         textAlign: TextAlign.center,

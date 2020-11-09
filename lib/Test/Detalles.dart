@@ -33,7 +33,7 @@ class _Detalles extends State<Detalles> {
                 barraNavegacion(context),
                 //texto
                 Padding(
-                    padding: const EdgeInsets.only(top: 20),
+                    padding: const EdgeInsets.only(top: 30, bottom: 10),
                     child: Column(children: [
                       Text(
                         "¿QUÉ DETALLES Y ACCESORIOS SON",

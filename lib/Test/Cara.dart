@@ -238,38 +238,40 @@ class _Cara extends State<Cara> {
                 height: 120,
                 alignment: Alignment.center,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                  Container(
-                      width: 250,
-                      child: Text(
-                        palabra,
-                        textAlign: TextAlign.center,
-                        style:
-                            TextStyle(fontSize: 40, color: Color(0xFF5C4438), fontWeight: FontWeight.bold),
-                      )),
-                  Container(
-                    height: 50.0,
-                    width: 50.0,
-                    decoration: new BoxDecoration(
-                        color: new Color.fromRGBO(255, 238, 217, 1),
-                        shape: BoxShape.circle,
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                              color: Colors.black54,
-                              blurRadius: 4.0,
-                              offset: Offset(0.0, 0.75))
-                        ]),
-                    child: FlatButton(
-                        onPressed: () {
-                          _abrirCamara(context);
-                          // Navigator.push(context,
-                          //  MaterialPageRoute(builder: (context)=> CameraApp())
-                          // );
-                        },
-                        child: Image.asset('assets/camara_01.png')),
-                  )
-                ]),
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                          width: 250,
+                          child: Text(
+                            palabra,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 35,
+                                color: Color(0xFF5C4438),
+                                fontWeight: FontWeight.bold),
+                          )),
+                      Container(
+                        height: 50.0,
+                        width: 50.0,
+                        decoration: new BoxDecoration(
+                            color: new Color.fromRGBO(255, 238, 217, 1),
+                            shape: BoxShape.circle,
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                  color: Colors.black54,
+                                  blurRadius: 4.0,
+                                  offset: Offset(0.0, 0.75))
+                            ]),
+                        child: FlatButton(
+                            onPressed: () {
+                              _abrirCamara(context);
+                              // Navigator.push(context,
+                              //  MaterialPageRoute(builder: (context)=> CameraApp())
+                              // );
+                            },
+                            child: Image.asset('assets/camara_01.png')),
+                      )
+                    ]),
               ),
             ]),
           ),

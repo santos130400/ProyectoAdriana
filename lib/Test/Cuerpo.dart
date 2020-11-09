@@ -7,7 +7,8 @@ class Cuerpo extends StatefulWidget {
   @override
   _Cuerpo createState() => _Cuerpo();
 }
-String palabra1="";
+
+String palabra1 = "";
 double cuerpo1 = 0;
 double cuerpo2 = 0;
 double cuerpo3 = 0;
@@ -21,7 +22,7 @@ class _Cuerpo extends State<Cuerpo> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    palabra1="";
+    palabra1 = "";
     cuerpo1 = 0;
     cuerpo2 = 0;
     cuerpo3 = 0;
@@ -79,7 +80,7 @@ class _Cuerpo extends State<Cuerpo> {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          palabra1="RECTANGULAR";
+                          palabra1 = "RECTANGULAR";
                           seleccionado = 1;
                           cuerpo1 = 5;
                           cuerpo2 = 0;
@@ -102,7 +103,7 @@ class _Cuerpo extends State<Cuerpo> {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          palabra1="OVALADA";
+                          palabra1 = "OVALADA";
                           seleccionado = 2;
                           cuerpo1 = 0;
                           cuerpo2 = 5;
@@ -125,7 +126,7 @@ class _Cuerpo extends State<Cuerpo> {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          palabra1="TRIANGULAR";
+                          palabra1 = "TRIANGULAR";
                           seleccionado = 3;
                           cuerpo1 = 0;
                           cuerpo2 = 0;
@@ -148,7 +149,7 @@ class _Cuerpo extends State<Cuerpo> {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          palabra1="RELOJ DE ARENA";
+                          palabra1 = "RELOJ DE ARENA";
                           seleccionado = 4;
                           cuerpo1 = 0;
                           cuerpo2 = 0;
@@ -171,7 +172,7 @@ class _Cuerpo extends State<Cuerpo> {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          palabra1="TRIANGULO INVERTIDO";
+                          palabra1 = "TRIANGULO INVERTIDO";
                           seleccionado = 5;
                           cuerpo1 = 0;
                           cuerpo2 = 0;
@@ -193,19 +194,22 @@ class _Cuerpo extends State<Cuerpo> {
                     ),
                   ],
                 ),
-
                 Container(
-                      width: double.infinity,
-                      
-                      margin: EdgeInsets.symmetric(horizontal: 25,vertical: 25),
-                      child: Container(
-                        child: Text(
-                          palabra1,
-                          textAlign: TextAlign.center,
-                          style:
-                              TextStyle(fontSize: 40, color: Color(0xFF5C4438), fontWeight: FontWeight.bold),
-                        ),
-                      )),
+                    width: double.infinity,
+                    margin: EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+                    child: Container(
+                      child: Text(
+                        palabra1,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 40,
+                            color: Color(0xFF5C4438),
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )),
+                Padding(
+                  padding: EdgeInsets.only(top: 50),
+                ),
               ],
             ),
           ),

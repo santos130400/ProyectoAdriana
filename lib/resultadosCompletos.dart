@@ -321,12 +321,15 @@ Widget boxPaletaCalida() {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: new Color.fromRGBO(184, 71, 57, 1),
-                  border: Border.all(color: Colors.black, width: 1),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: new Color.fromRGBO(184, 71, 57, 1),
+                    border: Border.all(color: Colors.black, width: 1),
+                  ),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 0)),
@@ -374,19 +377,22 @@ Widget boxPaletaCalida() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 0)),
+              Padding(padding: EdgeInsets.only(right: 20)),
             ],
           ),
           Padding(padding: EdgeInsets.only(bottom: 10)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: new Color.fromRGBO(0, 99, 167, 1),
-                  border: Border.all(color: Colors.black, width: 1),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: new Color.fromRGBO(0, 99, 167, 1),
+                    border: Border.all(color: Colors.black, width: 1),
+                  ),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 0)),
@@ -434,7 +440,7 @@ Widget boxPaletaCalida() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 0)),
+              Padding(padding: EdgeInsets.only(right: 20)),
             ],
           ),
         ],
@@ -452,15 +458,18 @@ Widget boxPaletaFria() {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: new Color.fromRGBO(32, 87, 167, 1),
-                  border: Border.all(color: Colors.black, width: 1),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: new Color.fromRGBO(32, 87, 167, 1),
+                    border: Border.all(color: Colors.black, width: 1),
+                  ),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 0)),
+              Padding(padding: EdgeInsets.only(left: 0)),
               Container(
                 width: 50,
                 height: 50,
@@ -505,19 +514,22 @@ Widget boxPaletaFria() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 0)),
+              Padding(padding: EdgeInsets.only(right: 20)),
             ],
           ),
           Padding(padding: EdgeInsets.only(bottom: 10)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: new Color.fromRGBO(124, 127, 178, 1),
-                  border: Border.all(color: Colors.black, width: 1),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: new Color.fromRGBO(124, 127, 178, 1),
+                    border: Border.all(color: Colors.black, width: 1),
+                  ),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 0)),
@@ -565,7 +577,7 @@ Widget boxPaletaFria() {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 0)),
+              Padding(padding: EdgeInsets.only(right: 20)),
             ],
           ),
         ],

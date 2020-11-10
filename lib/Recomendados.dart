@@ -40,7 +40,7 @@ class _Recomendados extends State<Recomendados> {
           Padding(
             padding: EdgeInsets.only(top: 20, bottom: 20),
             child: Text(
-              'PROXIMOS EVENTOS',
+              'PRÓXIMOS EVENTOS',
               textAlign: TextAlign.center,
               style: TextStyle(
                   color: Color.fromARGB(255, 92, 68, 46),
@@ -210,7 +210,7 @@ Widget boxEventos() {
     children: [
       Container(
         height: 350,
-        width: 270,
+        width: 350,
         decoration: BoxDecoration(color: Colors.white, boxShadow: [
           BoxShadow(color: Colors.black26, blurRadius: 10, offset: Offset(0, 4))
         ]),

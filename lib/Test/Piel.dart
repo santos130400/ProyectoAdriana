@@ -356,8 +356,7 @@ class _Piel extends State<Piel> {
               //radio buttons
               Container(
                   margin: const EdgeInsets.only(
-                    left: 5.0,
-                    right: 5.0,
+                    right: 8.0,
                     top: 5,
                   ),
                   child: Row(
@@ -374,7 +373,7 @@ class _Piel extends State<Piel> {
                         },
                       ),
                       Text(
-                        'Me quema',
+                        'Me quema     ',
                         style: TextStyle(fontSize: 18, color: Colors.black),
                       ),
                       Radio(
@@ -472,13 +471,12 @@ Widget textoPregunta() {
 }
 
 Widget textoRadio() {
-  return Padding(
-      padding: EdgeInsets.only(top: 0),
+  return Center(
       child: Text(
-        "    El contacto directo con el sol me:",
-        style: TextStyle(color: Colors.brown, fontSize: 18),
-        textAlign: TextAlign.center,
-      ));
+    "    El contacto directo con el sol me:     ",
+    style: TextStyle(color: Colors.brown, fontSize: 18),
+    //textAlign: TextAlign.center,
+  ));
 }
 
 Widget barraNavegacion(BuildContext context) {

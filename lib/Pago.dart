@@ -37,10 +37,10 @@ class _PagoState extends State<Pago> {
               Column(
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    //mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                          padding: EdgeInsets.only(left: 20, top: 20),
+                          padding: EdgeInsets.only(left: 40, top: 30),
                           child: SizedBox(
                             width: 25,
                             height: 25,
@@ -62,7 +62,7 @@ class _PagoState extends State<Pago> {
                             ),
                           )),
                       Padding(
-                          padding: EdgeInsets.only(left: 20, top: 20),
+                          padding: EdgeInsets.only(left: 20, top: 30),
                           child: Row(children: [
                             Text(
                               'Acepto los ',
@@ -81,38 +81,42 @@ class _PagoState extends State<Pago> {
                           ]))
                     ],
                   ),
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    Padding(
-                        padding: EdgeInsets.only(left: 20, top: 20, bottom: 20),
-                        child: SizedBox(
-                          width: 25,
-                          height: 25,
-                          child: RaisedButton(
-                            shape: RoundedRectangleBorder(
-                                side: BorderSide(color: Colors.black)),
-                            color: selected2,
-                            onPressed: () {
-                              setState(() {
-                                if (isSelected2 == 0) {
-                                  selected2 = Color(0xFFFFE3C0);
-                                  isSelected2 = 1;
-                                } else {
-                                  selected2 = Colors.white;
-                                  isSelected2 = 0;
-                                }
-                              });
-                            },
-                          ),
-                        )),
-                    Padding(
-                        padding: EdgeInsets.only(left: 20, bottom: 20),
-                        child: Text(
-                          'Autorizo el cargo automático mensual de mi tarjeta',
-                          style: TextStyle(
-                            fontSize: 13,
-                          ),
-                        )),
-                  ]),
+                  Row(
+                      //mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                            padding:
+                                EdgeInsets.only(left: 40, top: 20, bottom: 20),
+                            child: SizedBox(
+                              width: 25,
+                              height: 25,
+                              child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                    side: BorderSide(color: Colors.black)),
+                                color: selected2,
+                                onPressed: () {
+                                  setState(() {
+                                    if (isSelected2 == 0) {
+                                      selected2 = Color(0xFFFFE3C0);
+                                      isSelected2 = 1;
+                                    } else {
+                                      selected2 = Colors.white;
+                                      isSelected2 = 0;
+                                    }
+                                  });
+                                },
+                              ),
+                            )),
+                        Padding(
+                            padding:
+                                EdgeInsets.only(left: 20, top: 20, bottom: 20),
+                            child: Text(
+                              'Autorizo el cargo automático mensual de mi tarjeta',
+                              style: TextStyle(
+                                fontSize: 13,
+                              ),
+                            )),
+                      ]),
                   Container(
                     height: 40,
                   )
@@ -189,7 +193,7 @@ Widget textos1() {
         ],
       ),
       Padding(
-          padding: EdgeInsets.only(top: 0),
+          padding: EdgeInsets.only(top: 0, left: 20, right: 20),
           child: Text(
               " Este cargo se realiza mensualmente y puede ser cancelado en cualquier momento",
               textAlign: TextAlign.center,
@@ -593,12 +597,12 @@ Widget caja() {
 
 Widget botonPago() {
   return SizedBox(
-      height: 50,
+      height: 60,
       width: double.infinity,
       child: RaisedButton(
         color: Color(0xFFFFFC6A5),
         child: Text(
-          "REALIZAR PAGO",
+          "REALIZAR EL PAGO",
           style: TextStyle(
             color: Color(0xFF5C4438),
             fontSize: 25,

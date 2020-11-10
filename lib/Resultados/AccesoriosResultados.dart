@@ -39,11 +39,14 @@ Widget collar(BuildContext context) {
           height: 70,
           child: RaisedButton(
               child: Text(
-                "COLLAR Y ARETES",
+                "COLLARES Y ARETES",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(9)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultadosInter(9)));
               },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
@@ -60,7 +63,10 @@ Widget sombreros(BuildContext context) {
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(10)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultadosInter(10)));
               },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
@@ -77,7 +83,10 @@ Widget pulseras(BuildContext context) {
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(11)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultadosInter(11)));
               },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
@@ -94,7 +103,10 @@ Widget lentes(BuildContext context) {
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(12)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultadosInter(12)));
               },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
@@ -111,7 +123,10 @@ Widget bolsos(BuildContext context) {
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(13)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultadosInter(13)));
               },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
@@ -128,7 +143,10 @@ Widget cinturones(BuildContext context) {
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(14)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultadosInter(14)));
               },
               color: Color.fromARGB(255, 255, 198, 165))));
 }

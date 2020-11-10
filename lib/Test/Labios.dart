@@ -267,7 +267,7 @@ Widget textoPregunta = new Container(
             ),
           ),
           Text(
-            'MAS SE ASEMEJA A TUS LABIOS',
+            'MÁS SE ASEMEJA A TUS LABIOS',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: new Color.fromRGBO(92, 68, 56, 1),

@@ -177,7 +177,7 @@ Widget texto() {
       children: <Widget>[
         Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
           Column(children: <Widget>[
-            new Text("¿QUE TIPOS DE CARACTERISTICAS",
+            new Text("¿QUÉ TIPOS DE CARACTERISTICAS",
                 style: new TextStyle(
                     fontSize: 20,
                     color: const Color(0xFF5C4438),

@@ -46,7 +46,7 @@ class _Tejidos extends State<Tejidos> {
                     RadioListTile(
                       groupValue: radioItem1,
                       value: 2,
-                      title: Text('Lana delgada, algodón y gaberdina'),
+                      title: Text('Lana delgada, algodón y gabardina'),
                       activeColor: new Color.fromRGBO(92, 68, 56, 1),
                       onChanged: (val) {
                         setState(() {

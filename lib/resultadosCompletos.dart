@@ -46,7 +46,7 @@ class _ResultadosCompletos extends State<ResultadosCompletos> {
       colorFria2 = Colors.white;
       porcentajeCalida = m.paletaColorNumero().toString() + "%";
       porcentajeFria = "";
-      texto = "CALIDA";
+      texto = "CÁLIDA";
       leftBorder = 120;
     }
 
@@ -100,7 +100,7 @@ Widget temperaturaColor() {
               children: [
                 Row(
                   children: [
-                    Padding(padding: EdgeInsets.only(right: 35)),
+                    Padding(padding: EdgeInsets.only(right: 35, top: 35)),
                     Text(
                       'TEMPERATURA',
                       textAlign: TextAlign.left,
@@ -194,7 +194,7 @@ Widget temperaturaColor() {
                     Padding(
                       padding: EdgeInsets.only(top: 5, right: 55),
                       child: Text(
-                        'CÁLIDA',
+                        'CÁLIDA ',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color.fromARGB(255, 92, 68, 46),

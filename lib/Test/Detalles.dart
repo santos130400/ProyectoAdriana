@@ -55,7 +55,7 @@ class _Detalles extends State<Detalles> {
                     groupValue: radioItem1,
                     value: 1,
                     title: Text(
-                        'Detalles femeninos: flores, cintas, corazon, moños.'),
+                        'Detalles femeninos: flores, cintas, corazón, moños.'),
                     activeColor: new Color.fromRGBO(92, 68, 56, 1),
                     onChanged: (val) {
                       setState(() {
@@ -92,7 +92,7 @@ class _Detalles extends State<Detalles> {
                   groupValue: radioItem1,
                   value: 4,
                   title: Text(
-                      'Pocos o ningun accesorio: joyas muy pequeñas que no se quitan nunca'),
+                      'Pocos o ningun accesorio: joyas muy pequeñas que no me quito nunca'),
                   activeColor: new Color.fromRGBO(92, 68, 56, 1),
                   onChanged: (val) {
                     setState(() {
@@ -114,7 +114,7 @@ class _Detalles extends State<Detalles> {
                 RadioListTile(
                   groupValue: radioItem1,
                   value: 6,
-                  title: Text('Detalles sexys y aparentes'),
+                  title: Text('Detalles seductores y aparentes'),
                   activeColor: new Color.fromRGBO(92, 68, 56, 1),
                   onChanged: (val) {
                     setState(() {

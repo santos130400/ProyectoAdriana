@@ -601,9 +601,20 @@ class _CitaAgendarState extends State<CitaAgendar> {
                 ),
               ),
             ),
+            Padding(
+                padding: EdgeInsets.only(top: 25),
+                child: Container(
+                  child: Text(
+                    "¿PARA QUÉ OCASIÓN DESEAS TU CITA?",
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                )),
             Container(
               width: double.infinity,
-              height: 150,
+              height: 50,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

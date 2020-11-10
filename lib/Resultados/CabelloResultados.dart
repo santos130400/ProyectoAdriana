@@ -35,11 +35,14 @@ Widget cabelloYPeinados(BuildContext context) {
           height: 70,
           child: RaisedButton(
               child: Text(
-                "CABELLO Y PEINADOS",
+                "CORTES Y PEINADOS",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(15)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultadosInter(15)));
               },
               color: Color.fromARGB(255, 255, 198, 165))));
 }
@@ -56,7 +59,10 @@ Widget colorYEfectos(BuildContext context) {
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultadosInter(16)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultadosInter(16)));
               },
               color: Color.fromARGB(255, 255, 198, 165))));
 }

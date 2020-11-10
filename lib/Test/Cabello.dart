@@ -386,7 +386,7 @@ Widget texto() {
       child: Column(children: <Widget>[
         Center(
           child: Text(
-            '¿CUAL ES EL COLOR ',
+            '¿CUÁL ES EL COLOR ',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: new Color.fromRGBO(92, 68, 56, 1),
